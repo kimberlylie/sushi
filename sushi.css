@@ -31,7 +31,3 @@ img {vertical-align: middle;}
   from {opacity: .4} 
   to {opacity: 1}
 }
-
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
