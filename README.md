@@ -7,5 +7,3 @@ Pics Folder - All the pictures that will be needed for the webapp. This folder w
 
 sushi.css - External stylesheet for the webapp which houses all the styles across the pages. So, all the id names must be unique across the 3 pages + cart page. Header, nav styling should be uniform across including background color (white).
 
-test commit
-test commit2
