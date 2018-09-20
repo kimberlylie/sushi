@@ -1,4 +1,10 @@
-#sushi_header {
-	background-color: #eca1a6
-	
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: center;
 }

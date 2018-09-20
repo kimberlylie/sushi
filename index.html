@@ -7,48 +7,21 @@
     </head>
     <body>
         
-        <div id="header">insert sushi bar logo/banner here (style it outside at sushi.css ext stylesheet</div>
-
-        <nav>
-            <a href="index.html">Home</a> &nbsp;
-            <a href="menu.html">Menu</a> &nbsp;
-            <a href="contact.html">Contact</a> &nbsp;
-        </nav>
-
-        <div id="slideshow-container">
-            <div class="mySlides fade">
-            <img src="pics/sushi_banners.png" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-            <img src="pics/sushi_promotion.png" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-            <img src="pics/sushi_favourites.png" style="width:100%">
-            </div>
+        <div id="header">
+            <nav class = "navbar">
+            <img src="pics/sushi_logo.png">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="menu.html">menu</a>/li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+            <a href="cart.html"><img src="pics/cart.png" width="30" height="30"></a>
         </div>
 
-        <div id="locations">
-            Put the about and all that. Stylize the map? with the pins lighting up when pressed with the flag popping on top of it??
-        </div>
+        <div id="photo_carousel"></div>
+
+        <div id="locations"></div>
 
     </body>
 </html>
 
-<script>
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-        slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 3000); // Change image every 3 seconds
-    }
-</script>
