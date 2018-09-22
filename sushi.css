@@ -9,6 +9,10 @@ body {
 	margin: 0 auto;
 }
 
+header {
+  column-count: 5;
+}
+
 header::after {
 	content: '';
 	display: table;
@@ -32,6 +36,10 @@ nav li {
 	margin-left: 30px;
 	padding-top: 10px;
 	position: relative;
+}
+
+nav li #cart {
+  float: right;
 }
 
 nav li a {
@@ -63,4 +71,8 @@ nav a::before {
 
 nav a:hover::before {
 	width: 60%;
+}
+
+#cart {
+  margin-top: 10px;
 }
