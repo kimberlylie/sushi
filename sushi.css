@@ -149,6 +149,11 @@ slide:nth-child(4) {
   100% {left: 100%; width: 0%;}
 }
 
+slide img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Styles for menu page */
 
 /* Styles for contact page */
