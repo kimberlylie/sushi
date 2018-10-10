@@ -108,8 +108,25 @@ nav ul li a:hover::before {
 }
 
 .main {
+	margin: auto;
   position: relative;
   column-count: 2;
+}
+
+#roots {
+	font-family: 'Barlow', sans-serif;
+	font-weight: 25px;
+	padding-top: 35px;
+	padding-left: 150px;
+	text-align: left;
+}
+
+#roots_body {
+	column-count: 2;
+}
+
+#locations img {
+	opacity: 0.8;
 }
 
 
@@ -122,3 +139,28 @@ nav ul li a:hover::before {
 /* Styles for checkout page */
 
 /* Styles for confirmation page */
+
+/* Styles for footer */
+.footer {
+	margin: 50px;
+	padding: 50px;
+	position: relative;
+}
+
+#icons {
+	float: left;
+}
+
+#icons img {
+	margin-right: 20px;
+	width: 30px;
+	height: 30px;
+}
+
+#icons a:hover {
+	opacity: 0.5;
+}
+
+#copyright {
+	float: right;
+}
