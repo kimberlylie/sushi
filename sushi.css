@@ -34,42 +34,42 @@ body {
 	padding-top: 10px;
 }
 
-nav {
-	line-height: 25px;
-	margin-left: 50px;
-	float: left;
-}
 
-nav li {
+nav div {
 	display: inline-block;
 	text-align: center;
-	margin-left: 30px;
-	padding-top: 10px;
+ 	margin-left: 30px;
+  padding-top: 10px;
 	position: relative;
+
 }
 
-nav #cart {
-  float: right;
-  padding-top: 5px;
-}
-
-nav li a {
+#text a {
 	display: block;
 	color: #444;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
+	margin: 0;
 }
 
-nav ul {
+#text {
+	margin-left: 0;
+	padding:0;
+}
+
+#nav-container {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	background-color: #fff;
+	line-height: 25px;
+	margin-left: 100px;
+	float: left;
 }
 
-nav ul li a::before {
+#text a::before {
 	content: '';
 	display: block;
 	height: 3px;
@@ -78,14 +78,20 @@ nav ul li a::before {
 	top: 0;
 	width: 0%;
 	transition: all ease-in-out 250ms;
+	margin: 0;
+	margin-left: 0;
 }
 
-nav ul li a:hover::before {
-	width: 60%;
+#text a:hover::before {
+	width: 3%;
+	margin-left: 100px;
+
 }
 
 #cart {
   margin-left: 50px;
+    float: right;
+  padding-top: 5px;
 }
 
 /* Styles for home page */
