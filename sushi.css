@@ -172,6 +172,7 @@ nav ul li a:hover::before {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+	column-count: 2;
 }
 
 /* The Close Button */
