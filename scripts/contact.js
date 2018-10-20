@@ -11,7 +11,7 @@ function checkName() {
     }
     
     function checkEmail() {
-    
+        email.value = trim(email.value)
         var email = document.getElementById('email');
         if (/^[\w.-]+@([\w]+\.){1,3}[\w]{2,3}$/.test(email.value)==false) 
         {
@@ -21,6 +21,9 @@ function checkName() {
         }
     }
     
-
+    function trim(x) {
+        return x.replace(/^\s+|\s+$/gm,'');
+    }
+    
 
     
