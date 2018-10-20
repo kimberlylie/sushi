@@ -3,6 +3,7 @@
     <head>
         <title>The Sushi Bar SG</title>
         <link rel="stylesheet" href="sushi.css">
+        <script type="text/javascript" src="./scripts/contact.js"> </script>
         <meta charset="utf-8">
     </head>
     <body>   
@@ -32,15 +33,15 @@
             <p>600 500</p>
             <p>contact@sushi.com</p>
             <div class="contact-form"></div>
-            <form method="post" action="sendContact.php"> 
+            <form method="post" action="./php/sendContact.php"> 
                     <p>*Name:</p>
-                    <p><input type="text" name="name" id="name" required></p>
+                    <p><input type="text" name="name" id="name" onchange="checkName()" required></p>
 
                     <p>*E-mail:</p>
-                    <p> <input type="email" name="email" id="email" required></p>
+                    <p> <input type="email" name="email" id="email" onchange="checkEmail()" required></p>
 
                     <p>area of interest</p>
-                    <select name="interest" id="interest" required >
+                    <select name="subject" id="subject" required>
                         <option value="feedback">Feedback</option>
                         <option value="catering">Catering</option>
                         <option value="others">Others</option>
