@@ -70,12 +70,18 @@
 
             <div id="myModal" class="modal">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Dummy Item</p>
-                    <form action="add_to_cart.php" method="post">
-                        Quantity: <input type="number" name="quantity" id="quantity" style="width:50px;"><hr>
-                        <input type="submit" value="Add to cart">
-                    </form>
+                    <div id="modal-picture"><img src="assets/menu/dummy.jpg"></div>
+                    <div id="modal-details">
+                        <span class="close">&times;</span>
+                        <div id="modal-item-name"><h1>Item Name</h1></div><br>
+                        <div id="modal-item-price"><h3>Item Price</h3></div>
+                        <div id="modal-item-description"><h6>Description</h6></div>
+                        <hr>
+                        <form action="add_to_cart.php" method="post">
+                            Quantity: <input type="number" name="quantity" id="quantity" style="width:50px; margin-bottom: 30px; margin-top: 30px;"><br>
+                            <input type="submit" value="Add to cart">
+                        </form>
+                    </div>
                 </div>
             </div>
 	    </div>
