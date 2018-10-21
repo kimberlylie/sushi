@@ -11,8 +11,9 @@ function checkName() {
     }
     
     function checkEmail() {
-        email.value = trim(email.value)
         var email = document.getElementById('email');
+        email.value = trim(email.value)
+        
         if (/^[\w.-]+@([\w]+\.){1,3}[\w]{2,3}$/.test(email.value)==false) 
         {
             alert('email invalid');
