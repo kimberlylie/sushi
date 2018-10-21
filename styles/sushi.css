@@ -1,26 +1,24 @@
 /* Used for all pages */
 body {
 	margin: 0;
-	font-family: sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
-#nav-container {
-	width: 80%;
+.header {
+	column-count: 5;
+	position: fixed;
+	height: 63px;
+	top: 0;
+	z-index: 1;
+	opacity:0.8;
+	width: 100%;
 	margin: 0 auto;
-  display: inline;
-}
-
-#header {
-  column-count: 5;
-  position: fixed;
-  height: 63px;
-  top: 0;
-  z-index: 1;
-  opacity:0.8;
-  background-color: #fff;
+	display: inline;
+	background-color: #fff;
+	vertical-align: middle;
 }
 
 #header::after {
@@ -34,42 +32,41 @@ body {
 	padding-top: 10px;
 }
 
-
-nav div {
-	display: inline-block;
-	text-align: center;
- 	margin-left: 30px;
-  padding-top: 10px;
-	position: relative;
-
+nav {
+	line-height: 25px;
+	float: left;
 }
 
-#text a {
+nav li {
+	display: inline-block;
+	/*text-align: center;*/
+	/*margin-left: 30px;*/
+	padding-top: 10px;
+	position: relative;
+}
+
+nav #cart {
+	float: right;
+	padding-top: 5px;
+}
+
+nav li a {
 	display: block;
 	color: #444;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	margin: 0;
 }
 
-#text {
-	margin-left: 0;
-	padding:0;
-}
-
-#nav-container {
+nav ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	background-color: #fff;
-	line-height: 25px;
-	margin-left: 100px;
-	float: left;
 }
 
-#text a::before {
+nav .main-nav ul li a::before {
 	content: '';
 	display: block;
 	height: 3px;
@@ -78,20 +75,15 @@ nav div {
 	top: 0;
 	width: 0%;
 	transition: all ease-in-out 250ms;
-	margin: 0;
-	margin-left: 0;
 }
 
-#text a:hover::before {
-	width: 3%;
-	margin-left: 100px;
-
+nav ul li a:hover::before {
+	width: 60%;
 }
 
 #cart {
-  margin-left: 50px;
-    float: right;
-  padding-top: 5px;
+	/*margin-left: 50px;*/
+	background-color: #fff;
 }
 
 /* Styles for home page */
@@ -104,19 +96,19 @@ nav div {
 }
 
 #slideshow {
-  margin-top: 63px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  width: 1360px;
-  height: 453px;
-  -webkit-animation: slider 20s infinite alternate;
+	margin-top: 63px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 1360px;
+	height: 453px;
+	-webkit-animation: slider 20s infinite alternate;
 }
 
 .main {
 	margin: auto;
-  position: relative;
-  column-count: 2;
+	position: relative;
+	column-count: 2;
 }
 
 #roots {
@@ -137,8 +129,164 @@ nav div {
 
 
 /* Styles for menu page */
+.menu-nav a:hover {
+	opacity: 0.5;
+}
 
+#menu-nav-container, #menu-list-container {
+	text-align: center;
+	margin-top: 63px;
+}
+
+#menu-list-container {
+	column-count: 3;
+}
+
+#menu-list-container ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#menu-list-container img:hover {
+	opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+	column-count: 2;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 /* Styles for contact page */
+.contact-main {
+	column-count: 2;
+	margin-top: 63px;
+	width: 100%;
+	display: table;
+	background-color: #F5F4F0;
+}
+
+#contact-details {
+	padding: 20px;
+	vertical-align: middle;
+	display: table-cell;
+	float: right;
+	margin-right: 60px;
+}
+
+#contact-form {
+	padding: 20px;
+	vertical-align: middle;
+	display: table-cell;
+	margin-left: 60px;
+}
+
+#submit {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+	width: 260px;
+}
+
+#div-submit {
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+.input-text {
+    border: none;
+    border-bottom: 2px solid black;
+	background-color: #F5F4F0;
+	margin-bottom: 5px;
+}
+
+.input-textarea {
+    border: 1px solid black;
+	background-color: #F5F4F0;
+	margin-bottom: 5px;
+}
+
+.input-text, .input-textarea:focus {
+    outline: none;
+}
+
+input {
+  width: 260px;
+  display: block;
+}
+
+#label {
+  padding-top: 10px;
+  padding-bottom: 10px;	
+}
+
+#div-message {
+	padding-top: 20px;
+}
+
+.select-style {
+    border: 1px solid black;
+    border-radius: 0;
+    overflow: hidden;
+	background: #F5F4F0 url("./icon-select.jpg") no-repeat 95% 50%;
+	width: 260px;
+	display: block;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+	text-align: center;
+	text-decoration: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
 
 /* Styles for cart page */
 
@@ -148,7 +296,7 @@ nav div {
 
 /* Styles for footer */
 .footer {
-	margin: 50px;
+	margin: 10px;
 	padding: 50px;
 	position: relative;
 }
