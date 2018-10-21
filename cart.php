@@ -72,11 +72,12 @@
             <table border="1">
                         <thead>
                         <tr>
-                        <th></th>
+                            <th></th>
                             <th>Item</th>
                             <th>price/unit</th>
                             <th>quantity</th>
                             <th>total price</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -121,6 +122,11 @@
                                $totalPrice = $row['price']*$_SESSION['cart'][$i][1];
 
                                echo "<td id='".$totalPriceId."'>".$totalPrice."</td>";
+
+                               echo '<td onclick="';
+                               echo "trashFunc('".$quantityId."','".$rowId."')";
+                               echo '"> trash</td>';
+
                                echo "</tr>";
 
                            }
