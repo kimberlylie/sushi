@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "f37ee";
-$password = "f37ee";
-$dbname = "f37ee";
+include 'credentials.php';
 
 
 // Create connection
