@@ -84,13 +84,13 @@
                         <tbody>
 
                             <?php
-                                
+                                $allPrice=0;
                                 for ($i=0; $i<count($_SESSION['cart']); $i++)
                                 {
-
+                                    
                                     if ($_SESSION['cart'][$i][1]>0)
                                     {   
-                    /*                             $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
+                    /*                  $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
                                         $quantityId = 'quantity'.$rowId;
                                         echo "<tr id='".$rowId."'>";
                                         echo "<td>" .$_SESSION['cart'][$i][0]. "</td>";
@@ -147,6 +147,7 @@
                                                 </form></td>';
                                                 
                                                 echo "</tr>";
+                                                $allPrice = $allPrice +$totalPrice;
 
                                             }
                                         }
@@ -163,6 +164,9 @@
                              ?>
                     </tbody>
         </table>
+        <?php
+        echo "<h1>total:".$allPrice."</h1>"
+        ?>
         <form action="checkout.php" method="post">
         <input type="submit" value="Proceed to Checkout">
         </form>
