@@ -163,7 +163,7 @@
                              ?>
                     </tbody>
         </table>
-        <form action="./php/proceedToCheckOut.php" method="post">
+        <form action="checkout.php" method="post">
         <input type="submit" value="Proceed to Checkout">
         </form>
         </div>
