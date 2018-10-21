@@ -7,6 +7,7 @@ function updateCart(quantityId,rowId,priceId,totalPriceId)
     document.getElementById(totalPriceId).innerHTML = (price*quantity);
     if (quantity<=0)
    {
+    document.getElementById(quantityId).value = 0;
     document.getElementById(rowId).style.display = "none";
    }
 } 
