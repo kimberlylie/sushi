@@ -2,15 +2,17 @@
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-var item = document.getElementById("myItem");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-item.onclick = function() {
+function modalFunc(name,price,image) {
     modal.style.display = "block";
-}
+    document.getElementById("modal-item-name").innerHTML ='<h1>'.concat(name, '</h1>');
+    document.getElementById("modal-item-price").innerHTML = price;
+    document.getElementById("modal-picture").innerHTML = '<img src="'.concat(image, '">');   
+}   
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {

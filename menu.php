@@ -64,12 +64,14 @@ $items=array();
 $itemsName=array();
 $price = array();
 $image = array();
+
 if (mysqli_num_rows($result) > 0) {
 	// output data of each row
 	$i=0;
 	while($row = mysqli_fetch_assoc($result)) {
+        $id[$i]=$row['id'];
         $itemsName[$i]=$row['name'];
-        $items[$i] =  str_replace(' ', '', $itemsName); 
+        $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
         $price[$i] = $row['price'];
         $image[$i]= $row['imgURL'];
 		$i=$i+1;
@@ -95,13 +97,20 @@ if (!isset($_SESSION['cart']))
                 <?php
                 for ($i=0; $i<count($items); $i++)
                 {
-                echo'<li><img src="'.$image[$i].'"><p>'.$itemsName[$i].'</p></li>';
+                echo
+                '<li>
+                <div id="'.$items[$i].'container" onclick="';
+                echo "modalFunc('".$itemsName[$i]."',".$price[$i].",'".$image[$i]."')";
+                echo
+                '"><img src="'.$image[$i].'"><p>'.$itemsName[$i].'</p>
+                <div> 
+                </li>';
                 }
                 ?>
                 </ul>
             </div>
 
-<!--             <section>
+            <section>
             <div class="footer">
                 <div id="icons">
                     <a href="#"><img src="assets/footer/fb_icon.jpg"></a>
@@ -131,7 +140,7 @@ if (!isset($_SESSION['cart']))
                         </form>
                     </div>
                 </div>
-            </div> -->
+            </div> 
 
 
 	    </div>
