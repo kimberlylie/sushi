@@ -7,11 +7,13 @@ var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-function modalFunc(name,price,image) {
+function modalFunc(name,price,image,item) {
     modal.style.display = "block";
     document.getElementById("modal-item-name").innerHTML ='<h1>'.concat(name, '</h1>');
     document.getElementById("modal-item-price").innerHTML = price;
-    document.getElementById("modal-picture").innerHTML = '<img src="'.concat(image, '">');   
+    document.getElementById("modal-picture").innerHTML = '<img src="'.concat(image, '">');  
+    document.getElementById("itemNo").value = item; 
+    document.getElementById("itemNo").style.display = "none";
 }   
 
 // When the user clicks on <span> (x), close the modal
