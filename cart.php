@@ -15,11 +15,11 @@
                 
                 <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="menu.html">menu</a></li>
-                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="index.php">home</a></li>
+                    <li><a href="menu.php">menu</a></li>
+                    <li><a href="contact.php">contact</a></li>
                 </ul>
-                <a id="cart" href="cart.html"><img src="assets/nav/cart.png" width="50px" height="50px"></a>
+                <a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>
                 </nav>
                 
             </div>
@@ -69,6 +69,7 @@
                         }
                     }
             ?>
+            
             <table border="1">
                         <thead>
                         <tr>
@@ -81,67 +82,90 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <?php
-               
-               for ($i=0; $i<count($_SESSION['cart']); $i++)
-               {
 
-                   if ($_SESSION['cart'][$i][1]>0)
-                   {   
-/*                             $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
-                       $quantityId = 'quantity'.$rowId;
-                       echo "<tr id='".$rowId."'>";
-                       echo "<td>" .$_SESSION['cart'][$i][0]. "</td>";
-                       echo '<td><input type="number" name="'.$quantityId.'" value='.$_SESSION['cart'][$i][1].' id="'.$quantityId.'" onchange="';
-                       echo "checkQuantity('".$quantityId."','".$rowId."')";
-                       echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
-                       echo "</tr>"; */
-                       $sql = "SELECT * FROM menu where id=".$_SESSION['cart'][$i][0];
-                       $result = mysqli_query($conn, $sql);
-                       $item=array();
-                       if (mysqli_num_rows($result) > 0) {
-                           // output data of each row
-                           while($row = mysqli_fetch_assoc($result)) 
-                           {
-                               $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
-                               $quantityId = 'quantity'.$rowId;
-                               $priceId ='price'.$rowId;
-                               $totalPriceId ='totalPrice'.$rowId;
-                            
-                               echo "<tr id='".$rowId."'>";
+                            <?php
+                                
+                                for ($i=0; $i<count($_SESSION['cart']); $i++)
+                                {
 
-                               echo "<td><img src=".$row['imgURL']."></td>";
-                               echo "<td>" .$row['name']. "</td>";
-                               echo "<td id='".$priceId."'>" .$row['price']. "</td>";
-                               
+                                    if ($_SESSION['cart'][$i][1]>0)
+                                    {   
+                    /*                             $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
+                                        $quantityId = 'quantity'.$rowId;
+                                        echo "<tr id='".$rowId."'>";
+                                        echo "<td>" .$_SESSION['cart'][$i][0]. "</td>";
+                                        echo '<td><input type="number" name="'.$quantityId.'" value='.$_SESSION['cart'][$i][1].' id="'.$quantityId.'" onchange="';
+                                        echo "checkQuantity('".$quantityId."','".$rowId."')";
+                                        echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
+                                        echo "</tr>"; */
+                                        $sql = "SELECT * FROM menu where id=".$_SESSION['cart'][$i][0];
+                                        $result = mysqli_query($conn, $sql);
+                                        $item=array();
+                                        if (mysqli_num_rows($result) > 0) {
+                                            // output data of each row
+                                            while($row = mysqli_fetch_assoc($result)) 
+                                            {
+                                                $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
+                                                $quantityId = 'quantity'.$rowId;
+                                                $priceId ='price'.$rowId;
+                                                $totalPriceId ='totalPrice'.$rowId;
+                                                $itemNoId = 'itemNo'.$rowId;
+                                                $deleteId ='delete'.$rowId;
+                                                $saveId ='save'.$rowId;
 
-                               echo '<td><input type="number" name="'.$quantityId.'" value='.$_SESSION['cart'][$i][1].' id="'.$quantityId.'" onchange="';
-                               echo "updateCart('".$quantityId."','".$rowId."','".$priceId."','".$totalPriceId."')";
-                               echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
+                                                echo'<form action="./php/saveChange.php" method="post">';
 
-                               $totalPrice = $row['price']*$_SESSION['cart'][$i][1];
-
-                               echo "<td id='".$totalPriceId."'>".$totalPrice."</td>";
-
-                               echo '<td onclick="';
-                               echo "trashFunc('".$quantityId."','".$rowId."')";
-                               echo '"> trash</td>';
-
-                               echo "</tr>";
-
-                           }
-                       }
+                                                echo "<tr id='".$rowId."'>";
 
 
-                   }
-                   else
-                   {
-                    $_SESSION['cart'][$i][1]=0;
-                   }
+                                                echo "<td><img src=".$row['imgURL']."><input type='number' value=".$i." id='itemNoId' name='itemNoId'";
+                                                echo 'style="display:none"';
+                                                echo" ></td>";
+
+                                                echo "<td>" .$row['name']. "</td>";
+
+                                                echo "<td id='".$priceId."'>" .$row['price']. "</td>";  
+
+                                                echo '<td><input type="number" name="quantityId" value='.$_SESSION['cart'][$i][1].' id="quantityId" onchange="';
+                                                echo "updateCart('".$rowId."','".$priceId."','".$totalPriceId."','".$saveId."')";
+                                                echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;">';
+                                                echo'<input type="submit" value="Save" id="'.$saveId.'" style="display:none">';
+                                                echo '</td>';
+
+                                                echo'</form>';
+
+                                                $totalPrice = $row['price']*$_SESSION['cart'][$i][1];
+
+                                                echo "<td id='".$totalPriceId."'>".$totalPrice."</td>";
+                                                echo'<td><form action="./php/deleteCartEntry.php" method="post">';
+
+                                                echo "<input type='number' value=".$i." id='itemNoId' name='itemNoId'";
+                                                echo 'style="display:none"';
+                                                echo" >";
+
+                                                echo'<input type="submit" value="delete" id="'.$deleteId.'">
+                                                </form></td>';
+                                                
+                                                echo "</tr>";
+
+                                            }
+                                        }
+
+
+                                    }
+                                        else
+                                        {
+                                            $_SESSION['cart'][$i][1]=0;
+                                        }
                    
 
-               }
-           ?>
+                                }
+                             ?>
+                    </tbody>
+        </table>
+        <form action="./php/proceedToCheckOut.php" method="post">
+        <input type="submit" value="Proceed to Checkout">
+        </form>
         </div>
         
     </body>
