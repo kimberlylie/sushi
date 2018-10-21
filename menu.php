@@ -64,6 +64,7 @@ $items=array();
 $itemsName=array();
 $price = array();
 $image = array();
+$id=array();
 
 if (mysqli_num_rows($result) > 0) {
 	// output data of each row
@@ -85,7 +86,7 @@ if (!isset($_SESSION['cart']))
     $_SESSION['cart'] = array();
     for ($i=0; $i<count($items); $i++)
     {
-        $_SESSION['cart'][$i]=array($items[$i],0);
+        $_SESSION['cart'][$i]=array($id[$i],0);
     }
 }
 
@@ -100,7 +101,7 @@ if (!isset($_SESSION['cart']))
                 echo
                 '<li>
                 <div id="'.$items[$i].'container" onclick="';
-                echo "modalFunc('".$itemsName[$i]."',".$price[$i].",'".$image[$i]."')";
+                echo "modalFunc('".$itemsName[$i]."',".$price[$i].",'".$image[$i]."',".$i.")";
                 echo
                 '"><img src="'.$image[$i].'"><p>'.$itemsName[$i].'</p>
                 <div> 
@@ -134,11 +135,11 @@ if (!isset($_SESSION['cart']))
                         <div id="modal-item-name"><h1>Item Name</h1></div><br>
                         <div id="modal-item-price"><h3>Item Price</h3></div>
                         <div id="modal-item-description"><h6>Description</h6></div>
-                        <input type="number" id="itemNo" name="itemNo" >
+                        <input type="number" value=0 id="itemNo" name="itemNo" >
                         <hr>
                        
-                            Quantity: <input type="number" name="quantity" value=0 id="quantity" style="width:50px; margin-bottom: 30px; margin-top: 30px;"><br>
-                            <input type="submit" value="Add to cart">
+                        Quantity: <input type="number" name="quantity" value=0 id="quantity" style="width:50px; margin-bottom: 30px; margin-top: 30px;"><br>
+                        <input type="submit" value="Add to cart">
                         
                     </div>
                 </form>    

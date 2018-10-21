@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="sushi.css">
         <meta charset="utf-8">
     </head>
+    <script type="text/javascript" src="scripts/cart.js"></script>
     <body>   
 	    
 	    <header>
@@ -50,9 +51,11 @@
                         // output data of each row
                         $i=0;
                         while($row = mysqli_fetch_assoc($result)) {
-                            $items[$i] =  str_replace(' ', '', $row['name']);
+                            $id[$i]=$row['id'];
+                            $itemsName[$i]=$row['name'];
+                            $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
                             $price[$i] = $row['price'];
-                            $i=$i+1;
+                            $image[$i]= $row['imgURL'];;
                         }
                     }
 
@@ -65,7 +68,7 @@
                         $_SESSION['cart'] = array();
                         for ($i=0; $i<count($items); $i++)
                         {
-                            $_SESSION['cart'][$i]=array($items[$i],0);
+                            $_SESSION['cart'][$i]=array($id[$i],0);
                         }
                     }
             ?>
@@ -78,19 +81,28 @@
                         </thead>
                         <tbody>
                 <?php
-                    for ($i=0; $i < count($_SESSION['cart']); $i++)
+               
+                    for ($i=0; $i<count($_SESSION['cart']); $i++)
                     {
+
                         if ($_SESSION['cart'][$i][1]>0)
-                        {
-                        echo "<tr>";
-                        echo "<td>" .$_SESSION['cart'][$i][0]. "</td>";
-                        echo '<td>'.$_SESSION['cart'][$i][1].'</td>';
-                        echo "</tr>";
+                        {   
+                            $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
+                            $quantityId = 'quantity'.$rowId;
+		                    echo "<tr id='".$rowId."'>";
+		                    echo "<td>" .$_SESSION['cart'][$i][0]. "</td>";
+                            echo '<td><input type="number" name="'.$quantityId.'" value='.$_SESSION['cart'][$i][1].' id="'.$quantityId.'" onchange="';
+                            echo "checkQuantity('".$quantityId."','".$rowId."')";
+                            echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
+		                    echo "</tr>";
                         }
+                        
+
                     }
                 ?>
         </div>
         
     </body>
 </html>
+
 
