@@ -51,11 +51,11 @@ if (!isset($_SESSION['cart']))
 $itemNo = $_POST["itemNo"];
 $quantity = $_POST["quantity"];
 echo $itemNo."   ".$quantity;
-//$quantityTotal= $quantity + $_SESSION['cart'][$itemNo];
-$_SESSION['cart'][$itemNo]= array($id[$itemNo],$quantity) ;
+$quantityTotal= $quantity + $_SESSION['cart'][$itemNo][1];
+$_SESSION['cart'][$itemNo]= array($id[$itemNo],$quantityTotal) ;
 
-$message = $quantity." item(s) has been added!".$itemNo;
-// echo "<script type='text/javascript'>alert('$message');
-//window.location.href='/sushi/menu.php';
-//</script>"; 
+$message = $quantity." item(s) has been added!";
+ echo "<script type='text/javascript'>alert('$message');
+window.location.href='/sushi/menu.php';
+</script>"; 
 ?>

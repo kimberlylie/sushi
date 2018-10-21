@@ -75,31 +75,66 @@
             <table border="1">
                         <thead>
                         <tr>
-                            <th>Item Description</th>
+                        <th></th>
+                            <th>Item</th>
+                            <th>price/unit</th>
                             <th>quantity</th>
+                            <th>total price</th>
                         </tr>
                         </thead>
                         <tbody>
-                <?php
+                        <?php
                
-                    for ($i=0; $i<count($_SESSION['cart']); $i++)
-                    {
+               for ($i=0; $i<count($_SESSION['cart']); $i++)
+               {
 
-                        if ($_SESSION['cart'][$i][1]>0)
-                        {   
-                            $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
-                            $quantityId = 'quantity'.$rowId;
-		                    echo "<tr id='".$rowId."'>";
-		                    echo "<td>" .$_SESSION['cart'][$i][0]. "</td>";
-                            echo '<td><input type="number" name="'.$quantityId.'" value='.$_SESSION['cart'][$i][1].' id="'.$quantityId.'" onchange="';
-                            echo "checkQuantity('".$quantityId."','".$rowId."')";
-                            echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
-		                    echo "</tr>";
-                        }
-                        
+                   if ($_SESSION['cart'][$i][1]>0)
+                   {   
+/*                             $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
+                       $quantityId = 'quantity'.$rowId;
+                       echo "<tr id='".$rowId."'>";
+                       echo "<td>" .$_SESSION['cart'][$i][0]. "</td>";
+                       echo '<td><input type="number" name="'.$quantityId.'" value='.$_SESSION['cart'][$i][1].' id="'.$quantityId.'" onchange="';
+                       echo "checkQuantity('".$quantityId."','".$rowId."')";
+                       echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
+                       echo "</tr>"; */
+                       $sql = "SELECT * FROM menu where id=".$_SESSION['cart'][$i][0];
+                       $result = mysqli_query($conn, $sql);
+                       $item=array();
+                       if (mysqli_num_rows($result) > 0) {
+                           // output data of each row
+                           while($row = mysqli_fetch_assoc($result)) 
+                           {
+                               $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
+                               $quantityId = 'quantity'.$rowId;
+                               $priceId ='price'.$rowId;
+                               $totalPriceId ='totalPrice'.$rowId;
+                            
+                               echo "<tr id='".$rowId."'>";
 
-                    }
-                ?>
+                               echo "<td><img src=".$row['imgURL']."></td>";
+                               echo "<td>" .$row['name']. "</td>";
+                               echo "<td id='".$priceId."'>" .$row['price']. "</td>";
+                               
+
+                               echo '<td><input type="number" name="'.$quantityId.'" value='.$_SESSION['cart'][$i][1].' id="'.$quantityId.'" onchange="';
+                               echo "updateCart('".$quantityId."','".$rowId."','".$priceId."','".$totalPriceId."')";
+                               echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
+
+                               $totalPrice = $row['price']*$_SESSION['cart'][$i][1];
+
+                               echo "<td id='".$totalPriceId."'>".$totalPrice."</td>";
+                               echo "</tr>";
+
+                           }
+                       }
+
+
+                   }
+                   
+
+               }
+           ?>
         </div>
         
     </body>
