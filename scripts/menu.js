@@ -14,7 +14,16 @@ function modalFunc(name,price,image,item) {
     document.getElementById("modal-picture").innerHTML = '<img src="'.concat(image, '">');  
     document.getElementById("itemNo").value = item; 
     document.getElementById("itemNo").style.display = "none";
-}   
+}  
+
+function checkQuantity()
+{
+    if (document.getElementById("quantity").value < 0)
+    {
+    alert ("Quantity cannot be less than 0")
+    document.getElementById("quantity").value = 0;
+    }
+}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {

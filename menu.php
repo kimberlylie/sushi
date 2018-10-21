@@ -135,7 +135,7 @@ if (!isset($_SESSION['cart']))
                         <input type="number" value=0 id="itemNo" name="itemNo" >
                         <hr>
                        
-                        Quantity: <input type="number" name="quantity" value=0 id="quantity" style="width:50px; margin-bottom: 30px; margin-top: 30px;"><br>
+                        Quantity: <input type="number" name="quantity" value=0 id="quantity" onchange="checkQuantity()" style="width:50px; margin-bottom: 30px; margin-top: 30px;"><br>
                         <input type="submit" value="Add to cart">
                         
                     </div>
