@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +8,7 @@
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
         <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <script type="text/javascript" src="scripts/cart.js"></script>
     </head>
 
     <body>   
@@ -36,7 +38,7 @@
             <div class="cart-main">
                 <?php
 
-                            session_start();
+                            
 
                             include './php/credentials.php';
 
@@ -48,7 +50,6 @@
                                 die("Connection failed: " . mysqli_connect_error());
                             }
 
-                            // quantity of iced cappuccino double
                             $sql = "SELECT * FROM menu";
                             $result = mysqli_query($conn, $sql);
                             $item=array();
@@ -174,9 +175,7 @@
                             ?>
                     </tbody>
                 </table>
-                </div>
-
-                <div id="total-price">
+                
                 <?php
                 echo "<h1>total:".$allPrice."</h1>"
                 ?>
@@ -187,7 +186,21 @@
                 <input type="submit" value="Proceed to Checkout">
                 </form>
                 </div>
+
             </div>
+            <section>
+            <div class="footer">
+                <div id="icons">
+                    <a href="#"><img src="assets/footer/fb_icon.jpg"></a>
+                    <a href="#"><img src="assets/footer/pinterest_icon.jpg"></a>
+                    <a href="#"><img src="assets/footer/snapchat_icon.jpg"></a>
+                    <a href="#"><img src="assets/footer/spotify_icon.jpg"></a>
+                </div>
+                <div id="copyright">
+                    <i>&copy; The Sushi Bar All Rights Reserved</i>
+                </div>
+            </div>
+            </section>
         </div>
     </body>
 </html>

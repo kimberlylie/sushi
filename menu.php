@@ -1,7 +1,5 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
-<?php
-session_start();
-?>
 <html lang="en">
     <head>
         <title>The Sushi Bar SG</title>
@@ -255,7 +253,7 @@ session_start();
                             <input type="number" value=0 id="itemNo" name="itemNo" >
                             <hr>
                             Quantity: <input type="number" class="input-number" name="quantity" value=0 id="quantity" onchange="checkQuantity()"><br>
-                            <input type="submit" id="submit" value="ADD TO CART">   
+                            <input type="submit" id="submit" class="submit" value="ADD TO CART">   
                         </div>
 
                         <div id="modal-close" class="modal-col3"><span class="close">&times;</span></div>

@@ -53,5 +53,8 @@ echo $itemNo."   ".$quantity;
 
 $_SESSION['cart'][$itemNo][1]= $quantity;
 
-header('Location: /sushi/cart.php');
+echo "<script type='text/javascript'>
+window.location.href='/~kimie/sushi/cart.php'; 
+</script>";
+
 ?>

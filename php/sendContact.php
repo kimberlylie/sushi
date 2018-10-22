@@ -27,7 +27,7 @@ if (mysqli_query($conn, $sql_1)) {
     $message = "Feedback has been received!";
     echo "<script type='text/javascript'>alert('$message');
     window.location.href='/sushi/contact.html';
-    </script>";
+    </script>"; //window.location.href='/~kimie/sushi/contact.html';
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

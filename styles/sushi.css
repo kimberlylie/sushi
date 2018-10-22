@@ -285,7 +285,7 @@ nav ul li a:hover {
 	margin-left: 60px;
 }
 
-#submit {
+.submit {
     background-color: black; 
     border: none;
     color: white;
@@ -362,7 +362,20 @@ input {
 .cart-main {
 	margin-top: 63px;
 	width: 100%;
+	text-align: center;
 }
+
+#cart-table {
+    border-collapse: collapse; /* changed from separate */
+    border:none;	
+	width: 80%;
+}
+
+#table-heading {
+	text-align: left;
+	border-bottom: 1px solid black;
+}
+
 /* Styles for checkout page */
 
 /* Styles for confirmation page */

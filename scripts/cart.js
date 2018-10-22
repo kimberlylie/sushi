@@ -1,5 +1,3 @@
-
-
 function updateCart(rowId,priceId,totalPriceId,saveId) 
 {
     var quantity = document.getElementById("quantityId").value;
