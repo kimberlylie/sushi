@@ -2,76 +2,85 @@
 <html lang="en">
     <head>
         <title>The Sushi Bar SG</title>
-        <link rel="stylesheet" href="sushi.css">
+        <link rel="shortcut icon" href="./assets/icon/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./assets/icon/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
+        <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
     </head>
-    <script type="text/javascript" src="scripts/cart.js"></script>
+
     <body>   
-	    
-	    <header>
-            <div class="container">
-                
-                <img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px">
-                
-                <nav class="main-nav">
-                <ul>
-                    <li><a href="index.php">home</a></li>
-                    <li><a href="menu.php">menu</a></li>
-                    <li><a href="contact.php">contact</a></li>
-                </ul>
-                <a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>
-                </nav>
-                
+	    <div class="container">
+
+            <section>
+            <div class="header">
+                    
+                    <div class="header-box1"><img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px"></div>
+                       
+                    
+                    <div class="header-box2">
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="index.php"><b>home</b></a></li>
+                                <li><a href="menu.php"><b>menu</b></a></li>
+                                <li><a href="contact.php"><b>contact</b></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="header-box3"><nav class="main-nav"><a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a></nav></div>
+                                   
             </div>
-	    </header>
+            </section>
         
-        <div class="cart-main">
-        <?php
+            <div class="cart-main">
+                <?php
 
-                    session_start();
+                            session_start();
 
-                    include './php/credentials.php';
-
-
-                    // Create connection
-                    $conn = mysqli_connect($servername, $username, $password, $dbname);
-                    // Check connection
-                    if (!$conn) {
-                        die("Connection failed: " . mysqli_connect_error());
-                    }
-
-                    // quantity of iced cappuccino double
-                    $sql = "SELECT * FROM menu";
-                    $result = mysqli_query($conn, $sql);
-                    $item=array();
-                    if (mysqli_num_rows($result) > 0) {
-                        // output data of each row
-                        $i=0;
-                        while($row = mysqli_fetch_assoc($result)) {
-                            $id[$i]=$row['id'];
-                            $itemsName[$i]=$row['name'];
-                            $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
-                            $price[$i] = $row['price'];
-                            $image[$i]= $row['imgURL'];;
-                        }
-                    }
+                            include './php/credentials.php';
 
 
+                            // Create connection
+                            $conn = mysqli_connect($servername, $username, $password, $dbname);
+                            // Check connection
+                            if (!$conn) {
+                                die("Connection failed: " . mysqli_connect_error());
+                            }
+
+                            // quantity of iced cappuccino double
+                            $sql = "SELECT * FROM menu";
+                            $result = mysqli_query($conn, $sql);
+                            $item=array();
+                            if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                $i=0;
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    $id[$i]=$row['id'];
+                                    $itemsName[$i]=$row['name'];
+                                    $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
+                                    $price[$i] = $row['price'];
+                                    $image[$i]= $row['imgURL'];;
+                                }
+                            }
 
 
 
-                    // if (!isset($_SESSION['cart']))
-                    // {
-                    //     $_SESSION['cart'] = array();
-                    //     for ($i=0; $i<count($items); $i++)
-                    //     {
-                    //         $_SESSION['cart'][$i]=array($id[$i],0);
 
-                    //     }
-                    // }
-            ?>
-            
-            <table border="1">
+
+                            // if (!isset($_SESSION['cart']))
+                            // {
+                            //     $_SESSION['cart'] = array();
+                            //     for ($i=0; $i<count($items); $i++)
+                            //     {
+                            //         $_SESSION['cart'][$i]=array($id[$i],0);
+
+                            //     }
+                            // }
+                    ?>
+                    
+                    <div id="cart-table">
+                    <table border="1">
                         <thead>
                         <tr>
                             <th></th>
@@ -159,20 +168,27 @@
                                         {
                                             $_SESSION['cart'][$i][1]=0;
                                         }
-                   
+                
 
                                 }
-                             ?>
+                            ?>
                     </tbody>
-        </table>
-        <?php
-        echo "<h1>total:".$allPrice."</h1>"
-        ?>
-        <form action="checkout.php" method="post">
-        <input type="submit" value="Proceed to Checkout">
-        </form>
+                </table>
+                </div>
+
+                <div id="total-price">
+                <?php
+                echo "<h1>total:".$allPrice."</h1>"
+                ?>
+                </div>
+
+                <div id="order-summary">
+                <form action="checkout.php" method="post">
+                <input type="submit" value="Proceed to Checkout">
+                </form>
+                </div>
+            </div>
         </div>
-        
     </body>
 </html>
 
