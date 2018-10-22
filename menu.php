@@ -4,7 +4,7 @@
         <title>The Sushi Bar SG</title>
         <link rel="shortcut icon" href="./assets/icon/favicon.ico" type="image/x-icon">
         <link rel="icon" href="./assets/icon/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="./styles/sushi.css">
+        <link rel="stylesheet" href="/styles/sushi.css">
         <meta charset="utf-8">
         <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
     </head>
