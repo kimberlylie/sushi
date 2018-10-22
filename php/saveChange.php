@@ -51,7 +51,7 @@ $quantity = $_POST["quantityId"];
 echo $itemNo."   ".$quantity;
 
 
-$_SESSION['cart'][$itemNo][1]= $quantityTotal;
+$_SESSION['cart'][$itemNo][1]= $quantity;
 
 header('Location: /sushi/cart.php');
 ?>
