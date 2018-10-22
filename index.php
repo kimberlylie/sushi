@@ -11,20 +11,25 @@
 
     <body>   
 	    <div class="container">
+
             <section>
             <div class="header">
                     
-                    <img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px">
+                    <div class="header-box1"><img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px"></div>
+                       
                     
-                    <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.php"><b>home</b></a></li>
-                        <li><a href="menu.php"><b>menu</b></a></li>
-                        <li><a href="contact.php"><b>contact</b></a></li>
-                    </ul>
-                    <a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>
-                    </nav>
+                    <div class="header-box2">
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="index.php"><b>home</b></a></li>
+                                <li><a href="menu.php"><b>menu</b></a></li>
+                                <li><a href="contact.php"><b>contact</b></a></li>
+                            </ul>
+                        </nav>
+                    </div>
                     
+                    <div class="header-box3"><nav class="main-nav"><a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a></nav></div>
+                                   
             </div>
             </section>
             

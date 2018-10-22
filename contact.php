@@ -16,18 +16,23 @@
             <section>
             <div class="header">
                     
-                    <img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px">
+                    <div class="header-box1"><img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px"></div>
+                       
                     
-                    <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.php"><b>home</b></a></li>
-                        <li><a href="menu.php"><b>menu</b></a></li>
-                        <li><a href="contact.php"><b>contact</b></a></li>
-                    </ul>
-                    <a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>
-                    </nav>
+                    <div class="header-box2">
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="index.php"><b>home</b></a></li>
+                                <li><a href="menu.php"><b>menu</b></a></li>
+                                <li><a href="contact.php"><b>contact</b></a></li>
+                            </ul>
+                        </nav>
+                    </div>
                     
+                    <div class="header-box3"><nav class="main-nav"><a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a></nav></div>
+                                   
             </div>
+            </section>
         
             <div class="contact-main">
 
@@ -64,7 +69,7 @@
                         <div id="div-message">Message</div><br>
                         <textarea name="message" class="input-textarea" id="message" rows="4" cols="40" required></textarea><br>
 
-                        <div id="div-submit"><input type="submit" value="Submit" id="submit"></div>
+                        <div id="div-submit"><input type="submit" value="SUBMIT" id="submit"></div>
                     </form>
                 </div>
 
