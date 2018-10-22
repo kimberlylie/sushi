@@ -52,11 +52,12 @@ echo $itemNo."   ".$quantity;
 $quantityTotal= $quantity + $_SESSION['cart'][$itemNo][1];
 $_SESSION['cart'][$itemNo][1]= $quantityTotal;
 
-$message = "id No:".$_SESSION['cart'][$itemNo][0]."add".$_SESSION['cart'][$itemNo][1]." item(s) has been added!";
-//  echo "<script type='text/javascript'>alert('$message');
-// window.location.href='/sushi/menu.php';
-// </script>"; 
-
+// $message = "id No:".$_SESSION['cart'][$itemNo][0]."add".$_SESSION['cart'][$itemNo][1]." item(s) has been added!";
+$message = $_SESSION['cart'][$itemNo][1]." item(s) has been added!";
  echo "<script type='text/javascript'>alert('$message');
+window.location.href='/sushi/menu.php';
 </script>"; 
+
+//  echo "<script type='text/javascript'>alert('$message');
+// </script>"; 
 ?>
