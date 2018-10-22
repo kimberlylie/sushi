@@ -60,14 +60,15 @@
 
 
 
-                    if (!isset($_SESSION['cart']))
-                    {
-                        $_SESSION['cart'] = array();
-                        for ($i=0; $i<count($items); $i++)
-                        {
-                            $_SESSION['cart'][$i]=array($id[$i],0);
-                        }
-                    }
+                    // if (!isset($_SESSION['cart']))
+                    // {
+                    //     $_SESSION['cart'] = array();
+                    //     for ($i=0; $i<count($items); $i++)
+                    //     {
+                    //         $_SESSION['cart'][$i]=array($id[$i],0);
+
+                    //     }
+                    // }
             ?>
             
             <table border="1">
