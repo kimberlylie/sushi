@@ -13,8 +13,8 @@ function modalFunc(name,price,image,item,description) {
     document.getElementById("modal-item-price").innerHTML = '<h3>'.concat(('$'.concat(price)),'</h3>');
     document.getElementById("modal-picture").innerHTML = '<img src="'.concat(image, '">');  
     document.getElementById("modal-item-description").innerHTML ="<h6>".concat(description,"</h6>");
-    document.getElementById("itemNo").value = item; 
-    document.getElementById("itemNo").style.display = "none";
+    document.getElementById("itemId").value = item; 
+    document.getElementById("itemId").style.display = "none";
    
 }  
 

@@ -44,13 +44,23 @@ if (!isset($_SESSION['cart']))
 
 <?php
 
-$itemNo = $_POST["itemNoId"];
+$itemId = $_POST["itemNoId"];
 $quantity = 0;
-echo $itemNo."   ".$quantity;
+$index = array_search($itemId, $_SESSION['cart']) ;
+$check= "-".$index."-";
 
+if ($check!="--")
+    {
+    $quantityTotal= $quantity ;
+    $_SESSION['quantity'][$index]= $quantityTotal;
 
-$_SESSION['cart'][$itemNo][1]= $quantity;
-
+    }
+else
+{
+    $length = count( $_SESSION['cart']);
+    $_SESSION['quantity'][$length]=$quantity;
+    $_SESSION['cart'][$length]=$itemId;
+}
 echo "<script type='text/javascript'>
 window.location.href='/sushi/cart.php'; 
 </script>";

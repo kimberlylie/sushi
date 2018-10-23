@@ -44,14 +44,27 @@ if (!isset($_SESSION['cart']))
 
 <?php
 
-$itemNo = $_POST["itemNo"];
+$itemId = $_POST["itemId"];
 $quantity = $_POST["quantity"];
-echo $itemNo."   ".$quantity;
-$quantityTotal= $quantity + $_SESSION['cart'][$itemNo][1];
-$_SESSION['cart'][$itemNo][1]= $quantityTotal;
+$index = array_search($itemId, $_SESSION['cart']) ;
+$check= "-".$index."-";
+
+if ($check!="--")
+    {
+    $quantityTotal= $quantity + $_SESSION['quantity'][$index];
+    $_SESSION['quantity'][$index]= $quantityTotal;
+
+    }
+else
+{
+    $length = count( $_SESSION['cart']);
+    $_SESSION['quantity'][$length]=$quantity;
+    $_SESSION['cart'][$length]=$itemId;
+
+}
 
 // $message = "id No:".$_SESSION['cart'][$itemNo][0]."add".$_SESSION['cart'][$itemNo][1]." item(s) has been added!";
-$message = $_SESSION['cart'][$itemNo][1]." item(s) has been added!";
+$message = " item(s) has been added!";
  echo "<script type='text/javascript'>alert('$message');
 window.location.href='/sushi/menu.php'; 
 </script>";  // window.location.href='/~kimie/sushi/menu.php'

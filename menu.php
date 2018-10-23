@@ -98,7 +98,7 @@
                             '
                             <div class="menu-item">
                             <div id="'.$items[$k].'container" onclick="';
-                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$k.",'".$description[$k]."')";
+                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$id[$k].",'".$description[$k]."')";
                             echo
                             '"><img src="'.$image[$k].'"><div>'.$itemsName[$k].'</div>
                             </div> 
@@ -114,8 +114,9 @@
                             }
                             $k++;
                         }
+                        
                     ?>
-
+                </div>
                 <?php
 
                     $sql = "SELECT * FROM menu WHERE type='Nigiri'";
@@ -150,7 +151,7 @@
                             '
                             <div class="menu-item">
                             <div id="'.$items[$k].'container" onclick="';
-                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$k.",'".$description[$k]."')";
+                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$id[$k].",'".$description[$k]."')";
                             echo
                             '"><img src="'.$image[$k].'"><div>'.$itemsName[$k].'</div>
                             </div> 
@@ -167,6 +168,7 @@
                             $k++;
                         }
                     ?>
+                    </div>
 
 
                                     <?php
@@ -203,7 +205,7 @@
                                             '
                                             <div class="menu-item">
                                             <div id="'.$items[$k].'container" onclick="';
-                                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$k.",'".$description[$k]."')";
+                                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$id[$k].",'".$description[$k]."')";
                                             echo
                                             '"><img src="'.$image[$k].'"><div>'.$itemsName[$k].'</div>
                                             </div> 
@@ -220,7 +222,7 @@
                                             $k++;
                                         }
                                     ?>
-
+</div>
 
 
 
@@ -234,14 +236,18 @@
                     if (!isset($_SESSION['cart']))
                     {
                         $_SESSION['cart'] = array();
-                        for ($i=0; $i<count($items); $i++)
-                        {
-                            $_SESSION['cart'][$i]=array($id[$i],0);
 
-
-                        }
                     }
                     ?>  
+
+                    <?php
+                    
+                    if (!isset($_SESSION['quantity']))
+                    {
+                        $_SESSION['quantity'] = array();
+                    }
+                    ?>
+
                 </div>
 
                 <div id="myModal" class="modal">
@@ -253,7 +259,7 @@
                             <div id="modal-item-name"><h1>Item Name</h1></div><br>
                             <div id="modal-item-price"><h3>Item Price</h3></div>
                             <div id="modal-item-description"><h6>Description</h6></div>
-                            <input type="number" value=0 id="itemNo" name="itemNo" >
+                            <input type="number" value=0 id="itemId" name="itemId" >
                             <hr>
                             Quantity: <input type="number" class="input-number" name="quantity" value=0 id="quantity" onchange="checkQuantity()"><br>
                             <input type="submit" id="submit" class="submit" value="ADD TO CART">   

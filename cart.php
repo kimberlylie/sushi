@@ -97,7 +97,7 @@
                                 for ($i=0; $i<count($_SESSION['cart']); $i++)
                                 {
                                     
-                                    if ($_SESSION['cart'][$i][1]>0)
+                                    if ($_SESSION['quantity'][$i]>0)
                                     {   
                     /*                  $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
                                         $quantityId = 'quantity'.$rowId;
@@ -107,14 +107,14 @@
                                         echo "checkQuantity('".$quantityId."','".$rowId."')";
                                         echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
                                         echo "</tr>"; */
-                                        $sql = "SELECT * FROM menu where id=".$_SESSION['cart'][$i][0];
+                                        $sql = "SELECT * FROM menu where id=".$_SESSION['cart'][$i];
                                         $result = mysqli_query($conn, $sql);
                                         $item=array();
                                         if (mysqli_num_rows($result) > 0) {
                                             // output data of each row
                                             while($row = mysqli_fetch_assoc($result)) 
                                             {
-                                                $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
+                                                $rowId ='ItemWithId' .$_SESSION['cart'][$i];
                                                 $quantityId = 'quantity'.$rowId;
                                                 $priceId ='price'.$rowId;
                                                 $totalPriceId ='totalPrice'.$rowId;
@@ -127,7 +127,7 @@
                                                 echo "<tr id='".$rowId."'>";
 
 
-                                                echo "<td><img src=".$row['imgURL']."><input type='number' value=".$i." id='itemNoId' name='itemNoId'";
+                                                echo "<td><img src=".$row['imgURL']."><input type='number' value=".$_SESSION['cart'][$i]." id='itemNoId' name='itemNoId'";
                                                 echo 'style="display:none"';
                                                 echo" ></td>";
 
@@ -135,7 +135,7 @@
 
                                                 echo "<td id='".$priceId."'>" .$row['price']. "</td>";  
 
-                                                echo '<td><input type="number" name="quantityId" value='.$_SESSION['cart'][$i][1].' id="quantityId" onchange="';
+                                                echo '<td><input type="number" name="quantityId" value='.$_SESSION['quantity'][$i].' id="quantityId" onchange="';
                                                 echo "updateCart('".$rowId."','".$priceId."','".$totalPriceId."','".$saveId."')";
                                                 echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;">';
                                                 echo'<input type="submit" value="Save" id="'.$saveId.'" style="display:none">';
@@ -143,12 +143,12 @@
 
                                                 echo'</form>';
 
-                                                $totalPrice = $row['price']*$_SESSION['cart'][$i][1];
+                                                $totalPrice = $row['price']*$_SESSION['quantity'][$i];
 
                                                 echo "<td id='".$totalPriceId."'>".$totalPrice."</td>";
                                                 echo'<td><form action="./php/deleteCartEntry.php" method="post">';
 
-                                                echo "<input type='number' value=".$i." id='itemNoId' name='itemNoId'";
+                                                echo "<input type='number' value=".$_SESSION['cart'][$i]." id='itemNoId' name='itemNoId'";
                                                 echo 'style="display:none"';
                                                 echo" >";
 
