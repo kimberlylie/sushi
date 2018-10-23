@@ -48,7 +48,7 @@ function checkPhone() {
 
 function checkAddress() {
     var address = document.getElementById('address');
-    //address.value = trim(address.value)
+    address.value = trim(address.value)
     
     if (/^(\d{1,3}.)?.+\s/.test(address.value)==false) 
     {

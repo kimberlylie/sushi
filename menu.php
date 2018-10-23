@@ -8,16 +8,16 @@
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
         <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <script type="text/javascript" src="./scripts/buttonTop.js"> </script>
     </head>
 
     <body>   
 	    <div class="container">
-            <section>
-            <div class="header">
-                    
+            
+            <button onclick="topFunction()" id="button-top" title="Go to top"><img src="./assets/menu/buttonTop.png"></button>  
+            <section>  
+                <div class="header">
                     <div class="header-box1"><img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px"></div>
-                       
-                    
                     <div class="header-box2">
                         <nav class="main-nav">
                             <ul>
@@ -27,10 +27,8 @@
                             </ul>
                         </nav>
                     </div>
-                    
-                    <div class="header-box3"><nav class="main-nav"><a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a></nav></div>
-                                   
-            </div>
+                    <div class="header-box3"><nav class="main-nav"><a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a></nav></div>                   
+                </div>
             </section>
             
             <div id="menu-content">
@@ -38,8 +36,8 @@
                     <ul>
                         <li><a href="#maki">maki</a></li>
                         <li><a href="#nigiri">nigiri</a></li>
-                        <!-- <li><a href="#sashimi">sashimi</a></li> -->
-                        <!-- <li><a href="#don">don</a></li> -->
+                        <li><a href="#sashimi">sashimi</a></li> 
+                        <li><a href="#don">don</a></li> 
                         <li><a href="#gunkan">gunkan</a></li>
                     </ul>
                 </div>
@@ -86,7 +84,7 @@
            
                     <?php
                         echo '<div id="maki">';
-                        echo '<h1>Maki</h1>';
+                        //echo '<h1>Maki</h1>';
 
                        $c = 0;
                        for ($i=0; $i<count($items); $i++)
@@ -139,7 +137,7 @@
 
                     <?php
                         echo '<div id="nigiri">';
-                        echo '<h1>Nigiri</h1>';
+                        //echo '<h1>Nigiri</h1>';
 
                     $c = 0;
                     for ($i=$k; $i<count($items); $i++)
@@ -168,7 +166,6 @@
                             $k++;
                         }
                     ?>
-                    </div>
 
 
                                     <?php
@@ -193,7 +190,7 @@
 
                                     <?php
                                         echo '<div id="gunkan">';
-                                        echo '<h1>Gunkan</h1>';
+                                        //echo '<h1>Gunkan</h1>';
 
                                     $c = 0;
                                     for ($i=$k; $i<count($items); $i++)
@@ -222,14 +219,6 @@
                                             $k++;
                                         }
                                     ?>
-</div>
-
-
-
-
-
-
-
 
                     <?php
                     
@@ -249,27 +238,28 @@
                     ?>
 
                 </div>
+            </div>
 
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                    <form action="./php/add_to_cart.php" method="post">
-                        <div id="modal-picture" class="modal-col1"><img src="assets/menu/dummy.jpg"></div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                <form action="./php/add_to_cart.php" method="post">
+                    <div id="modal-picture" class="modal-col1"><img src="assets/menu/dummy.jpg"></div>
 
-                        <div id="modal-details" class="modal-col2">
-                            <div id="modal-item-name"><h1>Item Name</h1></div><br>
-                            <div id="modal-item-price"><h3>Item Price</h3></div>
-                            <div id="modal-item-description"><h6>Description</h6></div>
-                            <input type="number" value=0 id="itemId" name="itemId" >
-                            <hr>
-                            Quantity: <input type="number" class="input-number" name="quantity" value=0 id="quantity" onchange="checkQuantity()"><br>
-                            <input type="submit" id="submit" class="submit" value="ADD TO CART">   
-                        </div>
-
-                        <div id="modal-close" class="modal-col3"><span class="close">&times;</span></div>
-                    </form>    
+                    <div id="modal-details" class="modal-col2">
+                        <div id="modal-item-name"><h1>Item Name</h1></div><br>
+                        <div id="modal-item-price"><h3>Item Price</h3></div>
+                        <div id="modal-item-description"><h6>Description</h6></div>
+                        
+                        <hr>
+                        Quantity: <input type="number" class="input-number" name="quantity" value=0 id="quantity" onchange="checkQuantity()">
+                        <!-- kenapa butuh input id buat add ke cart? -->
+                        <input type="number" value=0 id="itemId" name="itemId"><br>
+                        <input type="submit" id="submit" class="submit" value="ADD TO CART">   
                     </div>
-                </div>
 
+                    <div id="modal-close" class="modal-col3"><span class="close">&times;</span></div>
+                </form>    
+                </div>
             </div>
 
             <script type="text/javascript" src="scripts/menu.js"></script>
