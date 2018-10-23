@@ -78,6 +78,7 @@
                             $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
                             $price[$i] = $row['price'];
                             $image[$i]= $row['imgURL'];
+                            $description[$i]=$row['description'];
                             $i=$i+1;
                         }
                     }
@@ -97,7 +98,7 @@
                             '
                             <div class="menu-item">
                             <div id="'.$items[$k].'container" onclick="';
-                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$k.")";
+                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$k.",'".$description[$k]."')";
                             echo
                             '"><img src="'.$image[$k].'"><div>'.$itemsName[$k].'</div>
                             </div> 
@@ -129,6 +130,7 @@
                             $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
                             $price[$i] = $row['price'];
                             $image[$i]= $row['imgURL'];
+                            $description[$i]=$row['description'];
                             $i=$i+1;
                         }
                     }
@@ -148,7 +150,7 @@
                             '
                             <div class="menu-item">
                             <div id="'.$items[$k].'container" onclick="';
-                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$k.")";
+                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$k.",'".$description[$k]."')";
                             echo
                             '"><img src="'.$image[$k].'"><div>'.$itemsName[$k].'</div>
                             </div> 
@@ -181,6 +183,7 @@
                                             $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
                                             $price[$i] = $row['price'];
                                             $image[$i]= $row['imgURL'];
+                                            $description[$i]=$row['description'];
                                             $i=$i+1;
                                         }
                                     }
@@ -200,7 +203,7 @@
                                             '
                                             <div class="menu-item">
                                             <div id="'.$items[$k].'container" onclick="';
-                                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$k.")";
+                                            echo "modalFunc('".$itemsName[$k]."',".$price[$k].",'".$image[$k]."',".$k.",'".$description[$k]."')";
                                             echo
                                             '"><img src="'.$image[$k].'"><div>'.$itemsName[$k].'</div>
                                             </div> 
