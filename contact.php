@@ -69,7 +69,7 @@
                         <div id="div-message">Message</div><br>
                         <textarea name="message" class="input-textarea" id="message" rows="4" cols="40" required></textarea><br>
 
-                        <div id="div-submit"><input type="submit" value="SUBMIT" id="submit"></div>
+                        <div id="div-submit"><input type="submit" class="submit" value="SUBMIT" id="submit"></div>
                     </form>
                 </div>
 

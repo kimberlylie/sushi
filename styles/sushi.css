@@ -163,6 +163,7 @@ nav ul li a:hover {
 
 #menu-list-container {
 	/*display: inline-block;*/
+	padding-top: 20px;
 	margin: 0 auto;
 	text-align: center;
 	background-color: #F5F4F0;
@@ -199,6 +200,26 @@ nav ul li a:hover {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+#button-top {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+#button-top:hover {
+  background-color: #555;
+}
+
 /* Modal Content */
 .modal-content {
     background-color: #fefefe;
@@ -227,21 +248,12 @@ nav ul li a:hover {
 	float: right;
 }
 
-/*#modal-close {
-	float: right;
-}
-
-#modal-details {
-	padding: 0px;
-	margin: 0px;
-}*/
-
 .input-number {
 	border: 1px solid black;
 	border-radius: 0px;
 	padding: 5px 8px;
 	width: 50px;
-	margin-bottom: 30px; 
+	margin-bottom: 10px; 
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
@@ -307,12 +319,14 @@ nav ul li a:hover {
     border-bottom: 2px solid black;
 	background-color: #F5F4F0;
 	margin-bottom: 5px;
+	font-size: 20px;
 }
 
 .input-textarea {
     border: 1px solid black;
 	background-color: #F5F4F0;
 	margin-bottom: 5px;
+	font-size: 15px;
 }
 
 .input-text, .input-textarea:focus {
@@ -340,6 +354,7 @@ input {
 	background: #F5F4F0 url("./icon-select.jpg") no-repeat 95% 50%;
 	width: 260px;
 	display: block;
+	
 }
 
 .select-style select {
@@ -352,6 +367,7 @@ input {
     -webkit-appearance: none;
 	text-align: center;
 	text-decoration: none;
+	font-size: 15px;
 }
 
 .select-style select:focus {
@@ -360,23 +376,136 @@ input {
 
 /* Styles for cart page */
 .cart-main {
+	background-color: #F5F4F0;
 	margin-top: 63px;
 	width: 100%;
 	text-align: center;
+	min-height: 700px;
+	padding-bottom: 100px;
+	/*display: inline-block;;*/
 }
 
 #cart-table {
-    border-collapse: collapse; /* changed from separate */
-    border:none;	
-	width: 80%;
+	display: inline-block;
+	float: left;
+	width: 70%;
 }
 
-#table-heading {
+#cart-details {
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+#cart-details th, #cart-details td {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+#cart-details th {
 	text-align: left;
-	border-bottom: 1px solid black;
+}
+
+.td-left {
+	text-align: left;
+}
+
+.td-center {
+	text-align: center;
+}
+
+#cart-table img {
+	width: 40%;
+	height: 40%;
+}
+
+.submit2 {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+	width: 240px;
+}
+
+.delete {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+	width: 50px;	
+}
+
+.update {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+	width: 70px;
+}
+
+#order-summary {
+	display: inline-block;
+	float: left;
+	width: 30%;
+	margin-left: -40px;
+}
+
+#summary-details {
+	border-collapse: collapse;
+	border: none;
+	margin: 0 auto;
+}
+
+#summary-details td {
+	padding: 10px;
 }
 
 /* Styles for checkout page */
+.checkout-main {
+	background-color: #F5F4F0;
+	margin-top: 63px;
+	width: 100%;
+	text-align: center;
+	/*display: inline-block;;*/
+	padding-bottom: 100px;
+	padding-top: 40px;
+	min-height: 700px;
+}
+
+#checkout-form {
+	display: inline-block;
+	float: left;
+	width: 65%;
+}
+
+#checkout-details {
+	border-collapse: collapse;
+	border: none;
+	margin: 0 auto;
+}
+
+#checkout-details td {
+	padding: 10px;
+	text-align: left;
+}
+
+#order-summary2 {
+	display: inline-block;
+	float: left;
+	width: 35%;
+	margin-left: -40px;
+}
 
 /* Styles for confirmation page */
 
@@ -385,6 +514,7 @@ input {
 	margin: 10px;
 	padding: 50px;
 	position: relative;
+	background-color: #fff;
 }
 
 #icons {
