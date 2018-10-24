@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
         <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
-        <script type="text/javascript" src="./scripts/checkout.js"> </script>
+        <script type="text/javascript" src="./scripts/confirmation.js"> </script>
     </head>
 
     <body>   
@@ -56,25 +56,32 @@
                             die("Connection failed: " . mysqli_connect_error());
                         }
 
-                        $allPrice = $_POST['allPrice'];
+                    
                     ?>
-                
-                <div id="confirmation-contact">
+                <?php
+                $name=$_SESSION['customer']['firstName']." ".$_SESSION['customer']['lastName'];
+                $address= $_SESSION['customer']['address'];
+                $postalCode=$_SESSION['customer']['zip'];
+                $email=$_SESSION['customer']['email'];
+                $phone= $_SESSION['customer']['phone'];
+                $note=$_SESSION['customer']['notes'];
+                echo
+                '<div id="confirmation-contact">
                     <h1>Please check if your order and particulars are correct.</h1><hr>
                     <div id="shipping-details">
                         <p>Name:</p>
-                        <p> [First Name] [Last Name]</p><br>
+                        <p>'.$name.'</p><br>
                         <p>Address:</p>
-                        <p>[Address]</p>
-                        <p>Singapore, [Postal Code]</p>
+                        <p>'.$address.'</p>
+                        <p>Singapore, '.$postalCode.'</p>
                     </div>
                     <div id="email-details">
                         <p>an email has been sent to:</p>
-                        <p>[Email address]</p>
+                        <p>'.$email.'</p>
                     </div>
-                </div>
+                </div>'
 
-                
+                ?>
                 <?php       
 
                 include './php/credentials.php';
@@ -107,7 +114,7 @@
                 {
                     echo 
                     "<script type='text/javascript'>
-                    window.location.href='/~kimie/sushi/menu.php'; 
+                    window.location.href='/sushi/menu.php'; 
                     </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
                 }
                 ?>
@@ -217,7 +224,7 @@
                                     }
                                     else
                                     {
-                                        $_SESSION['quantity'][$i]=0;
+                                        $_SESSION['quantity']=0;
                                     }
                 
 
@@ -284,7 +291,7 @@
                             <td><a href="./checkout.php" class="back-button" style="width: 90%;">BACK TO CART</a></td>
                             <td></td>
                             <td></td>
-                            <td><form action="./scripts/confirmation.js" method="post"><input type="submit" name="confirm" class="submit" value="CONFIRM ORDER" style="width: 100%; text-align: right;" onclick="confirmSubmit()"></form></td>
+                            <td><input type="submit" name="confirm" class="submit" value="CONFIRM ORDER" style="width: 100%; text-align: right;" onclick="confirmSubmit()"></td>
                         </tr>  
                         </tbody>
                     </table>

@@ -100,7 +100,7 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td colspan="3"><p><b>notes</b></p><textarea name="notes" value="'.$_SESSION['customer']['notes'].'" class="input-textarea" id="notes" rows="4" cols="40" style="width: 100%;" placeholder="no wasabi, more soysauce, no. of chopsticks"></textarea></td> 
+                                <td colspan="3"><p><b>notes</b></p><textarea name="notes"  class="input-textarea" id="notes" rows="4" cols="40" style="width: 100%;" placeholder="no wasabi, more soysauce, no. of chopsticks">'.$_SESSION['customer']['notes'].'</textarea></td> 
                                 <td></td>
                                 <td></td> 
                             </tr>

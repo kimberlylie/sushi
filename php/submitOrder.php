@@ -48,6 +48,10 @@
                  echo$_SESSION['customer']['zip'];
                  echo$_SESSION['customer']['notes'];
 
+                 $message = " item(s) has been added!";
+                echo "<script type='text/javascript'>
+                window.location.href='/sushi/confirmation.php'; 
+                </script>"; 
 
 
                 ?>
