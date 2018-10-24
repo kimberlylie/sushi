@@ -56,7 +56,7 @@
                             die("Connection failed: " . mysqli_connect_error());
                         }
 
-                        $allPrice = $_POST['allPrice'];
+                       
                     ?>
                 
                 <div id="confirmation-contact">
