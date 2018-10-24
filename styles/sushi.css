@@ -380,7 +380,7 @@ input {
 	margin-top: 63px;
 	width: 100%;
 	text-align: center;
-	min-height: 700px;
+	min-height: 900px;
 	padding-bottom: 100px;
 	/*display: inline-block;;*/
 }
@@ -432,7 +432,7 @@ input {
 
 .back-menu {
     background-color: white; 
-    border: none;
+    border: 1px black;
     color: black;
     padding: 8px 20px;
     text-align: center;
@@ -444,7 +444,7 @@ input {
 
 .back-button {
     background-color: white;
-    border: none;
+    border: 1px black;
     color: black;
     padding: 8px 20px;
     text-align: center;
@@ -534,6 +534,61 @@ input {
 }
 
 /* Styles for confirmation page */
+.confirmation-main {
+	background-color: #F5F4F0;
+	margin-top: 63px;
+	width: 100%;
+	text-align: center;
+	min-height: 2000px;
+	padding-bottom: 100px;
+	padding-top: 10px;
+	/*display: inline-block;;*/
+}
+
+#confirmation-contact {
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#confirmation-contact hr {
+	width: 70%;
+}
+
+#shipping-details {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	/*text-align: left;*/
+}
+
+#email-details {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	/*text-align: right;*/
+}
+
+#cart-summary {
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;	
+}
+
+#confirmation-buttons {
+	width: 80%; 
+	text-align: center;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+#align-buttons {
+	width: 60%; 
+	text-align: center;
+	margin: 0 auto;
+	display: inline-block;
+}
+
 
 /* Styles for footer */
 .footer {

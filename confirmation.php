@@ -43,8 +43,7 @@
             </div>
             </section>
         
-            <div class="checkout-main">
-                <div id="checkout-form">
+            <div class="confirmation-main">
                     <?php
 
                         include './php/credentials.php';
@@ -60,111 +59,236 @@
                         $allPrice = $_POST['allPrice'];
                     ?>
                 
-                    <table id="checkout-details">
+                <div id="confirmation-contact">
+                    <h1>Please check if your order and particulars are correct.</h1><hr>
+                    <div id="shipping-details">
+                        <p>Name:</p>
+                        <p> [First Name] [Last Name]</p><br>
+                        <p>Address:</p>
+                        <p>[Address]</p>
+                        <p>Singapore, [Postal Code]</p>
+                    </div>
+                    <div id="email-details">
+                        <p>an email has been sent to:</p>
+                        <p>[Email address]</p>
+                    </div>
+                </div>
+
+                
+                <?php       
+
+                include './php/credentials.php';
+
+
+                // Create connection
+                $conn = mysqli_connect($servername, $username, $password, $dbname);
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+
+                $sql = "SELECT * FROM menu";
+                $result = mysqli_query($conn, $sql);
+                $item=array();
+                if (mysqli_num_rows($result) > 0) {
+                    // output data of each row
+                    $i=0;
+                    while($row = mysqli_fetch_assoc($result)) {
+                        $id[$i]=$row['id'];
+                        $itemsName[$i]=$row['name'];
+                        $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
+                        $price[$i] = $row['price'];
+                        $image[$i]= $row['imgURL'];;
+                    }
+                }
+
+
+                if (!isset($_SESSION['cart']))
+                {
+                    echo 
+                    "<script type='text/javascript'>
+                    window.location.href='/~kimie/sushi/menu.php'; 
+                    </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
+                }
+                ?>
+
+                <?php
+                
+                if (!isset($_SESSION['cart']))
+                {
+                    $_SESSION['cart'] = array();
+
+                }
+                ?>  
+
+                <?php
+                
+                if (!isset($_SESSION['quantity']))
+                {
+                    $_SESSION['quantity'] = array();
+                }
+                ?>
+
+                <div id="cart-summary"> 
+                    <div id="cart-table" style="margin-top: 30px; float: none;">
+                    <table id="cart-details">
                         <thead>
                         <tr>
-                            <th style="border-bottom: 1px solid #ddd;"><h2 style="text-align: left;">checkout</h2></th>
-                            <th style="border-bottom: 1px solid #ddd;"></th>
-                            <th style="border-bottom: 1px solid #ddd;"></th>
-                            <th style="border-bottom: 1px solid #ddd;"></th>
-                            <th style="border-bottom: 1px solid #ddd;"></th>
-                            <th style="border-bottom: 1px solid #ddd;"></th>
-    
-
+                            <th></th>
+                            <th>Item</th>
+                            <th>Item Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
                         </tr>
                         </thead>
                         <tbody>
+
                             <?php
-                            echo
-                            '<form action="./php/submitOrder.php" method="post">
+                                $allPrice=0;
+                                for ($i=0; $i<count($_SESSION['cart']); $i++)
+                                {
+                                    
+                                    if ($_SESSION['quantity'][$i]>0)
+                                    {   
+                    /*                  $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
+                                        $quantityId = 'quantity'.$rowId;
+                                        echo "<tr id='".$rowId."'>";
+                                        echo "<td>" .$_SESSION['cart'][$i][0]. "</td>";
+                                        echo '<td><input type="number" name="'.$quantityId.'" value='.$_SESSION['cart'][$i][1].' id="'.$quantityId.'" onchange="';
+                                        echo "checkQuantity('".$quantityId."','".$rowId."')";
+                                        echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
+                                        echo "</tr>"; */
+                                        $sql = "SELECT * FROM menu where id=".$_SESSION['cart'][$i];
+                                        $result = mysqli_query($conn, $sql);
+                                        $item=array();
+                                        if (mysqli_num_rows($result) > 0) {
+                                            // output data of each row
+                                            while($row = mysqli_fetch_assoc($result)) 
+                                            {
+                                                $rowId ='ItemWithId' .$_SESSION['cart'][$i];
+                                                $quantityId = 'quantity'.$rowId;
+                                                $priceId ='price'.$rowId;
+                                                $totalPriceId ='totalPrice'.$rowId;
+                                                $itemNoId = 'itemNo'.$rowId;
+                                                $deleteId ='delete'.$rowId;
+                                                $saveId ='save'.$rowId;
 
-                            <tr>
-                                <td><p><b>first name</b></p><input type="text" name="firstName" value="'.$_SESSION['customer']['firstName'].'"class="input-text" id="firstName" placeholder="John" onchange="checkFirstName()" required></td>
-                                <td></td>
-                                <td><p><b>last name</b></p><input type="text" name="lastName"  value="'.$_SESSION['customer']['lastName'].'"class="input-text" id="lastName" placeholder="Doe" onchange="checkLastName()"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><p><b>email</b></p><input type="email" name="email" value="'.$_SESSION['customer']['email'].'" class="input-text" id="email" placeholder="john.doe@gmail.com" onchange="checkEmail()" required></td>
-                                <td></td>
-                                <td><p><b>phone no.</b></p><input type="text" name="phone"  value="+65'.$_SESSION['customer']['phone'].'"class="input-text" id="phone" onchange="checkPhone()"  required></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><p><b>address</b></p><input type="text" name="address" value="'.$_SESSION['customer']['address'].'" class="input-text" id="address" placeholder="#B2-54 24 Nanyang Avenue" onchange="checkAddress()" required></td>
-                                <td></td>
-                                <td><p><b>postal code</b></p><input type="text" name="zip"  value="'.$_SESSION['customer']['zip'].'"class="input-text" id="zip" placeholder="6 digits" onchange="checkZIP()" required></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3"><p><b>notes</b></p><textarea name="notes" value="'.$_SESSION['customer']['notes'].'" class="input-textarea" id="notes" rows="4" cols="40" style="width: 100%;" placeholder="no wasabi, more soysauce, no. of chopsticks"></textarea></td> 
-                                <td></td>
-                                <td></td> 
-                            </tr>
-                            <tr>
-                                <td><small>* pay by cash during food delivery.</small></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>  
-                            <tr>
-                                <td><a href="./cart.php" class="back-button">BACK TO CART</a></td>
-                                <td></td>
-                                <td><input type="submit" class="submit" value="SUBMIT ORDER" style="width: 100%;"></td>
-                                <td></td>
-                                <td></td>
-                            </tr>  
-                            </form>' ;
-                            ?>                                                   
+                                                //echo'<form action="./php/saveChange.php" method="post">';
+
+                                                echo "<tr id='".$rowId."'>";
+
+
+                                                echo "<td class='td-center'><img src=".$row['imgURL']."><input type='number' class='input-number' value=".$_SESSION['cart'][$i]." id='itemNoId' name='itemNoId'";
+                                                echo 'style="display:none"';
+                                                echo" ></td>";
+
+                                                echo "<td class='td-left'>" .$row['name']. "</td>";
+
+                                                echo "<td id='".$priceId."'>" .$row['price']. "</td>";  
+
+                                                echo "<td>" .$_SESSION['quantity'][$i]. "</td>";
+                                                //echo '<td><input type="number" class="input-number" style="background-color: #F5F4F0;" name="quantityId" value='.$_SESSION['quantity'][$i].' id="quantityId" onchange="';
+                                                //echo "updateCart('".$rowId."','".$priceId."','".$totalPriceId."','".$saveId."')";
+                                                //echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;">';
+                                                //echo'<input type="submit" class="update" value="UPDATE" id="'.$saveId.'" style="display:none">';
+                                                echo '</td>';
+
+                                                echo'</form>';
+
+                                                $totalPrice = $row['price']*$_SESSION['quantity'][$i];
+
+                                                echo "<td class='td-center' id='".$totalPriceId."'>".$totalPrice."</td>";
+                                                //echo'<td class="td-center"><form action="./php/deleteCartEntry.php" method="post">';
+
+                                                echo "<input type='number' value=".$_SESSION['cart'][$i]." id='itemNoId' name='itemNoId'";
+                                                echo 'style="display:none"';
+                                                echo" >";
+
+                                                //echo'<input type="submit" class="delete" value="X" id="'.$deleteId.'">
+                                                //</form></td>';
+                                                
+                                                echo "</tr>";
+                                                $allPrice = $allPrice +$totalPrice;
+
+                                            }
+                                        }
+
+
+                                    }
+                                    else
+                                    {
+                                        $_SESSION['quantity'][$i]=0;
+                                    }
+                
+
+                                }
+                            ?>
                         </tbody>
                     </table>
-                </div>
+                    </div>
 
-                <div id="order-summary2">
-                    <table id="summary-details">
-                        <thead>
-                            <th style="border-bottom: 1px solid #ddd;"><h2 style="text-align: left; margin-top: 65px;">order summary</h2></th>
-                            <th style="border-bottom: 1px solid #ddd;"></th>
-                            <th style="border-bottom: 1px solid #ddd;"></th>
-                            <th style="border-bottom: 1px solid #ddd;"></th>
-                        </thead>
+                    <div id="order-summary2" style="float: none; margin-left: 550px;">
+                        <table id="summary-details">
+                            <thead>
+                                <th style="border-bottom: 1px solid #ddd;"></th>
+                                <th style="border-bottom: 1px solid #ddd;"></th>
+                                <th style="border-bottom: 1px solid #ddd;"></th>
+                                <th style="border-bottom: 1px solid #ddd;"></th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left; margin-right: 190px;">subtotal</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td style="text-align: left;"><?php echo $allPrice ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; margin-right: 190px;">delivery</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td style="text-align: left;">4</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; margin-right: 190px;">gst (7%)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td style="text-align: left;"><?php $gstPrice = $allPrice * 0.3; echo $gstPrice; ?></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; margin-right: 190px; margin-top: 50px;"><h3>total</h3></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td style="text-align: left; margin-top: 50px;"><h3><?php echo $allPrice + $gstPrice + 4; ?></h3></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--Try using float instead of table-->
+                    <div id="confirmation-buttons">
+                    <table id="align-buttons">
                         <tbody>
-                            <tr>
-                                <td style="text-align: left; margin-right: 190px;">subtotal</td>
-                                <td></td>
-                                <td></td>
-                                <td style="text-align: left;"><?php echo $allPrice ?></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left; margin-right: 190px;">delivery</td>
-                                <td></td>
-                                <td></td>
-                                <td style="text-align: left;">4</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left; margin-right: 190px;">gst (7%)</td>
-                                <td></td>
-                                <td></td>
-                                <td style="text-align: left;"><?php $gstPrice = $allPrice * 0.3; echo $gstPrice; ?></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left; margin-right: 190px; margin-top: 50px;"><h3>total</h3></td>
-                                <td></td>
-                                <td></td>
-                                <td style="text-align: left; margin-top: 50px;"><h3><?php echo $allPrice + $gstPrice + 4; ?></h3></td>
-                            </tr>
+                        <tr>
+                            <td style="color: #F5F4F0;">---------------------------------</td>
+                            <td style="color: #F5F4F0;">---------------------------------</td>
+                            <td style="color: #F5F4F0;">---------------------------------</td>
+                            <td style="color: #F5F4F0;">---------------------------------</td>
+                        </tr> 
+                        <tr>
+                            <td><a href="./checkout.php" class="back-button" style="width: 90%;">BACK TO CART</a></td>
+                            <td></td>
+                            <td></td>
+                            <td><form action="./scripts/confirmation.js" method="post"><input type="submit" name="confirm" class="submit" value="CONFIRM ORDER" style="width: 100%; text-align: right;" onclick="confirmSubmit()"></form></td>
+                        </tr>  
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
             
@@ -185,6 +309,3 @@
         </div>
     </body>
 </html>
-
-
-
