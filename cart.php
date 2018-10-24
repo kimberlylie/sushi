@@ -248,7 +248,7 @@
                         <input type="submit" class="submit2" value="PROCEED TO CHECKOUT">
                     </form>
                     <form action="menu.php" method="post">
-                        <input type="submit" class="back" value="BACK TO MENU" style="margin-top: 10px;">
+                        <input type="submit" class="back-menu" value="BACK TO MENU" style="margin-top: 10px;">
                     </form> 
                 </div>
             </div>
