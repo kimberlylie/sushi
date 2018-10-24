@@ -31,21 +31,22 @@
                 ?>  
 
                 <?php
-                 $_SESSION['customer']['firstName']= $_POST["itemNoId"];
-                 $_SESSION['customer']['lastName']= $_POST["itemNoId"];
-                 $_SESSION['customer']['email']= $_POST["itemNoId"];
-                 $_SESSION['customer']['phone']= $_POST["itemNoId"];
-                 $_SESSION['customer']['address']= $_POST["itemNoId"];
-                 $_SESSION['customer']['zip']= $_POST["itemNoId"];
-                 $_SESSION['customer']['notes']= $_POST["itemNoId"];
+                 $_SESSION['customer']['firstName']= $_POST["firstName"];
+                 $_SESSION['customer']['lastName']= $_POST["lastName"];
+                 $_SESSION['customer']['email']= $_POST["email"];
+                 $_SESSION['customer']['phone']= $_POST["phone"];
+                 $_SESSION['customer']['address']= $_POST["address"];
+                 $_SESSION['customer']['zip']= $_POST["zip"];
+                 $_SESSION['customer']['notes']= $_POST["notes"];
 
                  
                  echo$_SESSION['customer']['firstName'];
                  echo$_SESSION['customer']['lastName'];
                  echo$_SESSION['customer']['email'];
-                 echo$_SESSION['customer']['Name'];
-                 echo$_SESSION['customer']['firstName'];
-                 echo$_SESSION['customer']['firstName'];
+                 echo$_SESSION['customer']['phone'];
+                 echo$_SESSION['customer']['address'];
+                 echo$_SESSION['customer']['zip'];
+                 echo$_SESSION['customer']['notes'];
 
 
 
