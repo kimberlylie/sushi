@@ -112,7 +112,7 @@
                                 <td></td>
                             </tr>  
                             <tr>
-                                <td></td>
+                                <td><a href="./cart.php" class="back-button">BACK TO CART</a></td>
                                 <td></td>
                                 <td><input type="submit" class="submit" value="SUBMIT ORDER" style="width: 100%;"></td>
                                 <td></td>

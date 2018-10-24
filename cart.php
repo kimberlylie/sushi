@@ -247,6 +247,9 @@
                         <input type="hidden" name="allPrice" value="<?php echo $allPrice ?>">
                         <input type="submit" class="submit2" value="PROCEED TO CHECKOUT">
                     </form>
+                    <form action="menu.php" method="post">
+                        <input type="submit" class="back" value="BACK TO MENU" style="margin-top: 10px;">
+                    </form> 
                 </div>
             </div>
 
