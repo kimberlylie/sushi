@@ -62,7 +62,7 @@ else
     $_SESSION['cart'][$length]=$itemId;
 }
 echo "<script type='text/javascript'>
-window.location.href='/sushi/cart.php'; 
+window.location.href='/~kimie/sushi/cart.php'; 
 </script>";
 
 ?>
