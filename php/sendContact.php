@@ -24,10 +24,9 @@ $message =$_POST["message"];
 $sql_1 = "INSERT INTO `feedback` (`name`,`email`,`subject`,`message`) VALUES ('".$name."','".$email."','".$subject."','".$message."')";
 $result =mysqli_query($conn, $sql_1);
 if ($result) { 
-    // $message = "Feedback has been received!";
-    $message = SELECT SCOPE_IDENTITY();;
+    $message = "Feedback has been received!";
     echo "<script type='text/javascript'>alert('$message');";
-    // echo "window.location.href='/sushi/contact.html';"
+    echo "window.location.href='/sushi/contact.html';"
     echo"</script>"; //window.location.href='/~kimie/sushi/contact.html';
 } 
 else {
