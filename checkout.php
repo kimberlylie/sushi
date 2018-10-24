@@ -88,7 +88,7 @@
                             <tr>
                                 <td><p><b>email</b></p><input type="email" name="email" value="'.$_SESSION['customer']['email'].'" class="input-text" id="email" placeholder="john.doe@gmail.com" onchange="checkEmail()" required></td>
                                 <td></td>
-                                <td><p><b>phone no.</b></p><input type="text" name="phone"  value="'.$_SESSION['customer']['phone'].'"class="input-text" id="phone" onchange="checkPhone()" value="+65" required></td>
+                                <td><p><b>phone no.</b></p><input type="text" name="phone"  value="+65'.$_SESSION['customer']['phone'].'"class="input-text" id="phone" onchange="checkPhone()"  required></td>
                                 <td></td>
                                 <td></td>
                             </tr>
