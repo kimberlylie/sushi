@@ -14,7 +14,7 @@ function checkLastName() {
 
     var name = document.getElementById('lastName');
     name.value = trim(name.value)
-        if (/^[A-Za-z][A-Za-z\s]*$/.test(name.value)==false)
+        if (/^[A-Za-z\s]*$/.test(name.value)==false)
         {
             alert('Name invalid');
             document.getElementById("lastName").value = "";

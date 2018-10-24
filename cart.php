@@ -37,7 +37,7 @@
         
             <div class="cart-main">
                 <div id="cart-table">
-                <?php
+                <!-- <?php
 
                             
 
@@ -77,7 +77,24 @@
                         window.location.href='/sushi/menu.php'; 
                         </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
                     }
-                ?>
+                ?> -->
+
+                    <?php
+                    
+                    if (!isset($_SESSION['cart']))
+                    {
+                        $_SESSION['cart'] = array();
+
+                    }
+                    ?>  
+
+                    <?php
+                    
+                    if (!isset($_SESSION['quantity']))
+                    {
+                        $_SESSION['quantity'] = array();
+                    }
+                    ?>
             
                 <h2 style="text-align: left; margin-left: 100px; padding-top: 40px;">shopping cart</h2>
                 <table id="cart-details">
@@ -164,10 +181,10 @@
 
 
                                 }
-                                    else
-                                    {
-                                        $_SESSION['cart'][$i][1]=0;
-                                    }
+                                else
+                                {
+                                    $_SESSION['quantity'][$i]=0;
+                                }
             
 
                             }
@@ -175,7 +192,16 @@
                     </tbody>
                 </table>
                 </div>
-
+                        <?php
+                        if ($allPrice==0)
+                        {
+                            $message = "Cart is empty";
+                            echo "<script type='text/javascript'>alert('$message');
+                            window.location.href='/sushi/menu.php'; 
+                            </script>";
+                             
+                        }
+                        ?>
                 <div id="order-summary">
                     <table id="summary-details">
                         <thead>

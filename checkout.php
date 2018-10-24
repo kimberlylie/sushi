@@ -1,4 +1,12 @@
 <?php session_start(); ?>
+<?php
+                    
+                    if (!isset($_SESSION['customer']))
+                    {
+                        $_SESSION['customer'] = array('firstName'=>'','lastName'=>'','email'=>'','phone'=>'','address'=>'','zip'=>'','notes'=>'');
+
+                    }
+?>  
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -62,35 +70,37 @@
                             <th style="border-bottom: 1px solid #ddd;"></th>
                             <th style="border-bottom: 1px solid #ddd;"></th>
     
+
                         </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            echo
+                            '<form action="./php/submitOrder.php" method="post">
 
-                            <form action="./php/submitOrder.php" method="post">
-
                             <tr>
-                                <td><p><b>first name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John" onchange="checkFirstName()" required></td>
+                                <td><p><b>first name</b></p><input type="text" name="firstName" value="'.$_SESSION['customer']['firstName'].'"class="input-text" id="firstName" placeholder="John" onchange="checkFirstName()" required></td>
                                 <td></td>
-                                <td><p><b>last name</b></p><input type="text" name="lastName" class="input-text" id="lastName" placeholder="Doe" onchange="checkLastName()" required></td>
+                                <td><p><b>last name</b></p><input type="text" name="lastName"  value="'.$_SESSION['customer']['lastName'].'"class="input-text" id="lastName" placeholder="Doe" onchange="checkLastName()"></td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><p><b>email</b></p><input type="email" name="email" class="input-text" id="email" placeholder="john.doe@gmail.com" onchange="checkEmail()" required></td>
+                                <td><p><b>email</b></p><input type="email" name="email" value="'.$_SESSION['customer']['email'].'" class="input-text" id="email" placeholder="john.doe@gmail.com" onchange="checkEmail()" required></td>
                                 <td></td>
-                                <td><p><b>phone no.</b></p><input type="text" name="phone" class="input-text" id="phone" onchange="checkPhone()" value="+65" required></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><p><b>address</b></p><input type="text" name="address" class="input-text" id="address" placeholder="#B2-54 24 Nanyang Avenue" onchange="checkAddress()" required></td>
-                                <td></td>
-                                <td><p><b>postal code</b></p><input type="text" name="zip" class="input-text" id="zip" placeholder="6 digits" onchange="checkZIP()" required></td>
+                                <td><p><b>phone no.</b></p><input type="text" name="phone"  value="'.$_SESSION['customer']['phone'].'"class="input-text" id="phone" onchange="checkPhone()" value="+65" required></td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td colspan="3"><p><b>notes</b></p><textarea name="notes" class="input-textarea" id="notes" rows="4" cols="40" style="width: 100%;" placeholder="no wasabi, more soysauce, no. of chopsticks"></textarea></td> 
+                                <td><p><b>address</b></p><input type="text" name="address" value="'.$_SESSION['customer']['address'].'" class="input-text" id="address" placeholder="#B2-54 24 Nanyang Avenue" onchange="checkAddress()" required></td>
+                                <td></td>
+                                <td><p><b>postal code</b></p><input type="text" name="zip"  value="'.$_SESSION['customer']['zip'].'"class="input-text" id="zip" placeholder="6 digits" onchange="checkZIP()" required></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><p><b>notes</b></p><textarea name="notes" value="'.$_SESSION['customer']['notes'].'" class="input-textarea" id="notes" rows="4" cols="40" style="width: 100%;" placeholder="no wasabi, more soysauce, no. of chopsticks"></textarea></td> 
                                 <td></td>
                                 <td></td> 
                             </tr>
@@ -108,7 +118,8 @@
                                 <td></td>
                                 <td></td>
                             </tr>  
-                            </form>                                                    
+                            </form>' ;
+                            ?>                                                   
                         </tbody>
                     </table>
                 </div>
