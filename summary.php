@@ -69,16 +69,16 @@
                 $note=$_SESSION['customer']['notes'];
                 echo
                 '<div id="confirmation-contact">
-                    <h1>Please check if your order and particulars are correct.</h1><hr>
+                    <h1>Thank you, your order has been submitted.</h1><hr>
                     <div id="shipping-details">
-                        <p>Name:</p>
+                        <p><b>Name:</b></p>
                         <p>'.$name.'</p><br>
-                        <p>Address:</p>
+                        <p><b>Address:</b></p>
                         <p>'.$address.'</p>
                         <p>Singapore, '.$postalCode.'</p>
                     </div>
                     <div id="email-details">
-                        <p>an email has been sent to:</p>
+                        <p><b>an email has been sent to:</b></p>
                         <p>'.$email.'</p>
                     </div>
                 </div>'
@@ -263,7 +263,7 @@
                                     <td style="text-align: left; margin-right: 190px;">gst (7%)</td>
                                     <td></td>
                                     <td></td>
-                                    <td style="text-align: left;"><?php $gstPrice = $allPrice * 0.3; echo $gstPrice; ?></td>
+                                    <td style="text-align: left;"><?php $gstPrice = $allPrice * 0.07; echo $gstPrice; ?></td>
                                 </tr>
                                 <tr>
                                     <td></td>

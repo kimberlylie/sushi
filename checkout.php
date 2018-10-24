@@ -149,7 +149,7 @@
                                 <td style="text-align: left; margin-right: 190px;">gst (7%)</td>
                                 <td></td>
                                 <td></td>
-                                <td style="text-align: left;"><?php $gstPrice = $allPrice * 0.3; echo $gstPrice; ?></td>
+                                <td style="text-align: left;"><?php $gstPrice = $allPrice * 0.07; echo $gstPrice; ?></td>
                             </tr>
                             <tr>
                                 <td></td>
