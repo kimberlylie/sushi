@@ -38,7 +38,7 @@ function checkPhone() {
     var phone = document.getElementById('phone');
     phone.value = trim(phone.value)
     
-    if (/^\+65(6|8|9)\d{7}$/.test(phone.value)==false) 
+    if (/^(+\d{2,3})?\d{8,12}$/.test(phone.value)==false) 
     {
         alert('Phone number invalid');
         document.getElementById("phone").value= "";
