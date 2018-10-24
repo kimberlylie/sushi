@@ -7,6 +7,7 @@
 
                     }
 ?>  
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -59,20 +60,30 @@
                        
                     ?>
                 
-                <div id="confirmation-contact">
-                    <h1>Thank you, your order has been confirmed.</h1><hr>
+                <?php
+                $name=$_SESSION['customer']['firstName']." ".$_SESSION['customer']['lastName'];
+                $address= $_SESSION['customer']['address'];
+                $postalCode=$_SESSION['customer']['zip'];
+                $email=$_SESSION['customer']['email'];
+                $phone= $_SESSION['customer']['phone'];
+                $note=$_SESSION['customer']['notes'];
+                echo
+                '<div id="confirmation-contact">
+                    <h1>Please check if your order and particulars are correct.</h1><hr>
                     <div id="shipping-details">
                         <p>Name:</p>
-                        <p> [First Name] [Last Name]</p><br>
+                        <p>'.$name.'</p><br>
                         <p>Address:</p>
-                        <p>[Address]</p>
-                        <p>Singapore, [Postal Code]</p>
+                        <p>'.$address.'</p>
+                        <p>Singapore, '.$postalCode.'</p>
                     </div>
                     <div id="email-details">
                         <p>an email has been sent to:</p>
-                        <p>[Email address]</p>
+                        <p>'.$email.'</p>
                     </div>
-                </div>
+                </div>'
+
+                ?>
 
                 
                 <?php       
@@ -103,13 +114,13 @@
                 }
 
 
-                if (!isset($_SESSION['cart']))
-                {
-                    echo 
-                    "<script type='text/javascript'>
-                    window.location.href='/~kimie/sushi/menu.php'; 
-                    </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
-                }
+                // if (!isset($_SESSION['cart']))
+                // {
+                //     echo 
+                //     "<script type='text/javascript'>
+                //     window.location.href='/~kimie/sushi/menu.php'; 
+                //     </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
+                // }
                 ?>
 
                 <?php
@@ -287,5 +298,11 @@
             </section>
 
         </div>
+
     </body>
+    <?php
+        unset($_SESSION['cart']);
+        unset($_SESSION['quantity']);
+        unset($_SESSION['customer']);
+    ?>
 </html>
