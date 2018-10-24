@@ -74,7 +74,7 @@
                     {
                         echo 
                         "<script type='text/javascript'>
-                        window.location.href='/~kimie/sushi/menu.php'; 
+                        window.location.href='/sushi/menu.php'; 
                         </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
                     }
                 ?> -->

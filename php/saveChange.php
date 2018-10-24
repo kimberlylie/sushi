@@ -63,7 +63,7 @@ else
 
 
 echo "<script type='text/javascript'>
-window.location.href='/~kimie/sushi/cart.php'; 
+window.location.href='/sushi/cart.php'; 
 </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
 
 ?>

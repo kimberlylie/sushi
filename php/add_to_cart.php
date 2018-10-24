@@ -66,7 +66,7 @@ else
 // $message = "id No:".$_SESSION['cart'][$itemNo][0]."add".$_SESSION['cart'][$itemNo][1]." item(s) has been added!";
 $message = " item(s) has been added!";
  echo "<script type='text/javascript'>alert('$message');
-window.location.href='/~kimie/sushi/menu.php'; 
+window.location.href='/sushi/menu.php'; 
 </script>";  // window.location.href='/~kimie/sushi/menu.php'
 
 //  echo "<script type='text/javascript'>alert('$message');
