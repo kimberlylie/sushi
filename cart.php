@@ -74,7 +74,7 @@
                     {
                         echo 
                         "<script type='text/javascript'>
-                        window.location.href='/sushi/menu.php'; 
+                        window.location.href='/f37ee/sushi/menu.php'; 
                         </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
                     }
                 ?> -->
@@ -197,7 +197,7 @@
                         {
                             $message = "Cart is empty";
                             echo "<script type='text/javascript'>alert('$message');
-                            window.location.href='/sushi/menu.php'; 
+                            window.location.href='/f37ee/sushi/menu.php'; 
                             </script>";
                              
                         }
