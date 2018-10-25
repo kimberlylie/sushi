@@ -46,7 +46,7 @@ if ($result) {
     {
         $message = "Order has been sent!";
         echo "<script type='text/javascript'>alert('$message');";
-        echo "window.location.href='/sushi/summary.php';";
+        echo "window.location.href='/f37ee/sushi/summary.php';";
         echo"</script>"; //window.location.href='/~kimie/sushi/contact.html';
     }
     else 

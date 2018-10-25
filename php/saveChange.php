@@ -35,7 +35,7 @@ if (!isset($_SESSION['cart']))
 {
     echo 
     "<script type='text/javascript'>
-   window.location.href='/sushi/menu.php'; 
+   window.location.href='/f37ee/sushi/menu.php'; 
    </script>"; 
 } 
 
@@ -63,7 +63,7 @@ else
 
 
 echo "<script type='text/javascript'>
-window.location.href='/sushi/cart.php'; 
+window.location.href='/f37ee/sushi/cart.php'; 
 </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
 
 ?>

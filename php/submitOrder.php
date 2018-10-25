@@ -4,7 +4,7 @@
                     {
                         echo 
                         "<script type='text/javascript'>
-                        window.location.href='/sushi/menu.php'; 
+                        window.location.href='/f37ee/sushi/menu.php'; 
                         </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
                     }
                     ?>
@@ -13,7 +13,7 @@
                     {
                         echo 
                         "<script type='text/javascript'>
-                        window.location.href='/sushi/menu.php'; 
+                        window.location.href='/f37ee/sushi/menu.php'; 
                         </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
                     }
                 ?>
@@ -24,7 +24,7 @@
                     {
                         echo 
                         "<script type='text/javascript'>
-                        window.location.href='/sushi/checkout.php'; 
+                        window.location.href='/f37ee/sushi/checkout.php'; 
                         </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
 
                     }
@@ -50,7 +50,7 @@
 
                  $message = " item(s) has been added!";
                 echo "<script type='text/javascript'>
-                window.location.href='/sushi/confirmation.php'; 
+                window.location.href='/f37ee/sushi/confirmation.php'; 
                 </script>"; 
 
 
