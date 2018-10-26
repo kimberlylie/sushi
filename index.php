@@ -11,18 +11,72 @@
 
     <body>   
 	    <div class="container">
-            <div id="landing-contents">
-                <div id="landing-image"><img src="./assets/index/cover2.jpg"></div>
-                <div id="landing-login">
-                    <img src="./assets/index/logo.png"><hr>
-                    <form action="login.php" method="post">
-                        <p style="margin-top: 30px;"><b>Email</b></p><input type="email" class="input-text" style="background-color: #fff; margin-left: 225px; width: 260px;" name="email" id="email">
-                        <p><b>Password</b></p><input type="password" class="input-text" style="background-color: #fff; margin-left: 225px; width: 260px;;" name="password" id="password">
-                        <input type="submit" class="submit" value="LOG IN" style="margin-top: 50px; text-align: center;"><br>
-                    </form> 
-                    <a href="./signup.php" class="back-button" style="margin-top: 15px; width: 220px;">SIGN UP</a>    
+
+            <section>
+            <div class="header">
+                    
+                    <div class="header-box1"><img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px"></div>
+                       
+                    
+                    <div class="header-box2">
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="index.php"><b>home</b></a></li>
+                                <li><a href="menu.php"><b>menu</b></a></li>
+                                <li><a href="contact.php"><b>contact</b></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="header-box3">
+                        <nav class="main-nav">
+                            <a id="cart" href="user.php"><img src="assets/nav/user-icon.jpg" width="50px" height="50px"></a>
+                            <a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>
+                        </nav>
+                    </div>          
+            </div>
+            </section>
+            
+            <div id="slideshow_containter" style="background-color: #F5F4F0">
+                <div class="carousel-wrapper">
+                    <span id="item-1"></span>
+                    <span id="item-2"></span>
+                    <span id="item-3"></span>
+                    <div class="carousel-item item-1">
+                        <h2>Item 1</h2>
+                        <a class="arrow arrow-prev" href="#item-3"></a>
+                        <a class="arrow arrow-next" href="#item-2"></a>
+                    </div>
+                    
+                    <div class="carousel-item item-2">
+                        <h2>Item 2</h2>
+                        <a class="arrow arrow-prev" href="#item-1"></a>
+                        <a class="arrow arrow-next" href="#item-3"></a>
+                    </div>
+                    
+                    <div class="carousel-item item-3">
+                        <h2>Item 3</h2>
+                        <a class="arrow arrow-prev" href="#item-2"></a>
+                        <a class="arrow arrow-next" href="#item-1"></a>
+                    </div>
                 </div>
             </div>
+            
+
+            <section>
+            <div class="footer">
+                <div id="icons">
+                    <a href="#"><img src="assets/footer/fb_icon.jpg"></a>
+                    <a href="#"><img src="assets/footer/pinterest_icon.jpg"></a>
+                    <a href="#"><img src="assets/footer/snapchat_icon.jpg"></a>
+                    <a href="#"><img src="assets/footer/spotify_icon.jpg"></a>
+                </div>
+                <div id="copyright">
+                    <i>&copy; The Sushi Bar All Rights Reserved</i>
+                </div>
+            </div>
+            </section>
+
 	    </div>
     </body>
 </html>

@@ -32,15 +32,19 @@
                     <div class="header-box2">
                         <nav class="main-nav">
                             <ul>
-                                <li><a href="home.php"><b>home</b></a></li>
+                                <li><a href="index.php"><b>home</b></a></li>
                                 <li><a href="menu.php"><b>menu</b></a></li>
                                 <li><a href="contact.php"><b>contact</b></a></li>
                             </ul>
                         </nav>
                     </div>
                     
-                    <div class="header-box3"><nav class="main-nav"><a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a></nav></div>
-                                   
+                    <div class="header-box3">
+                        <nav class="main-nav">
+                            <a id="cart" href="user.php"><img src="assets/nav/user-icon.jpg" width="50px" height="50px"></a>
+                            <a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>
+                        </nav>
+                    </div>  
             </div>
             </section>
         

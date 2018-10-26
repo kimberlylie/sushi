@@ -14,7 +14,7 @@
 	    <div class="container">
             <div id="landing-contents">
                 <div id="landing-login">
-                    <img src="./assets/index/logo.png"><hr>
+                    <img src="./assets/login/logo.png"><hr>
                     <table id="signup-table">
                         <form action="verifyEmail.php" method="post">
                             <tr>
@@ -36,12 +36,12 @@
                                 <td colspan="3"><input type="submit" class="submit" value="SIGN UP" style="width: 100%; margin-left: 0px; margin-top: 60px; text-align: center;"></td>
                             </tr>  
                             <tr>
-                                <td colspan="3"><a href="./index.php" class="back-button" style="margin-left: 0px; margin-top: 15px; width: 540px;">LOG IN</a></td>
+                                <td colspan="3"><a href="./login.php" class="back-button" style="margin-left: 0px; margin-top: 15px; width: 540px;">LOG IN</a></td>
                             </tr>                            
                         </form> 
                     </table> 
                 </div>
-                <div id="landing-image"><img src="./assets/index/cover1.jpg"></div>
+                <div id="landing-image"><img src="./assets/login/cover1f.jpg"></div>
             </div>
 	    </div>
     </body>

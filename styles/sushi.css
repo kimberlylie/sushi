@@ -31,13 +31,13 @@ body {
 .header-box1 {
 	height: 63px;
     float: left;
-    width: 42%;
+    width: 44%;
 }
 
 .header-box2 {
 	height: 63px;
 	float: left;
-	width: 49%;
+	width: 47%;
 }
 
 .header-box3 {
@@ -50,6 +50,7 @@ body {
 .logo {
 	float: left;
 	padding-top: 10px;
+	margin-left: 50px;
 }
 
 nav {
@@ -95,13 +96,97 @@ nav ul li a:hover {
 	background-color: #fff;
 }
 
-#slideshow {
+/*#slideshow {
 	margin-top: 63px;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 	width: 1360px;
 	height: 453px;
+}*/
+
+.carousel-wrapper{
+  height:500px;
+  position:relative;
+  width:1500px;
+  margin:0 auto;
+  margin-top: 63px;
+}
+
+.carousel-item{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:25px 50px;
+  opacity:0;
+  transition: all 0.5s ease-in-out;
+}
+.arrow{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 12px;
+}
+
+.arrow-prev{
+  left:-30px;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%) rotate(135deg);
+}
+ 
+.arrow-next{
+    right:-30px;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%) rotate(-45deg);
+  }
+
+.light{
+  color:white;
+}
+
+@media (max-width: 480px) {
+      .arrow, .light .arrow {
+        background-size: 10px;
+        background-position: 10px 50%;
+      }
+}
+
+
+/*Select every element*/
+[id^="item"] {
+    display: none;
+  }
+
+.item-1 {
+    z-index: 2;
+    opacity: 1;
+  background:url('/~kimie/sushi/assets/home/banner1.jpg');
+  background-size:cover;
+  }
+.item-2{
+  background:url('/~kimie/sushi/assets/home/banner2.jpg');
+   background-size:cover;
+}
+.item-3{
+  background:url('/~kimie/sushi/assets/home/banner3.jpg');
+   background-size:cover;
+}
+
+*:target ~ .item-1 {
+    opacity: 0;
+  }
+
+#item-1:target ~ .item-1 {
+    opacity: 1;
+  }
+
+#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+    z-index: 3;
+    opacity: 1;
 }
 
 /*Styles for index page*/
@@ -110,7 +195,7 @@ nav ul li a:hover {
 	margin-left: 150px;
 	margin-right: 150px;*/
 	width: 100%;
-	text-align: center;
+	text-align: center !important;
 	/*margin: auto;*/
 	min-height: 500px;
 	vertical-align: center;
@@ -134,9 +219,9 @@ nav ul li a:hover {
 	/*padding: 50px;*/
 }
 
-#landing-login form {
+/*#landing-login form {
 	text-align: center !important;
-}
+}*/
 
 #landing-login hr {
 	width: 80%;
@@ -144,7 +229,7 @@ nav ul li a:hover {
 
 #landing-login p {
 	text-align: left;
-	margin-left: 225px;
+	margin-left: 345px;
 }
 
 #landing-login input {
@@ -169,7 +254,7 @@ nav ul li a:hover {
 
 #signup-table {
 	text-align: left;
-	margin-left: 65px;
+	margin-left: 200px;
 }
 
 #signup-table p {
@@ -184,7 +269,7 @@ nav ul li a:hover {
 	border: solid 1px black;
 	outline: none;
 	width: 5%;
-	transition: all .2s ease-in-out;
+	/*transition: all .2s ease-in-out;*/
 	border-radius: 0px;
 	float: left;
 	display: inline-block;
