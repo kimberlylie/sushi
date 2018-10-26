@@ -31,19 +31,19 @@ body {
 .header-box1 {
 	height: 63px;
     float: left;
-    width: 41%;
+    width: 42%;
 }
 
 .header-box2 {
 	height: 63px;
 	float: left;
-	width: 54%;
+	width: 49%;
 }
 
 .header-box3 {
 	height: 63px;
 	float: left;
-	width: 5%;
+	width: 9%;
 	/*text-align: right;*/
 }
 
