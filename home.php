@@ -34,7 +34,7 @@
             </section>
             
             <div id="slideshow_containter" style="background-color: #F5F4F0">
-                <div id="slideshow"><img src="assets/index/banner1.jpg"></div>
+                <div id="slideshow"><img src="assets/home/banner1.jpg"></div>
             </div>
             
 

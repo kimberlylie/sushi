@@ -89,34 +89,10 @@ nav ul li a:hover {
 	padding-top: 5px;
 }
 
-/*nav .main-nav ul li a::before {
-	content: '';
-	display: block;
-	height: 3px;
-	background-color: #444;
-	position: absolute;
-	top: 0;
-	width: 0%;
-	transition: all ease-in-out 250ms;
-}*/
-
-/*nav ul li a:hover::before {
-	width: 60%;
-}*/
-
 #cart {
 	/*margin-left: 50px;*/
 	background-color: #fff;
 }
-
-/* Styles for home page */
-/*@-webkit-keyframes slider {
-    0%    { background-position: 0px 0px; }
-    10%   { background-position: 0px 0px; }
-    33%   { background-position: -1360px 0px; }
-    66%   { background-position: -1360px -453px; }
-    100%  { background-position: 0px -453px; }  
-}*/
 
 #slideshow {
 	margin-top: 63px;
@@ -125,7 +101,38 @@ nav ul li a:hover {
 	position: relative;
 	width: 1360px;
 	height: 453px;
-	/*-webkit-animation: slider 20s infinite alternate;*/
+}
+
+/*Styles for index page*/
+#landing-contents {
+	width: 80%;
+	text-align: center;
+	margin: auto;
+	min-height: 500px;
+	vertical-align: center;
+}
+
+#landing-image {
+	display: inline-block;
+	float: left;
+	width: 40%;
+		background-color: #F5F4F0;
+}
+
+#landing-login {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	width: 40%;
+}
+
+#landing-login img {
+	width: 60%;
+	height: 60%;
+}
+
+#login-input {
+	text-align: left;
 }
 
 /* Styles for menu page */
@@ -140,8 +147,6 @@ nav ul li a:hover {
 
 #menu-nav-container li {
 	display: inline-block;
-	/*text-align: center;*/
-	/*margin-left: 30px;*/
 	padding-top: 10px;
 	position: relative;
 }
@@ -158,11 +163,9 @@ nav ul li a:hover {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	/*overflow: hidden;*/
 }
 
 #menu-list-container {
-	/*display: inline-block;*/
 	padding-top: 20px;
 	margin: 0 auto;
 	text-align: center;
@@ -212,7 +215,7 @@ nav ul li a:hover {
   color: white;
   cursor: pointer;
   padding: 15px;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 #button-top img {
@@ -311,6 +314,7 @@ nav ul li a:hover {
     display: inline-block;
     font-size: 14px;
 	width: 260px;
+	cursor: pointer;
 }
 
 #div-submit {
@@ -432,6 +436,7 @@ input {
     display: inline-block;
     font-size: 14px;
 	width: 240px;
+	cursor: pointer;
 }
 
 .back-menu {
@@ -469,7 +474,8 @@ input {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-	width: 50px;	
+	width: 50px;
+	cursor: pointer;	
 }
 
 .update {
@@ -482,6 +488,7 @@ input {
     display: inline-block;
     font-size: 12px;
 	width: 70px;
+	cursor: pointer;
 }
 
 #order-summary {
