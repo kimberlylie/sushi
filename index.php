@@ -37,31 +37,60 @@
             </div>
             </section>
             
-            <div id="slideshow_containter" style="background-color: #F5F4F0">
-                <div class="carousel-wrapper">
-                    <span id="item-1"></span>
-                    <span id="item-2"></span>
-                    <span id="item-3"></span>
-                    <div class="carousel-item item-1">
-                        <h2>Item 1</h2>
-                        <a class="arrow arrow-prev" href="#item-3"></a>
-                        <a class="arrow arrow-next" href="#item-2"></a>
-                    </div>
-                    
-                    <div class="carousel-item item-2">
-                        <h2>Item 2</h2>
-                        <a class="arrow arrow-prev" href="#item-1"></a>
-                        <a class="arrow arrow-next" href="#item-3"></a>
-                    </div>
-                    
-                    <div class="carousel-item item-3">
-                        <h2>Item 3</h2>
-                        <a class="arrow arrow-prev" href="#item-2"></a>
-                        <a class="arrow arrow-next" href="#item-1"></a>
+            <div id="home-main">
+                <div id="slideshow-containter" style="background-color: #F5F4F0">
+                    <div class="carousel-wrapper">
+                        <span id="item-1"></span>
+                        <span id="item-2"></span>
+                        <span id="item-3"></span>
+                        <div class="carousel-item item-1">
+                            <a class="arrow arrow-prev" href="#item-3"></a>
+                            <a class="arrow arrow-next" href="#item-2"></a>
+                        </div>
+                        
+                        <div class="carousel-item item-2">
+                            <a class="arrow arrow-prev" href="#item-1"></a>
+                            <a class="arrow arrow-next" href="#item-3"></a>
+                        </div>
+                        
+                        <div class="carousel-item item-3">
+                            <a class="arrow arrow-prev" href="#item-2"></a>
+                            <a class="arrow arrow-next" href="#item-1"></a>
+                        </div>
                     </div>
                 </div>
+
+                <div id="index-services">
+                    <h1>Our Services</h1>
+                    <div class="services-card">
+                        <img src="./assets/home/food_delivery.jpg">
+                        <br><h3>Fast delivery</h3><br>
+                        < 30 minutes guaranteed, or meal will be free.
+                    </div>
+                    <div class="services-card">
+                        <img src="./assets/home/fresh_food.jpg">
+                        <br><h3>Fresh products</h3><br>
+                        Air-flown from Tsujiki Market, Tokyo, Japan.
+                    </div>
+                    <div class="services-card">
+                        <img src="./assets/home/catering.jpg">
+                        <br><h3>Catering services</h3><br>
+                        Feel free to contact us for a quote!                   
+                    </div>
+                </div>
+
+                <div id="index-review">
+                    <h3><i>"10/10 would recommend" - Gordon Ramsay</i></h3>
+                    <a href="./menu.php" class="submit" style="margin-bottom: 30px;">BUY NOW</a>
+                </div>
+
+                <div id="index-roots"></div>
+
+                <div id="index-chef"></div>    
+
             </div>
-            
+
+
 
             <section>
             <div class="footer">
