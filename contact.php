@@ -43,7 +43,10 @@
                 <div id="contact-details">
                     <h2>Map</h2>
                     <img src="./assets/contact/map.jpg" width="200px" height="200px"><br><br>
-                    <caption><small>88 Dunearn Road, Singapore 883589</small></caption><br><br>
+                    <caption>
+                        <small><b>88 Dunearn Road, Singapore 883589</b></small><br>
+                        <small>Open everyday from 0900-0200!</small>
+                    </caption><br><br>
                     <p><img src="./assets/contact/phone.jpg" width="25px" height="20px" style="bottom: 0; margin-right: 20px;">600 500<br></p>
                     <p><img src="./assets/contact/mail.jpg" width="25px" height="20px" style="bottom: 0; margin-right: 20px;">contact@sushi.com<br></p>
                 </div>
