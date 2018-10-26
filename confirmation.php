@@ -31,7 +31,7 @@
                     <div class="header-box2">
                         <nav class="main-nav">
                             <ul>
-                                <li><a href="index.php"><b>home</b></a></li>
+                                <li><a href="home.php"><b>home</b></a></li>
                                 <li><a href="menu.php"><b>menu</b></a></li>
                                 <li><a href="contact.php"><b>contact</b></a></li>
                             </ul>
@@ -288,7 +288,7 @@
                             <td style="color: #F5F4F0;">---------------------------------</td>
                         </tr> 
                         <tr>
-                            <td><a href="./checkout.php" class="back-button" style="width: 90%;">BACK TO CART</a></td>
+                            <td><a href="./checkout.php" class="back-button" style="width: 90%;">BACK TO CHECKOUT</a></td>
                             <td></td>
                             <td></td>
                             <td><input type="submit" name="confirm" class="submit" value="CONFIRM ORDER" style="width: 100%; text-align: right;" onclick="confirmSubmit()"></td>

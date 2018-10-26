@@ -203,10 +203,9 @@ nav ul li a:hover {
 #button-top {
   display: none;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 100px;
+  right: 100px;
   z-index: 99;
-  font-size: 18px;
   border: none;
   outline: none;
   background-color: black;
@@ -214,6 +213,11 @@ nav ul li a:hover {
   cursor: pointer;
   padding: 15px;
   border-radius: 50%;
+}
+
+#button-top img {
+	width: 50%;
+	width: 50%;
 }
 
 #button-top:hover {

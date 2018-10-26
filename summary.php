@@ -32,7 +32,7 @@
                     <div class="header-box2">
                         <nav class="main-nav">
                             <ul>
-                                <li><a href="index.php"><b>home</b></a></li>
+                                <li><a href="home.php"><b>home</b></a></li>
                                 <li><a href="menu.php"><b>menu</b></a></li>
                                 <li><a href="contact.php"><b>contact</b></a></li>
                             </ul>
