@@ -12,17 +12,15 @@
     <body>   
 	    <div class="container">
             <div id="landing-contents">
-                <div id="landing-image"><h1>Welcome!</h1></div>
+                <div id="landing-image"><img src="./assets/index/cover2.jpg"></div>
                 <div id="landing-login">
-                    <img src="assets/index/logo.png"><hr>
+                    <img src="./assets/index/logo.png"><hr>
                     <form action="login.php" method="post">
-                        <div id="login-input">
-                            <p><b>Email</b></p><input type="email" class="input-text" style="background-color: #fff;" name="email" id="email">
-                            <p><b>Password</b></p><input type="password" class="input-text" style="background-color: #fff;" name="password" id="password">
-                        </div>
-                        <input type="submit" class="submit" value="Log-in"><br>
-                        <h5>Don't have an account with Sushi? <a href="signup.php">Sign up here!</a></h5>
-                    </form>    
+                        <p style="margin-top: 30px;"><b>Email</b></p><input type="email" class="input-text" style="background-color: #fff; margin-left: 225px; width: 260px;" name="email" id="email">
+                        <p><b>Password</b></p><input type="password" class="input-text" style="background-color: #fff; margin-left: 225px; width: 260px;;" name="password" id="password">
+                        <input type="submit" class="submit" value="LOG IN" style="margin-top: 50px; text-align: center;"><br>
+                    </form> 
+                    <a href="./signup.php" class="back-button" style="margin-top: 15px; width: 220px;">SIGN UP</a>    
                 </div>
             </div>
 	    </div>
