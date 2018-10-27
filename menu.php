@@ -89,7 +89,7 @@
                     ?>
            
                     <?php
-                        echo '<div id="maki">';
+                        echo '<div id="maki" style="padding-top: 20px;">';
                         //echo '<h1>Maki</h1>';
 
                        $c = 0;
@@ -142,7 +142,7 @@
                     ?>
 
                     <?php
-                        echo '<div id="nigiri">';
+                        echo '<div id="nigiri" style="padding-top: 20px;">';
                         //echo '<h1>Nigiri</h1>';
 
                     $c = 0;
@@ -194,7 +194,7 @@
                     ?>
 
                     <?php
-                        echo '<div id="sets">';
+                        echo '<div id="sets" style="padding-top: 20px;">';
                         //echo '<h1>Sets</h1>';
 
                     $c = 0;
@@ -246,7 +246,7 @@
                     ?>
 
                     <?php
-                        echo '<div id="don">';
+                        echo '<div id="don" style="padding-top: 20px;">';
                         //echo '<h1>Don</h1>';
 
                     $c = 0;
@@ -298,7 +298,7 @@
                     ?>
 
                     <?php
-                        echo '<div id="gunkan">';
+                        echo '<div id="gunkan" style="padding-top: 20px;">';
                         //echo '<h1>Gunkan</h1>';
 
                     $c = 0;
@@ -355,12 +355,12 @@
                     <div id="modal-picture" class="modal-col1"><img src="assets/menu/dummy.jpg"></div>
 
                     <div id="modal-details" class="modal-col2">
-                        <div id="modal-item-name"><h1>Item Name</h1></div><br>
+                        <div id="modal-item-name"><h1>Item Name</h1></div>
                         <div id="modal-item-price"><h2>Item Price</h2></div>
                         <div id="modal-item-description"><h4>Description</h4></div>
                         
                         <hr>
-                        Quantity: <input type="number" class="input-number" name="quantity" value=0 id="quantity" onchange="checkQuantity()">
+                        <h4>Quantity: </h4><input type="number" class="input-number" name="quantity" value=0 id="quantity" onchange="checkQuantity()">
                         <!-- kenapa butuh input id buat add ke cart? -->
                         <input type="number" value=0 id="itemId" name="itemId"><br>
                         <input type="submit" id="submit" class="submit" value="ADD TO CART">   

@@ -38,7 +38,7 @@
             </section>
             
             <div id="home-main">
-                <div id="slideshow-containter" style="background-color: #F5F4F0">
+                <div id="slideshow-container" style="background-color: #F5F4F0">
                     <div class="carousel-wrapper">
                         <span id="item-1"></span>
                         <span id="item-2"></span>
@@ -70,7 +70,7 @@
                     <div class="services-card">
                         <img src="./assets/home/fresh_food.jpg">
                         <br><h3>Fresh products</h3><br>
-                        Air-flown from Tsujiki Market, Tokyo, Japan.
+                        Air-flown from Tsukijii Market, Tokyo, Japan.
                     </div>
                     <div class="services-card">
                         <img src="./assets/home/catering.jpg">
@@ -84,9 +84,21 @@
                     <a href="./menu.php" class="submit" style="margin-bottom: 30px;">BUY NOW</a>
                 </div>
 
-                <div id="index-roots"></div>
+                <div id="index-roots">
+                    <div class="index-half">
+                        <h2>our roots</h2>
+                        <p style="padding-top: 20px;">We hail from the Tsukiji Market, <br>and have relocated to Singapore, <br>to share the gastronomic delight<br> sushi can offer.</p>
+                    </div>
+                    <div class="index-half"><img src="./assets/home/roots.jpg" width="50%" height="50%"></div>
+                </div>
 
-                <div id="index-chef"></div>    
+                <div id="index-chef">
+                    <div class="index-half"><img src="./assets/home/chef.jpg" width="50%" height="50%"></div>
+                    <div class="index-half">
+                        <h2 style="padding-top: 20px;">meet jiro morimoto, head chef</h2>
+                        <p style="padding-top: 20px;">The guy who revolutionized <br>sushi delivery. He believes <br>that everyone deserves<br> quality sushi from Japan.</p>
+                    </div>    
+                </div>    
 
             </div>
 
