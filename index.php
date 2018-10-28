@@ -81,7 +81,7 @@
 
                 <div id="index-review">
                     <h3><i>"10/10 would recommend" - Gordon Ramsay</i></h3>
-                    <a href="./menu.php" class="submit" style="margin-bottom: 30px;">BUY NOW</a>
+                    <a href="./menu.php" class="submit" style="margin-top: 20px; margin-bottom: 30px;">BUY NOW</a>
                 </div>
 
                 <div id="index-roots">
