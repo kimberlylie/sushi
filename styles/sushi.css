@@ -812,6 +812,12 @@ input {
 	display: inline-block;
 }
 
+/*Styles for admin pages*/
+#admin-main {
+	 margin-top: 63px;
+	 background-color: #F5F4F0;
+	 height: 500px;
+}
 
 /* Styles for footer */
 .footer {
