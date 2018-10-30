@@ -48,6 +48,7 @@
                         <th>Item</th>
                         <th>Item Price</th>
                         <th>Description</th>
+                        <th>Availability</th>
                     </tr>
                     </thead>
                     <tbody>                      
@@ -56,18 +57,21 @@
                             <td>[Item Name]</td>
                             <td>[Item Price]</td>
                             <td>[Description]</td>
+                            <td>[Availability]</td>
                         </tr>
                         <tr>
                             <td>[Item Pic]</td>
                             <td>[Item Name]</td>
                             <td>[Item Price]</td>
                             <td>[Description]</td>
+                            <td>[Availability]</td>
                         </tr>
                         <tr>
                             <td>[Item Pic]</td>
                             <td>[Item Name]</td>
                             <td>[Item Price]</td>
                             <td>[Description]</td>
+                            <td>[Availability]</td>
                         </tr>
                     </tbody>
                 </table>

@@ -264,11 +264,13 @@ nav ul li a:hover {
 	width: 100%;
 	text-align: center !important;
 	/*margin: auto;*/
-	min-height: 500px;
+	min-height: 600px;
 	vertical-align: center;
+	background-color: #F5F4F0;
+	margin-top: 63px;
 }
 
-#landing-image {
+/*#landing-image {
 	display: inline-block;
 	float: left;
 	width: 50%;
@@ -276,22 +278,22 @@ nav ul li a:hover {
 	background-color: #fff;
 	overflow: hidden;
 	/*padding: 50px;*/
-}
+/*}*/
 
-#landing-login {
+/*#landing-login {
 	display: inline-block;
 	float: left;
 	text-align: center;
 	width: 50%;
 	height: 80%;
 	/*padding: 50px;*/
-}
+}*/*/
 
 /*#landing-login form {
 	text-align: center !important;
 }*/
 
-#landing-login hr {
+/*#landing-login hr {
 	width: 80%;
 }
 
@@ -319,11 +321,11 @@ nav ul li a:hover {
 	width: 50%;
 	height: 80%;
 	/*padding: 50px;*/
-}
+}*/
 
 #signup-table {
-	text-align: left;
-	margin-left: 35px;
+	text-align: center;
+	/*margin-left: 500px;*/
 }
 
 #signup-table p {

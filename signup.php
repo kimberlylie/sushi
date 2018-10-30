@@ -12,32 +12,54 @@
 
     <body>   
 	    <div class="container">
-            <div id="landing-contents">
-                <div id="landing-login">
-                    <img src="./assets/login/logo.png" style="margin-top: 60px;"><hr>
-                    <table id="signup-table">
+            <section>  
+                <div class="header">
+                    <div class="header-box1"><img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px"></div>
+                    <div class="header-box2">
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="index.php"><b>home</b></a></li>
+                                <li><a href="menu.php"><b>menu</b></a></li>
+                                <li><a href="contact.php"><b>contact</b></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="header-box3">
+                        <nav class="main-nav">
+                            <a id="cart" href="user.php"><img src="assets/nav/user-icon.jpg" width="50px" height="50px"></a>
+                            <a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>
+                        </nav>
+                    </div>       
+                </div>
+            </section>
+            <div id="landing-contents" style="height: 700px">
+                <!--<div id="landing-login">-->
+                    <!--<img src="./assets/login/logo.png" style="margin-top: 60px;"><hr>-->
+                    <h2 style="padding-top: 60px;">Sign up</h2>
+                    <table id="signup-table" style="margin-left: 380px;">
                         <form action="verifyEmail.php" method="post">
                             <tr>
-                                <td><p><b>first name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John" onchange="checkFirstName();" style="background-color: #fff; width: 250px;" required></td>
+                                <td><p style="text-align: left;"><b>first name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John" onchange="checkFirstName();" style="width: 250px;" required></td>
                                 <td></td>
-                                <td><p style="margin-left: 30px;"><b>last name</b></p><input type="text" name="lastName" class="input-text" id="lastName" placeholder="Doe" onchange="checkLastName();" style="background-color: #fff; margin-left: 30px; width: 250px;"></td>
+                                <td><p style="text-align: left; margin-left: 30px;"><b>last name</b></p><input type="text" name="lastName" class="input-text" id="lastName" placeholder="Doe" onchange="checkLastName();" style="margin-left: 30px; width: 250px;"></td>
                             </tr>
                             <tr>
-                                <td><p><b>email</b></p><input type="email" name="email" class="input-text" id="email" placeholder="john.doe@gmail.com" onchange="checkEmail();" style="background-color: #fff; width: 250px;" required></td>
+                                <td><p style="text-align: left;"><b>email</b></p><input type="email" name="email" class="input-text" id="email" placeholder="john.doe@gmail.com" onchange="checkEmail();" style="width: 250px;" required></td>
                                 <td></td>
-                                <td><p style="margin-left: 30px;"><b>phone no.</b></p><input type="text" name="phone" class="input-text" id="phone" onchange="checkPhone();" style="background-color: #fff; margin-left: 30px; width: 250px;" required></td>
+                                <td><p style="text-align: left; margin-left: 30px;"><b>phone no.</b></p><input type="text" name="phone" class="input-text" id="phone" onchange="checkPhone();" style="margin-left: 30px; width: 250px;" required></td>
                             </tr>
                             <tr>
-                                <td><p><b>address</b></p><input type="text" name="address" class="input-text" id="address" placeholder="#B2-54 24 Nanyang Avenue" onchange="checkAddress();" style="background-color: #fff; width: 250px;" required></td>
+                                <td><p style="text-align: left;"><b>address</b></p><input type="text" name="address" class="input-text" id="address" placeholder="#B2-54 24 Nanyang Avenue" onchange="checkAddress();" style="width: 250px;" required></td>
                                 <td></td>
-                                <td><p style="margin-left: 30px;"><b>postal code</b></p><input type="text" name="zip" class="input-text" id="zip" placeholder="6 digits" onchange="checkZIP();" style="background-color: #fff; margin-left: 30px; width: 250px;" required></td>
+                                <td><p style="text-align: left; margin-left: 30px;"><b>postal code</b></p><input type="text" name="zip" class="input-text" id="zip" placeholder="6 digits" onchange="checkZIP();" style="margin-left: 30px; width: 250px;" required></td>
                             </tr>
                             <tr>
-                                <td><p><b>password</b></p><input type="password" name="password" class="input-text" id="password" onkeyup="checkPassword();" style="background-color: #fff; width: 250px;" required></td>
+                                <td><p style="text-align: left;"><b>password</b></p><input type="password" name="password" class="input-text" id="password" onkeyup="checkPassword();" style="width: 250px;" required></td>
                                 <td></td>
                                 <td>
-                                    <p style="margin-left: 30px;"><b>confirm password</b></p><input type="password" name="cpassword" class="input-text" id="cpassword" onkeyup="checkPassword();" style="background-color: #fff; margin-left: 30px; width: 250px;" required>
-                                    <p id="message"></p>
+                                    <p style="text-align: left; margin-left: 30px;"><b>confirm password</b></p><input type="password" name="cpassword" class="input-text" id="cpassword" onkeyup="checkPassword();" style="margin-left: 30px; width: 250px;" required>
+                                    <!--<p id="message"></p>-->
                                 </td>
                             </tr>
                             <tr>
@@ -48,9 +70,22 @@
                             </tr>                            
                         </form> 
                     </table> 
-                </div>
-                <div id="landing-image"><img src="./assets/login/cover1.jpg"></div>
+                <!--</div>-->
+                <!--<div id="landing-image"><img src="./assets/login/cover1.jpg"></div>-->
             </div>
+            <section>
+            <div class="footer">
+                <div id="icons">
+                    <a href="#"><img src="assets/footer/fb_icon.jpg"></a>
+                    <a href="#"><img src="assets/footer/pinterest_icon.jpg"></a>
+                    <a href="#"><img src="assets/footer/snapchat_icon.jpg"></a>
+                    <a href="#"><img src="assets/footer/spotify_icon.jpg"></a>
+                </div>
+                <div id="copyright">
+                    <i>&copy; The Sushi Bar All Rights Reserved</i>
+                </div>
+            </div>
+            </section>            
 	    </div>
     </body>
 </html>

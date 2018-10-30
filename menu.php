@@ -361,7 +361,6 @@
                         
                         <hr>
                         <h4>Quantity: </h4><input type="number" class="input-number" name="quantity" value=0 id="quantity" onchange="checkQuantity()">
-                        <!-- kenapa butuh input id buat add ke cart? -->
                         <input type="number" value=0 id="itemId" name="itemId"><br>
                         <input type="submit" id="submit" class="submit" value="ADD TO CART">   
                     </div>
