@@ -46,22 +46,19 @@ if (!isset($_SESSION['cart']))
 
 $itemId = $_POST["itemId"];
 $quantity = $_POST["quantity"];
-$index = array_search($itemId, $_SESSION['cart']) ;
-$check= "-".$index."-";
 
-if ($check!="--")
+if (array_key_exists($itemId,$_SESSION['cart']))
     {
-    $quantityTotal= $quantity + $_SESSION['quantity'][$index];
-    $_SESSION['quantity'][$index]= $quantityTotal;
+    $quantityTotal= $quantity + $_SESSION['cart'][$itemId];
+    $_SESSION['cart'][$itemId]= $quantityTotal;
 
     }
 else
 {
-    $length = count( $_SESSION['cart']);
-    $_SESSION['quantity'][$length]=$quantity;
-    $_SESSION['cart'][$length]=$itemId;
-
+    $_SESSION['cart'][$itemId]= $quantity;
 }
+
+echo $_SESSION['cart'][$itemId];
 
 // $message = "id No:".$_SESSION['cart'][$itemNo][0]."add".$_SESSION['cart'][$itemNo][1]." item(s) has been added!";
 $message = " item(s) has been added!";

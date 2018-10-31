@@ -49,18 +49,10 @@ $quantity = 0;
 $index = array_search($itemId, $_SESSION['cart']) ;
 $check= "-".$index."-";
 
-if ($check!="--")
-    {
-    $quantityTotal= $quantity ;
-    $_SESSION['quantity'][$index]= $quantityTotal;
+$_SESSION['cart'][$itemId]= $quantity;
 
-    }
-else
-{
-    $length = count( $_SESSION['cart']);
-    $_SESSION['quantity'][$length]=$quantity;
-    $_SESSION['cart'][$length]=$itemId;
-}
+echo $_SESSION['cart'][$itemId];
+
 echo "<script type='text/javascript'>
 window.location.href='/sushi/cart.php'; 
 </script>";

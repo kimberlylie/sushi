@@ -1,4 +1,15 @@
 <?php session_start(); ?>
+
+<?php
+if (!isset($_SESSION['cart']))
+{
+$_SESSION['cart'] = array();
+}
+?>  
+
+
+
+                    
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -329,22 +340,7 @@
                         }
                     ?>
 
-                    <?php
-                    
-                    if (!isset($_SESSION['cart']))
-                    {
-                        $_SESSION['cart'] = array();
 
-                    }
-                    ?>  
-
-                    <?php
-                    
-                    if (!isset($_SESSION['quantity']))
-                    {
-                        $_SESSION['quantity'] = array();
-                    }
-                    ?>
 
                 </div>
             </div>

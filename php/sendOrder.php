@@ -34,14 +34,19 @@ if ($result) {
     }
 
     $date = date("Y-m-d");
-    $sql_3 ="INSERT INTO `orders` (`customer_ID`,`date`,`menu_ID`,`quantity`) VALUES 
-    (".$customerId.",'".$date."',".$_SESSION['cart'][0].",'".$_SESSION['quantity'][0]."')";
+    $sql_3 ="INSERT INTO `orders` (`customer_ID`,`date`,`menu_ID`,`quantity`) VALUES";
 
-    for ($i=1; $i<count($_SESSION['cart']); $i++)
+    //  (".$customerId.",'".$date."',".array_keys($_SESSION['cart'])[0].",'".$_SESSION['cart'][array_keys($_SESSION['cart'])[0]]."')";
+
+    for ($i=0; $i<count($_SESSION['cart']); $i++)
     {
-    $sql_3=$sql_3.",(".$customerId.",'".$date."',".$_SESSION['cart'][$i].",'".$_SESSION['quantity'][$i]."')";
+    if ($_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]>0)
+    {
+    $sql_3=$sql_3."(".$customerId.",'".$date."',".array_keys($_SESSION['cart'])[$i].",'".$_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]."'),";
+    }    
     }
     
+    $sql_3 = substr($sql_3, 0, -1);
     if(mysqli_query($conn, $sql_3))
     {
         $message = "Order has been sent!";

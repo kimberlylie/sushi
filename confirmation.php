@@ -1,12 +1,20 @@
 <?php session_start(); ?>
-<?php
-                    
-                    if (!isset($_SESSION['customer']))
-                    {
-                        $_SESSION['customer'] = array('firstName'=>'','lastName'=>'','email'=>'','phone'=>'','address'=>'','zip'=>'','notes'=>'');
 
-                    }
+<?php
+if (!isset($_SESSION['customer']))
+{
+$_SESSION['customer'] = array('firstName'=>'','lastName'=>'','email'=>'','phone'=>'','address'=>'','zip'=>'','notes'=>'');
+}
 ?>  
+
+
+<?php
+if (!isset($_SESSION['cart']))
+{
+$_SESSION['cart'] = array();
+}
+?>  
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -48,20 +56,7 @@
             </section>
         
             <div class="confirmation-main">
-                    <?php
 
-                        include './php/credentials.php';
-
-
-                        // Create connection
-                        $conn = mysqli_connect($servername, $username, $password, $dbname);
-                        // Check connection
-                        if (!$conn) {
-                            die("Connection failed: " . mysqli_connect_error());
-                        }
-
-                    
-                    ?>
                 <?php
                 $name=$_SESSION['customer']['firstName']." ".$_SESSION['customer']['lastName'];
                 $address= $_SESSION['customer']['address'];
@@ -84,59 +79,16 @@
                         <p>'.$email.'</p>
                     </div>
                 </div>'
-
                 ?>
+                
                 <?php       
 
                 include './php/credentials.php';
-
-
                 // Create connection
                 $conn = mysqli_connect($servername, $username, $password, $dbname);
                 // Check connection
                 if (!$conn) {
                     die("Connection failed: " . mysqli_connect_error());
-                }
-
-                $sql = "SELECT * FROM menu";
-                $result = mysqli_query($conn, $sql);
-                $item=array();
-                if (mysqli_num_rows($result) > 0) {
-                    // output data of each row
-                    $i=0;
-                    while($row = mysqli_fetch_assoc($result)) {
-                        $id[$i]=$row['id'];
-                        $itemsName[$i]=$row['name'];
-                        $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
-                        $price[$i] = $row['price'];
-                        $image[$i]= $row['imgURL'];;
-                    }
-                }
-
-
-                if (!isset($_SESSION['cart']))
-                {
-                    echo 
-                    "<script type='text/javascript'>
-                    window.location.href='/~kimie/sushi/menu.php'; 
-                    </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
-                }
-                ?>
-
-                <?php
-                
-                if (!isset($_SESSION['cart']))
-                {
-                    $_SESSION['cart'] = array();
-
-                }
-                ?>  
-
-                <?php
-                
-                if (!isset($_SESSION['quantity']))
-                {
-                    $_SESSION['quantity'] = array();
                 }
                 ?>
 
@@ -159,7 +111,7 @@
                                 for ($i=0; $i<count($_SESSION['cart']); $i++)
                                 {
                                     
-                                    if ($_SESSION['quantity'][$i]>0)
+                                    if ($_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]>0)
                                     {   
                     /*                  $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
                                         $quantityId = 'quantity'.$rowId;
@@ -169,14 +121,14 @@
                                         echo "checkQuantity('".$quantityId."','".$rowId."')";
                                         echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
                                         echo "</tr>"; */
-                                        $sql = "SELECT * FROM menu where id=".$_SESSION['cart'][$i];
+                                        $sql = "SELECT * FROM menu where id=".array_keys($_SESSION['cart'])[$i];
                                         $result = mysqli_query($conn, $sql);
                                         $item=array();
                                         if (mysqli_num_rows($result) > 0) {
                                             // output data of each row
                                             while($row = mysqli_fetch_assoc($result)) 
                                             {
-                                                $rowId ='ItemWithId' .$_SESSION['cart'][$i];
+                                                $rowId ='ItemWithId' .array_keys($_SESSION['cart'])[$i];
                                                 $quantityId = 'quantity'.$rowId;
                                                 $priceId ='price'.$rowId;
                                                 $totalPriceId ='totalPrice'.$rowId;
@@ -189,7 +141,7 @@
                                                 echo "<tr id='".$rowId."'>";
 
 
-                                                echo "<td class='td-center'><img src=".$row['imgURL']."><input type='number' class='input-number' value=".$_SESSION['cart'][$i]." id='itemNoId' name='itemNoId'";
+                                                echo "<td class='td-center'><img src=".$row['imgURL']."><input type='number' class='input-number' value=".array_keys($_SESSION['cart'])[$i]." id='itemNoId' name='itemNoId'";
                                                 echo 'style="display:none"';
                                                 echo" ></td>";
 
@@ -197,7 +149,7 @@
 
                                                 echo "<td id='".$priceId."'>" .$row['price']. "</td>";  
 
-                                                echo "<td>" .$_SESSION['quantity'][$i]. "</td>";
+                                                echo "<td>" .$_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]. "</td>";
                                                 //echo '<td><input type="number" class="input-number" style="background-color: #F5F4F0;" name="quantityId" value='.$_SESSION['quantity'][$i].' id="quantityId" onchange="';
                                                 //echo "updateCart('".$rowId."','".$priceId."','".$totalPriceId."','".$saveId."')";
                                                 //echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;">';
@@ -206,12 +158,12 @@
 
                                                 echo'</form>';
 
-                                                $totalPrice = $row['price']*$_SESSION['quantity'][$i];
+                                                $totalPrice = $row['price']*$_SESSION['cart'][array_keys($_SESSION['cart'])[$i]];
 
                                                 echo "<td class='td-center' id='".$totalPriceId."'>".$totalPrice."</td>";
                                                 //echo'<td class="td-center"><form action="./php/deleteCartEntry.php" method="post">';
 
-                                                echo "<input type='number' value=".$_SESSION['cart'][$i]." id='itemNoId' name='itemNoId'";
+                                                echo "<input type='number' value=".array_keys($_SESSION['cart'])[$i]." id='itemNoId' name='itemNoId'";
                                                 echo 'style="display:none"';
                                                 echo" >";
 
@@ -228,7 +180,7 @@
                                     }
                                     else
                                     {
-                                        $_SESSION['quantity']=0;
+                                        $_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]=0;
                                     }
                 
 

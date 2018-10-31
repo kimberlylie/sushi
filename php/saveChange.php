@@ -46,20 +46,11 @@ if (!isset($_SESSION['cart']))
 
 $itemId = $_POST["itemNoId"];
 $quantity = $_POST["quantityId"];
-$index = array_search($itemId, $_SESSION['cart']) ;
-$check= "-".$index."-";
 
-if ($check!="--")
-    {
-    $quantityTotal= $quantity;
-    $_SESSION['quantity'][$index]= $quantityTotal;
-    }
-else
-{
-    $length = count( $_SESSION['cart']);
-    $_SESSION['quantity'][$length]=$quantity;
-    $_SESSION['cart'][$length]=$itemId;
-}
+$_SESSION['cart'][$itemId]= $quantity;
+
+
+echo $_SESSION['cart'][$itemId];
 
 
 echo "<script type='text/javascript'>
