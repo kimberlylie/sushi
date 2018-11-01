@@ -42,31 +42,19 @@
                             <tr>
                                 <td colspan="3"><p style="text-align: left;"><b>name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John Doe" onchange="checkFirstName();" style="width: 100%;" required></td> 
                             </tr>
-                            <tr>
-                                <td><p style="text-align: left;" id="message"></p></td>
-                                <td></td>
-                                <td><p  style="text-align: left;" id="message"></p></td>
-                            </tr>
+
                             <tr>
                                 <td><p style="text-align: left;"><b>email</b></p><input type="email" name="email" class="input-text" id="email" placeholder="john.doe@gmail.com" onchange="checkEmail();" style="width: 250px;" required></td>
                                 <td></td>
                                 <td><p style="text-align: left; margin-left: 30px;"><b>phone no.</b></p><input type="text" name="phone" class="input-text" id="phone" onchange="checkPhone();" style="margin-left: 30px; width: 250px;" required></td>
                             </tr>
-                            <tr>
-                                <td><p  style="text-align: left;" id="message"></p></td>
-                                <td></td>
-                                <td><p  style="text-align: left;" id="message"></p></td>
-                            </tr>
+
                             <tr>
                                 <td><p style="text-align: left;"><b>address</b></p><input type="text" name="address" class="input-text" id="address" placeholder="#B2-54 24 Nanyang Avenue" onchange="checkAddress();" style="width: 250px;" required></td>
                                 <td></td>
                                 <td><p style="text-align: left; margin-left: 30px;"><b>postal code</b></p><input type="text" name="zip" class="input-text" id="zip" placeholder="6 digits" onchange="checkZIP();" style="margin-left: 30px; width: 250px;" required></td>
                             </tr>
-                            <tr>
-                                <td><p  style="text-align: left;" id="message"></p></td>
-                                <td></td>
-                                <td><p  style="text-align: left;" id="message"></p></td>
-                            </tr>
+
                             <tr>
                                 <td><p style="text-align: left;"><b>password</b></p><input type="password" name="password" class="input-text" id="password" onchange="checkPassword();"  style="width: 250px;" required></td>
                                 <td></td>
