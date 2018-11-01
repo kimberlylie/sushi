@@ -19,7 +19,7 @@ $phone= $_SESSION['customer']['phone'];
 $note=$_SESSION['customer']['notes'];
 
 
-$sql_1 = "INSERT INTO `customers` (`name`,`address`,`postalCode`,`email`,`phone`,`note`) VALUES ('".$name."','".$address."',".$postalCode.",'".$email."','".$phone."','".$note."')";
+$sql_1 = "INSERT INTO `customers` (`name`,`address`,`postalCode`,`email`,`phone`) VALUES ('".$name."','".$address."',".$postalCode.",'".$email."','".$phone."')";
 $result =mysqli_query($conn, $sql_1);
 if ($result) { 
     
@@ -32,9 +32,42 @@ if ($result) {
             $customerId=$row['LastID'];
         }
     }
+} 
+else 
+{
+    echo "Error: " . $sql_1 . "<br>" . mysqli_error($conn);
+}
+
+
 
     $date = date("Y-m-d");
-    $sql_3 ="INSERT INTO `orders` (`customer_ID`,`date`,`menu_ID`,`quantity`) VALUES";
+    
+    $sql_3 = "INSERT INTO `transaction` (`customer_ID`,`date`,`ship_address`,`ship_postalCode`,`note`) VALUES ('".$customerId."','".$date."','".$address."','".$postalCode."','".$note."')";
+    echo $sql_3;
+    $result =mysqli_query($conn, $sql_3);
+
+    if ($result) { 
+        
+        $sql_4 = "SELECT ID AS LastID FROM `transaction` WHERE ID = @@Identity";
+        $result = mysqli_query($conn, $sql_4);
+    
+        if (mysqli_num_rows($result) > 0) 
+        {
+            while($row = mysqli_fetch_assoc($result)) 
+            {
+            
+            $transactionId=$row['LastID'];
+            echo $transactionId;
+            }
+        }
+
+    }
+else 
+{
+    echo "Error: " . $sql_3 . "<br>" . mysqli_error($conn);
+}
+    
+    $sql_5 ="INSERT INTO `orders` (`transaction_ID`,`menu_ID`,`quantity`) VALUES";
 
     //  (".$customerId.",'".$date."',".array_keys($_SESSION['cart'])[0].",'".$_SESSION['cart'][array_keys($_SESSION['cart'])[0]]."')";
 
@@ -42,12 +75,12 @@ if ($result) {
     {
     if ($_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]>0)
     {
-    $sql_3=$sql_3."(".$customerId.",'".$date."',".array_keys($_SESSION['cart'])[$i].",'".$_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]."'),";
+    $sql_5=$sql_5."(".$transactionId.",".array_keys($_SESSION['cart'])[$i].",'".$_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]."'),";
     }    
     }
     
-    $sql_3 = substr($sql_3, 0, -1);
-    if(mysqli_query($conn, $sql_3))
+    $sql_5 = substr($sql_5, 0, -1);
+    if(mysqli_query($conn, $sql_5))
     {
         $message = "Order has been sent!";
         echo "<script type='text/javascript'>alert('$message');";
@@ -56,13 +89,9 @@ if ($result) {
     }
     else 
     {
-        echo "Error: " . $sql_3 . "<br>" . mysqli_error($conn);
+        echo "Error: " . $sql_5 . "<br>" . mysqli_error($conn);
     }
-} 
-else 
-{
-    echo "Error: " . $sql_1 . "<br>" . mysqli_error($conn);
-}
+
 
 
 mysqli_close($conn);
