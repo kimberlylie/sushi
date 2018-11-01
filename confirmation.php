@@ -75,7 +75,7 @@ $_SESSION['cart'] = array();
                         <p>Singapore, '.$postalCode.'</p>
                     </div>
                     <div id="email-details">
-                        <p>an email has been sent to:</p>
+                        <p>Email:</p>
                         <p>'.$email.'</p>
                     </div>
                 </div>'
