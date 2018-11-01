@@ -17,17 +17,15 @@ die("Connection failed: " . mysqli_connect_error());
 <?php
 
 $firstName= $_POST["firstName"];
-$lastName= $_POST["lastName"];
 $email= $_POST["email"];
 $phone= $_POST["phone"];
 $address= $_POST["address"];
 $postalCode= $_POST["zip"];
 
 $password = sha1($_POST['password']);
-$name = $firstName." ".$lastName ;
+$name = $firstName;
 
 echo$firstName;
-echo$lastName;
 echo$email;
 echo$phone;
 echo$address;

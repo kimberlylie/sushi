@@ -4,7 +4,7 @@
                     
     if (!isset($_SESSION['customer']))
     {
-    $_SESSION['customer'] = array('firstName'=>'','lastName'=>'','email'=>'','phone'=>'','address'=>'','zip'=>'','notes'=>'');
+    $_SESSION['customer'] = array('firstName'=>'','email'=>'','phone'=>'','address'=>'','zip'=>'','notes'=>'');
     }
 ?>  
 

@@ -10,17 +10,7 @@ name.value = trim(name.value)
     }
 }
 
-function checkLastName() {
-
-    var name = document.getElementById('lastName');
-    name.value = trim(name.value)
-        if (/^[A-Za-z\s]*$/.test(name.value)==false)
-        {
-            alert('Name invalid');
-            document.getElementById("lastName").value = "";
-            return false;
-        }
-}    
+ 
     
 function checkEmail() {
     var email = document.getElementById('email');

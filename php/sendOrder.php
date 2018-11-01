@@ -11,7 +11,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$name=$_SESSION['customer']['firstName']." ".$_SESSION['customer']['lastName'];
+$name=$_SESSION['customer']['firstName'];
 $address= $_SESSION['customer']['address'];
 $postalCode=$_SESSION['customer']['zip'];
 $email=$_SESSION['customer']['email'];

@@ -32,7 +32,6 @@
 
                 <?php
                  $_SESSION['customer']['firstName']= $_POST["firstName"];
-                 $_SESSION['customer']['lastName']= $_POST["lastName"];
                  $_SESSION['customer']['email']= $_POST["email"];
                  $_SESSION['customer']['phone']= $_POST["phone"];
                  $_SESSION['customer']['address']= $_POST["address"];
@@ -41,7 +40,6 @@
 
                  
                  echo$_SESSION['customer']['firstName'];
-                 echo$_SESSION['customer']['lastName'];
                  echo$_SESSION['customer']['email'];
                  echo$_SESSION['customer']['phone'];
                  echo$_SESSION['customer']['address'];

@@ -3,7 +3,7 @@
 <?php
 if (!isset($_SESSION['customer']))
 {
-$_SESSION['customer'] = array('firstName'=>'','lastName'=>'','email'=>'','phone'=>'','address'=>'','zip'=>'','notes'=>'');
+$_SESSION['customer'] = array('firstName'=>'','email'=>'','phone'=>'','address'=>'','zip'=>'','notes'=>'');
 }
 ?>  
 
@@ -58,7 +58,7 @@ $_SESSION['cart'] = array();
             <div class="confirmation-main">
 
                 <?php
-                $name=$_SESSION['customer']['firstName']." ".$_SESSION['customer']['lastName'];
+                $name=$_SESSION['customer']['firstName']
                 $address= $_SESSION['customer']['address'];
                 $postalCode=$_SESSION['customer']['zip'];
                 $email=$_SESSION['customer']['email'];
