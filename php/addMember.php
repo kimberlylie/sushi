@@ -17,7 +17,7 @@ die("Connection failed: " . mysqli_connect_error());
 <?php
 
 $firstName= $_POST["firstName"];
-$email= $_POST["email"];
+$email= strtolower($_POST["email"]);
 $phone= $_POST["phone"];
 $address= $_POST["address"];
 $postalCode= $_POST["zip"];
