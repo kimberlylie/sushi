@@ -55,11 +55,11 @@
                                 <td><p style="text-align: left; margin-left: 30px;"><b>postal code</b></p><input type="text" name="zip" class="input-text" id="zip" placeholder="6 digits" onchange="checkZIP();" style="margin-left: 30px; width: 250px;" required></td>
                             </tr>
                             <tr>
-                                <td><p style="text-align: left;"><b>password</b></p><input type="password" name="password" class="input-text" id="password" onkeyup="checkPassword();" style="width: 250px;" required></td>
+                                <td><p style="text-align: left;"><b>password</b></p><input type="password" name="password" class="input-text" id="password" onkeyup="checkPassword();"  style="width: 250px;" required></td>
                                 <td></td>
                                 <td>
                                     <p style="text-align: left; margin-left: 30px;"><b>confirm password</b></p><input type="password" name="cpassword" class="input-text" id="cpassword" onkeyup="checkPassword();" style="margin-left: 30px; width: 250px;" required>
-                                    <!--<p id="message"></p>-->
+                                    <p id="message"></p>
                                 </td>
                             </tr>
                             <tr>
