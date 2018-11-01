@@ -172,6 +172,7 @@ $_SESSION['cart'] = array();
                                                 
                                                 echo "</tr>";
                                                 $allPrice = $allPrice +$totalPrice;
+                                               
 
                                             }
                                         }
@@ -232,7 +233,9 @@ $_SESSION['cart'] = array();
                             </tbody>
                         </table>
                     </div>
-
+                    <?php
+                    $_SESSION['allPrice']=$allPrice + $gstPrice + 4;
+                    ?>
                     <!--Try using float instead of table-->
                     <div id="confirmation-buttons">
                     <table id="align-buttons">

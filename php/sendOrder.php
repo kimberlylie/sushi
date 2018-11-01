@@ -42,7 +42,7 @@ else
 
     $date = date("Y-m-d");
     
-    $sql_3 = "INSERT INTO `transaction` (`customer_ID`,`date`,`ship_address`,`ship_postalCode`,`note`) VALUES ('".$customerId."','".$date."','".$address."','".$postalCode."','".$note."')";
+    $sql_3 = "INSERT INTO `transaction` (`customer_ID`,`date`,`ship_address`,`ship_postalCode`,`note`,`price`) VALUES ('".$customerId."','".$date."','".$address."','".$postalCode."','".$note."', ".$_SESSION['allPrice'].")";
     echo $sql_3;
     $result =mysqli_query($conn, $sql_3);
 
