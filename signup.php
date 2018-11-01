@@ -38,7 +38,7 @@
                     <!--<img src="./assets/login/logo.png" style="margin-top: 60px;"><hr>-->
                     <h2 style="padding-top: 60px;">Sign up</h2>
                     <table id="signup-table" style="margin-left: 700px;">
-                        <form action="verifyEmail.php" method="post">
+                        <form action="./php/addMember.php" method="post">
                             <tr>
                                 <td><p style="text-align: left;"><b>first name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John" onchange="checkFirstName();" style="width: 250px;" required></td>
                                 <td></td>

@@ -19,7 +19,7 @@ $phone= $_SESSION['customer']['phone'];
 $note=$_SESSION['customer']['notes'];
 
 
-$sql_1 = "INSERT INTO `customers` (`name`,`address`,`postalCode`,`email`,`phone`) VALUES ('".$name."','".$address."',".$postalCode.",'".$email."','".$phone."')";
+$sql_1 = "INSERT INTO `customers` (`name`,`address`,`postalCode`,`email`,`phone`) VALUES ('".$name."','".$address."','".$postalCode."','".$email."','".$phone."')";
 $result =mysqli_query($conn, $sql_1);
 if ($result) { 
     

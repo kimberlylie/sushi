@@ -7,6 +7,41 @@
 
                     }
 ?>  
+
+<?php
+
+include './php/credentials.php';
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+?>
+
+<?php
+if (isset($_SESSION['member']))
+{
+
+    $sql = "SELECT * FROM customers WHERE id = ".$_SESSION['member'];
+    echo $sql;
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        
+        while($row = mysqli_fetch_assoc($result)) {
+            $_SESSION['customer']['firstName']=$row['name'];
+            $_SESSION['customer']['email']=$row['email'];
+            $_SESSION['customer']['zip']=$row['postalCode'];
+            $_SESSION['customer']['phone']=$row['phone'];
+            $_SESSION['customer']['address']=$row['address'];
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -48,20 +83,7 @@
         
             <div class="checkout-main">
                 <div id="checkout-form">
-                    <?php
 
-                        include './php/credentials.php';
-
-
-                        // Create connection
-                        $conn = mysqli_connect($servername, $username, $password, $dbname);
-                        // Check connection
-                        if (!$conn) {
-                            die("Connection failed: " . mysqli_connect_error());
-                        }
-
-                        $allPrice = $_POST['allPrice'];
-                    ?>
                 
                     <table id="checkout-details">
                         <thead>
@@ -78,6 +100,7 @@
                         </thead>
                         <tbody>
                             <?php
+                            $allPrice=$_POST['allPrice'];
                             echo
                             '<form action="./php/submitOrder.php" method="post">
 
