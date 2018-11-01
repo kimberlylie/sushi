@@ -111,8 +111,8 @@ if (!isset($_SESSION['member']))
                         <h2>change password</h2>
                         <form action="login.php" method="post">
                             <p style="margin-top: 32px;"><b>old password</b></p><input type="password" class="input-text" style="width: 260px;" name="oldpassword" id="oldpassword">
-                            <p style="margin-top: 25px;"><b>new password</b></p><input type="password" class="input-text" style="width: 260px;" name="password" id="password" onkeyup="checkPassword();">
-                            <p style="margin-top: 25px;"><b>confirm password</b></p><input type="password" class="input-text" style="width: 260px;;" name="cpassword" id="cpassword" onkeyup="checkPassword();">
+                            <p style="margin-top: 25px;"><b>new password</b></p><input type="password" class="input-text" style="width: 260px;" name="password" id="password" onchange="checkPassword();">
+                            <p style="margin-top: 25px;"><b>confirm password</b></p><input type="password" class="input-text" style="width: 260px;;" name="cpassword" id="cpassword" onchange="checkPassword();">
                             <p id="message"></p>
                             <input type="submit" class="submit" value="CHANGE PASSWORD" style="margin-top: 64px; text-align: center;"><br>
                         </form> 
