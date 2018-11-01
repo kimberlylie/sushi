@@ -66,7 +66,7 @@ var checkPassword = function() {
     document.getElementById('message').style.color = 'green';
     document.getElementById('message').innerHTML = 'The passwords match.';
   } else {
-    document.getElementById('cpassword') = '';
+    document.getElementById('cpassword') = "";
     document.getElementById('message').style.color = 'red';
     document.getElementById('message').innerHTML = 'The passwords do not match.';
   }
