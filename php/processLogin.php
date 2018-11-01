@@ -18,13 +18,20 @@ die("Connection failed: " . mysqli_connect_error());
 <?php
 $password= sha1($_POST['password']);
 $email= $_POST["email"];
+
 $sql = "SELECT * FROM member WHERE email='".$email."'";
+echo $sql;
 $result = mysqli_query($conn, $sql);
 
 
-if (mysqli_num_rows($result)>0)
+if ($row = mysqli_num_rows($result)>0)
 {
+    while($row = mysqli_fetch_assoc($result)) {
     $dbPassword=$row['password'];
+    $customerId=$row['customer_ID'];
+    }
+
+    echo "test".$password."  ".$dbPassword."test";
     if($password==$dbPassword)
     {
         $_SESSION['member'] = $customerId;
@@ -35,17 +42,20 @@ if (mysqli_num_rows($result)>0)
     }
     else
     {
-        $message = "login fail";
+        $message = "wrong password fail";
         echo "<script type='text/javascript'>alert('$message');
         window.location.href='/sushi/login.php'; 
         </script>"; 
+      
     }
+    
 }
 else
 {
-    $message = "login fail";
+    $message = "wrong email";
     echo "<script type='text/javascript'>alert('$message');
     window.location.href='/sushi/login.php'; 
     </script>";
+
 }
 ?>

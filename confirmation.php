@@ -58,7 +58,7 @@ $_SESSION['cart'] = array();
             <div class="confirmation-main">
 
                 <?php
-                $name=$_SESSION['customer']['firstName']
+                $name=$_SESSION['customer']['firstName'];
                 $address= $_SESSION['customer']['address'];
                 $postalCode=$_SESSION['customer']['zip'];
                 $email=$_SESSION['customer']['email'];

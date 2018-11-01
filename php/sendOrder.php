@@ -18,7 +18,13 @@ $email=$_SESSION['customer']['email'];
 $phone= $_SESSION['customer']['phone'];
 $note=$_SESSION['customer']['notes'];
 
+if (isset($_SESSION['member']))
+{
 
+    $customerId=$_SESSION['member'];
+}
+else
+{
 $sql_1 = "INSERT INTO `customers` (`name`,`address`,`postalCode`,`email`,`phone`) VALUES ('".$name."','".$address."','".$postalCode."','".$email."','".$phone."')";
 $result =mysqli_query($conn, $sql_1);
 if ($result) { 
@@ -38,7 +44,7 @@ else
     echo "Error: " . $sql_1 . "<br>" . mysqli_error($conn);
 }
 
-
+}
 
     $date = date("Y-m-d");
     

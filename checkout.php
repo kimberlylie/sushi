@@ -105,14 +105,29 @@ if (isset($_SESSION['member']))
                             '<form action="./php/submitOrder.php" method="post">
 
                             <tr>
-                                <td colspan="3"><p><b>name</b></p><input type="text" name="firstName" value="'.$_SESSION['customer']['firstName'].'" class="input-text" id="firstName" placeholder="John Doe" style="width: 100%;" onchange="checkFirstName()" required></td>
+                                <td colspan="3"><p><b>name</b></p><input type="text" name="firstName" value="'.$_SESSION['customer']['firstName'].'" class="input-text" id="firstName" ';
+                                if (isset($_SESSION['member']))
+                                {
+                                    echo 'onfocus="this.blur();"';
+                                }
+                                echo'placeholder="John Doe" style="width: 100%;" onchange="checkFirstName()" required></td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><p><b>email</b></p><input type="email" name="email" value="'.$_SESSION['customer']['email'].'" class="input-text" id="email" placeholder="john.doe@gmail.com" onchange="checkEmail()" required></td>
+                                <td><p><b>email</b></p><input type="email" name="email" value="'.$_SESSION['customer']['email'].'" class="input-text" id="email" ';
+                                if (isset($_SESSION['member']))
+                                {
+                                    echo 'onfocus="this.blur();"';
+                                }
+                                echo'placeholder="john.doe@gmail.com" onchange="checkEmail()" required></td>
                                 <td></td>
-                                <td><p><b>phone no.</b></p><input type="text" name="phone"  value="'.$_SESSION['customer']['phone'].'"class="input-text" id="phone" onchange="checkPhone()"  required></td>
+                                <td><p><b>phone no.</b></p><input type="text" name="phone"  value="'.$_SESSION['customer']['phone'].'"class="input-text" id="phone"';
+                                if (isset($_SESSION['member']))
+                                {
+                                    echo 'onfocus="this.blur();"';
+                                }
+                                echo'onchange="checkPhone()"  required></td>
                                 <td></td>
                                 <td></td>
                             </tr>
