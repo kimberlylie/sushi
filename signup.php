@@ -40,12 +40,10 @@
                     <table id="signup-table" style="margin-left: 700px;">
                         <form action="./php/addMember.php" method="post">
                             <tr>
-                                <td><p style="text-align: left;"><b>first name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John" onchange="checkFirstName();" style="width: 250px;" required></td>
-                                <td></td>
-                                <td><p style="text-align: left; margin-left: 30px;"><b>last name</b></p><input type="text" name="lastName" class="input-text" id="lastName" placeholder="Doe" onchange="checkLastName();" style="margin-left: 30px; width: 250px;"></td>
+                                <td colspan="3"><p style="text-align: left;"><b>name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John Doe" onchange="checkFirstName();" style="width: 100%;" required></td> 
                             </tr>
                             <tr>
-                                <td><p  style="text-align: left;" id="message"></p></td>
+                                <td><p style="text-align: left;" id="message"></p></td>
                                 <td></td>
                                 <td><p  style="text-align: left;" id="message"></p></td>
                             </tr>

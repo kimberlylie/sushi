@@ -105,9 +105,7 @@ if (isset($_SESSION['member']))
                             '<form action="./php/submitOrder.php" method="post">
 
                             <tr>
-                                <td><p><b>first name</b></p><input type="text" name="firstName" value="'.$_SESSION['customer']['firstName'].'"class="input-text" id="firstName" placeholder="John" onchange="checkFirstName()" required></td>
-                                <td></td>
-                                <td><p><b>last name</b></p><input type="text" name="lastName"  value="'.$_SESSION['customer']['lastName'].'"class="input-text" id="lastName" placeholder="Doe" onchange="checkLastName()"></td>
+                                <td colspan="3"><p><b>name</b></p><input type="text" name="firstName" value="'.$_SESSION['customer']['firstName'].'" class="input-text" id="firstName" placeholder="John Doe" style="width: 100%;" onchange="checkFirstName()" required></td>
                                 <td></td>
                                 <td></td>
                             </tr>

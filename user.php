@@ -78,9 +78,7 @@
                             </tr>
                         
                             <tr>
-                                <td><p><b>first name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John" onchange="checkFirstName();" style="width: 250px;" required></td>
-                                <td></td>
-                                <td><p style="margin-left: 30px;"><b>last name</b></p><input type="text" name="lastName" class="input-text" id="lastName" placeholder="Doe" onchange="checkLastName();" style="margin-left: 30px; width: 250px;"></td>
+                                <td colspan="3"><p><b>name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John Doe" onchange="checkFirstName();" style="width: 100%;" required></td>
                             </tr>
                             <tr>
                                 <td><p><b>email</b></p><input type="email" name="email" class="input-text" id="email" placeholder="john.doe@gmail.com" onchange="checkEmail();" style="width: 250px;" required></td>
