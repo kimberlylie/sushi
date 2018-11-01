@@ -247,7 +247,7 @@ $_SESSION['cart'] = array();
                             <td style="color: #F5F4F0;">---------------------------------</td>
                         </tr> 
                         <tr>
-                            <td><a href="./checkout.php" class="back-button" style="width: 90%;">BACK TO CHECKOUT</a></td>
+                            <td><a href="./checkout.php" class="back-button" style="width: 90%; margin-left: 50px;">BACK TO CHECKOUT</a></td>
                             <td></td>
                             <td></td>
                             <td><input type="submit" name="confirm" class="submit" value="CONFIRM ORDER" style="width: 100%; text-align: center;" onclick="confirmSubmit()"></td>
