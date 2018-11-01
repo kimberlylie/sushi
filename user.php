@@ -1,11 +1,10 @@
-
 <?php session_start(); ?>
 
 <?php
 if (!isset($_SESSION['member']))
 {
     echo "<script type='text/javascript'>
-            window.location.href='/sushi/login.php'; 
+            window.location.href='./login.php'; 
             </script>";
 }
 ?>
