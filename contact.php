@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <?php session_start(); ?>
+<!DOCTYPE html>
+
 <?php
     include './php/credentials.php';
     // Create connection
