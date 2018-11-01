@@ -70,7 +70,7 @@
                 <hr width="85%">
                 <div id="index-review" style="height: 500px; padding-top: 20px;">
                     <div class="index-half" style="width: 70%;">
-                        <table id="signup-table" style="margin-left: 100px;">
+                        <table id="particulars-table" style="margin-left: 100px;">
                             <form action="updateDetails.php" method="post">
                             <tr>
                                 <th colspan="2"><h2>your particulars</h2></th>
