@@ -45,16 +45,19 @@
                         <span id="item-3"></span>
                         <div class="carousel-item item-1">
                             <a class="arrow arrow-prev" href="#item-3"></a>
+                            <a href="./menu.php#sets"><button id="link-button"></button></a>
                             <a class="arrow arrow-next" href="#item-2"></a>
                         </div>
                         
                         <div class="carousel-item item-2">
                             <a class="arrow arrow-prev" href="#item-1"></a>
+                            <a href="./menu.php#sets"><button id="link-button"></button></a>
                             <a class="arrow arrow-next" href="#item-3"></a>
                         </div>
                         
                         <div class="carousel-item item-3">
                             <a class="arrow arrow-prev" href="#item-2"></a>
+                            <a href="./menu.php#sets"><button id="link-button"></button></a>
                             <a class="arrow arrow-next" href="#item-1"></a>
                         </div>
                     </div>
