@@ -1,4 +1,36 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
+<?php
+    include './php/credentials.php';
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+?>
+<?php
+
+if (isset($_SESSION['member']))
+{
+
+    $sql = "SELECT * FROM customers WHERE id = ".$_SESSION['member'];
+    echo $sql;
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        
+        while($row = mysqli_fetch_assoc($result)) {
+            $name=$row['name'];
+            $email=$row['email'];
+            $postalCode=$row['postalCode'];
+            $phone=$row['phone'];
+            $address=$row['address'];
+        }
+    }
+}
+?>
 <html lang="en">
     <head>
         <title>The Sushi Bar SG</title>
@@ -57,11 +89,11 @@
 
                         <div>
                             <div id="label">Name</div>
-                            <input type="text" name="name" class="input-text" id="name" onchange="checkName()" required>
+                            <input type="text" name="name" class="input-text" id="name" onchange="checkName()" value="<?php echo $name?>"required>
                         </div>
                         <div>
                             <div id="label">E-mail</div>
-                            <input type="email" name="email" class="input-text" id="email" onchange="checkEmail()" required>
+                            <input type="email" name="email" class="input-text" id="email" onchange="checkEmail()" value="<?php echo $email?>"required>
                         </div>
 
                         <div id="label">Subject</div>
