@@ -72,13 +72,13 @@ function checkZIP() {
 
 
 var checkPassword = function() {
-  if (document.getElementById('password').value ==
-    document.getElementById('cpassword').value) {
+  if (document.getElementById('password').value == document.getElementById('cpassword').value) {
     document.getElementById('message').style.color = 'green';
-    document.getElementById('message').innerHTML = 'matching';
+    document.getElementById('message').innerHTML = 'The passwords match.';
   } else {
+    document.getElementById('cpassword') = '';
     document.getElementById('message').style.color = 'red';
-    document.getElementById('message').innerHTML = 'not matching';
+    document.getElementById('message').innerHTML = 'The passwords do not match.';
   }
 }   
 
