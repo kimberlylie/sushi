@@ -38,14 +38,14 @@
             
             <div id="user-main">
                 <div id="index-review" style="height: 80px;">
-                    <h1>Hello, [First Name] !</h1>
+                    <h1>Hello, [Name] !</h1>
                 </div>
                 <div id="index-review" style="height: 400px; padding-top: 20px;">
                     <h2 style="text-align: left; margin-left: 100px; margin-bottom: 40px;">order history</h2>
                     <table id="history-table">
                         <thead>
                             <tr>
-                                <th>order ID</th>
+                                <th>no</th>
                                 <th>date</th>
                                 <th>total</th>
                                 <th>details</th>
@@ -53,16 +53,16 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>00001</td>
+                                <td>1</td>
                                 <td>27 Oct 2018, 12:45</td>
                                 <td>$190</td>
-                                <td>[order summary pdf]</td>
+                                <td><a href="./viewSummary.php" class="submit" style="width: 30px">VIEW</a></td>
                             </tr>
                             <tr>
-                                <td>00002</td>
+                                <td>2</td>
                                 <td>28 Oct 2018, 01:17</td>
                                 <td>$190</td>
-                                <td>[order summary pdf]</td>
+                                <td><a href="./viewSummary.php" class="submit" style="width: 30px">VIEW</a></td>
                             </tr>
                         </tbody>
                     </table>
