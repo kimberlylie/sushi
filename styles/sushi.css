@@ -857,6 +857,15 @@ input {
 	 height: 500px;
 }
 
+.datepicker {
+    border: 1px solid black;
+    border-radius: 0;
+    overflow: hidden;
+	background: #F5F4F0;
+	width: 150px;
+	display: block;
+}
+
 /* Styles for footer */
 .footer {
 	margin: 10px;
