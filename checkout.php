@@ -204,6 +204,16 @@ if (isset($_SESSION['member']))
                             </tr>
                         </tbody>
                     </table>
+                    <?php
+                        if ($allPrice==0)
+                        {
+                            $message = "Cart is empty";
+                            echo "<script type='text/javascript'>alert('$message');
+                            window.location.href='./menu.php'; 
+                            </script>";
+                             
+                        }
+                        ?>
                 </div>
             </div>
             

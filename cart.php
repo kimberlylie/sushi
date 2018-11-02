@@ -167,14 +167,14 @@ $_SESSION['cart'] = array();
                 </table>
                 </div>
                         <?php
-                        // if ($allPrice==0)
-                        // {
-                        //     $message = "Cart is empty";
-                        //     echo "<script type='text/javascript'>alert('$message');
-                        //     window.location.href='/~kimie/sushi/menu.php'; 
-                        //     </script>";
+                        if ($allPrice==0)
+                        {
+                            $message = "Cart is empty";
+                            echo "<script type='text/javascript'>alert('$message');
+                            window.location.href='./menu.php'; 
+                            </script>";
                              
-                        // }
+                        }
                         ?>
                 <div id="order-summary">
                     <table id="summary-details">

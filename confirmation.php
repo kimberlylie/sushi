@@ -233,6 +233,16 @@ $_SESSION['cart'] = array();
                                 </tr>
                             </tbody>
                         </table>
+                        <?php
+                        if ($allPrice==0)
+                        {
+                            $message = "Cart is empty";
+                            echo "<script type='text/javascript'>alert('$message');
+                            window.location.href='./menu.php'; 
+                            </script>";
+                             
+                        }
+                        ?>
                     </div>
                     <?php
                     $_SESSION['allPrice']=$allPrice + $gstPrice + 4;
