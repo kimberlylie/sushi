@@ -88,13 +88,15 @@ $_SESSION['cart'] = array();
                         // output data of each row
                         
                         while($row = mysqli_fetch_assoc($result)) {
-                            $id[$i]=$row['id'];
-                            $itemsName[$i]=$row['name'];
-                            $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
-                            $price[$i] = $row['price'];
-                            $image[$i]= $row['imgURL'];
-                            $description[$i]=$row['description'];
-                            $i=$i+1;
+                            if ($row['availability']>0){
+                                $id[$i]=$row['id'];
+                                $itemsName[$i]=$row['name'];
+                                $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
+                                $price[$i] = $row['price'];
+                                $image[$i]= $row['imgURL'];
+                                $description[$i]=$row['description'];
+                                $i=$i+1;
+                            }
                         }
                     }
                     ?>
@@ -141,6 +143,7 @@ $_SESSION['cart'] = array();
                         // output data of each row
                         
                         while($row = mysqli_fetch_assoc($result)) {
+                            if ($row['availability']>0){
                             $id[$i]=$row['id'];
                             $itemsName[$i]=$row['name'];
                             $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
@@ -148,6 +151,7 @@ $_SESSION['cart'] = array();
                             $image[$i]= $row['imgURL'];
                             $description[$i]=$row['description'];
                             $i=$i+1;
+                            }
                         }
                     }
                     ?>
@@ -193,6 +197,7 @@ $_SESSION['cart'] = array();
                         // output data of each row
                         
                         while($row = mysqli_fetch_assoc($result)) {
+                            if ($row['availability']>0){
                             $id[$i]=$row['id'];
                             $itemsName[$i]=$row['name'];
                             $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
@@ -200,6 +205,7 @@ $_SESSION['cart'] = array();
                             $image[$i]= $row['imgURL'];
                             $description[$i]=$row['description'];
                             $i=$i+1;
+                            }
                         }
                     }
                     ?>
@@ -245,6 +251,7 @@ $_SESSION['cart'] = array();
                         // output data of each row
                         
                         while($row = mysqli_fetch_assoc($result)) {
+                            if ($row['availability']>0){
                             $id[$i]=$row['id'];
                             $itemsName[$i]=$row['name'];
                             $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
@@ -252,6 +259,7 @@ $_SESSION['cart'] = array();
                             $image[$i]= $row['imgURL'];
                             $description[$i]=$row['description'];
                             $i=$i+1;
+                            }
                         }
                     }
                     ?>
@@ -297,6 +305,7 @@ $_SESSION['cart'] = array();
                         // output data of each row
                         
                         while($row = mysqli_fetch_assoc($result)) {
+                            if ($row['availability']>0){
                             $id[$i]=$row['id'];
                             $itemsName[$i]=$row['name'];
                             $items[$i] =  str_replace(' ', '', $itemsName[$i]); 
@@ -304,6 +313,7 @@ $_SESSION['cart'] = array();
                             $image[$i]= $row['imgURL'];
                             $description[$i]=$row['description'];
                             $i=$i+1;
+                            }
                         }
                     }
                     ?>

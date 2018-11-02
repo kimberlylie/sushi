@@ -128,6 +128,7 @@ $_SESSION['cart'] = array();
                                             // output data of each row
                                             while($row = mysqli_fetch_assoc($result)) 
                                             {
+                                                
                                                 $rowId ='ItemWithId' .array_keys($_SESSION['cart'])[$i];
                                                 $quantityId = 'quantity'.$rowId;
                                                 $priceId ='price'.$rowId;
@@ -172,7 +173,7 @@ $_SESSION['cart'] = array();
                                                 
                                                 echo "</tr>";
                                                 $allPrice = $allPrice +$totalPrice;
-                                               
+                                                
 
                                             }
                                         }
