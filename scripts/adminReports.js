@@ -1,4 +1,4 @@
-function updateDate() 
+function updateDate(className) 
 {
-    document.getElementById('go').style.display = "inline-block";
+    document.getElementById(className).style.display = "inline-block";
 } 

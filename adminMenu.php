@@ -1,4 +1,26 @@
-<?php session_start(); ?>
+<?php 
+session_start();
+?>
+<?php
+if (!isset($_SESSION['admin']))
+{
+    echo "<script type='text/javascript'>
+    window.location.href='/sushi/adminLogin.php'; 
+    </script>"; 
+}
+?>  
+<?php
+if (!isset($_SESSION['menuType']))
+{
+    $_SESSION['menuType']="";
+}
+if (isset($_POST['type']))
+{
+    $_SESSION['menuType']=$_POST['type'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,7 +30,7 @@
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
         <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
-        <script type="text/javascript" src="scripts/cart.js"></script>
+        
     </head>
 
     <body>   
@@ -41,57 +63,100 @@
                 <!--<div id="cart-table">-->
             
                 
-                <table id="cart-details">
-                    <thead>
-                    <tr>
-                        <th colspan="3"><h2 style="text-align: left; padding-top: 40px;">menu</h2></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th>Item</th>
-                        <th>Item Price</th>
-                        <th>Description</th>
-                        <th>Availability</th>
-                    </tr>
-                    </thead>
-                    <tbody>                      
-                        <tr>
-                            <td>[Item Pic]</td>
-                            <td>[Item Name]</td>
-                            <td>[Item Price]</td>
-                            <td>[Description]</td>
-                            <td>[Availability]</td>
-                        </tr>
-                        <tr>
-                            <td>[Item Pic]</td>
-                            <td>[Item Name]</td>
-                            <td>[Item Price]</td>
-                            <td>[Description]</td>
-                            <td>[Availability]</td>
-                        </tr>
-                        <tr>
-                            <td>[Item Pic]</td>
-                            <td>[Item Name]</td>
-                            <td>[Item Price]</td>
-                            <td>[Description]</td>
-                            <td>[Availability]</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!--</div>-->
+                <table id="history-table" style="width: 75%">
+                        <thead>
+                            <tr>
+                                <th colspan="4"><h2 style="text-align: left;">transactions log</h2></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr style="margin-bottom: 30px;"> 
+                            
+                                <script type="text/javascript" src="scripts/adminReports.js"></script>
+                                    <th colspan="3">
+                                    <form action="adminMenu.php" method="post">
+                                        <label style="display: inline-block;">Type : </label>
+                                        <select name="type" id="type" onchange="updateDate('go');" >
+                                        <option value=""<?php if ($_SESSION['menuType']==""){echo " selected ";}?>>All</option>
+                                        <option value="Gunkan"<?php if ($_SESSION['menuType']=="Gunkan"){echo " selected ";}?>>Gunkan</option>
+                                        <option value="Maki"<?php if ($_SESSION['menuType']=="Maki"){echo " selected ";}?>>Maki</option>
+                                        <option value="Sets"<?php if ($_SESSION['menuType']=="Sets"){echo " selected ";}?>>Sets</option>
+                                        <option value="Nigiri"<?php if ($_SESSION['menuType']=="Nigiri"){echo " selected ";}?>>Nigiri</option>
+                                        <option value="Don"<?php if ($_SESSION['menuType']=="Don"){echo " selected ";}?>>Don</option>
+                                        </select>
+                                        <input type="submit" class="go" value="GO" id="go" style="display:none">
+                                        </form>
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                               
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th>name</th>
+                                <th>price</th>
+                                <th>detail</th>
+                                <th>availability</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                <!--<div id="order-summary" style="text-align: left;">
-                    <h2 style="text-align: left; padding-top: 40px;">insert item</h2>
-                    <form action="insertItem.php" method="post">
-                        <p style="margin-top: 10px;"><b>picture link</b></p><input type="text" class="input-text" style="width: 260px;" name="link" id="link">
-                        <p style="margin-top: 10px;"><b>item name</b></p><input type="text" class="input-text" style="width: 260px;" name="name" id="name">
-                        <p style="margin-top: 10px;"><b>Price</b></p><input type="number" class="input-number" style="margin-left: 0px; background-color: #F5F4F0;" name="price" id="price">
-                        <p style="margin-top: 10px;"><b>description</b></p><textarea name="description" style="width: 260px;" class="input-textarea" id="description" rows="4" cols="40" required></textarea><br>
-                        <input type="submit" class="submit" value="INSERT" style="width: 260px; margin-top: 30px; text-align: center;"><br>
-                    </form> 
-                </div>-->
+                        <?php
+                        include './php/credentials.php';
+                        // Create connection
+                        $conn = mysqli_connect($servername, $username, $password, $dbname);
+                        // Check connection
+                        if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                        }
+                        ?>
+                        
+                        <?php
+                        $sql_1 = "SELECT * FROM menu WHERE type LIKE '%".$_SESSION['menuType']."%'";
+                        $result = mysqli_query($conn, $sql_1);
+
+
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+
+                                
+                                
+                                // <form action="./php/editMenu.php" method="post">
+                                     echo'
+                                        <tr>
+                                        <td><img src="'.$row['imgURL'].'"></td>
+                                        <td>'.$row['name'].'</td>
+                                        <td><input type="number" id="price'.$row['id'].'" name="price'.$row['id'].'" style=" text-align:center" form="form'.$row['id'].'"  value='.$row['price'].' onchange="updateDate(\'go'.$row['id'].'\');"></td>
+                                        <td><textarea id="description'.$row['id'].'" name="description'.$row['id'].'" style=" text-align:center" form="form'.$row['id'].'" onchange="updateDate(\'go'.$row['id'].'\');"> '.$row['description'].'</textarea></td>
+
+                                        
+                                        <td>
+                                        <select name="availability'.$row['id'].'" id="availability'.$row['id'].'" onchange="updateDate(\'go'.$row['id'].'\');"  form="form'.$row['id'].'" required >
+                                        <option value="1"'; if ($row['availability']==1){echo " selected ";}echo'>Available</option>
+                                        <option value="0"'; if ($row['availability']==0){echo " selected ";}echo'>Unavailable</option>
+                                        </select>
+                                        </td>
+                                        
+                                        <td>
+                                        <form  name="form'.$row['id'].'" id="form'.$row['id'].'" action="./php/editMenu.php" method="post">
+                                        <input type="number" id="menuID" name="menuID" style="display: none" value='.$row['id'].'>
+                                        <input type="submit" class="go'.$row['id'].'" value="update" id="go'.$row['id'].'" style="display:none">
+                                        </form>
+                                        </td>
+
+                                        </tr>'
+                                        // </form>
+                                ;
+            
+                            }
+                        }
+                        ?>
+
+                        </tbody>
+                    </table>
             </div>
 
             <section>

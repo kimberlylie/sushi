@@ -12,6 +12,15 @@
 ?>
 <?php
 
+            $name='';
+            $email='';
+            $postalCode='';
+            $phone='';
+            $address='';
+
+?>
+<?php
+
 if (isset($_SESSION['member']))
 {
 

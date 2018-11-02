@@ -1,4 +1,25 @@
-<?php session_start(); ?>
+<?php 
+session_start();
+?>
+<?php
+if (!isset($_SESSION['admin']))
+{
+    echo "<script type='text/javascript'>
+    window.location.href='/sushi/adminLogin.php'; 
+    </script>"; 
+}
+?>  
+<?php
+if (!isset($_SESSION['enquiriesType']))
+{
+    $_SESSION['enquiriesType']="";
+}
+if (isset($_POST['type']))
+{
+    $_SESSION['enquiriesType']=$_POST['type'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,33 +65,77 @@
                         <th colspan="3"><h2 style="text-align: left; padding-top: 40px;">enquiries list</h2></th>
                         <th></th>
                     </tr>
-                    <tr>
-                        <th>name</th>
-                        <th>email</th>
-                        <th>subject</th>
-                        <th>message</th>
+                    
+
+                    <tr style="margin-bottom: 30px;"> 
+                            
+                                <script type="text/javascript" src="scripts/adminReports.js"></script>
+                                    <th colspan="3">
+                                    <form action="adminEnquiries.php" method="post">
+                                        <label style="display: inline-block;">Type : </label>
+                                        <select name="type" id="type" onchange="updateDate('go');" >
+                                        <option value=""<?php if ($_SESSION['enquiriesType']==""){echo " selected ";}?>>All</option>
+                                        <option value="feedback"<?php if ($_SESSION['enquiriesType']=="feedback"){echo " selected ";}?>>feedback</option>
+                                        <option value="catering"<?php if ($_SESSION['enquiriesType']=="catering"){echo " selected ";}?>>catering</option>
+                                        <option value="others"<?php if ($_SESSION['enquiriesType']=="others"){echo " selected ";}?>>others</option>
+                                        </select>
+                                        <input type="submit" class="go" value="GO" id="go" style="display:none">
+                                        </form>
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                               
                     </tr>
-                    </thead>
-                    <tbody>                      
-                        <tr>
-                            <td>[Name]</td>
-                            <td>[Email]</td>
-                            <td>[Subject]</td>
-                            <td>[Message]</td>
-                        </tr>
-                        <tr>
-                            <td>[Name]</td>
-                            <td>[Email]</td>
-                            <td>[Subject]</td>
-                            <td>[Message]</td>
-                        </tr>
-                        <tr>
-                            <td>[Name]</td>
-                            <td>[Email]</td>
-                            <td>[Subject]</td>
-                            <td>[Message]</td>
-                        </tr>
-                    </tbody>
+                    
+                    <tr>
+                                
+                                <th>name</th>
+                                <th>email</th>
+                                <th>subject</th>
+                                <th>message</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        <?php
+                        include './php/credentials.php';
+                        // Create connection
+                        $conn = mysqli_connect($servername, $username, $password, $dbname);
+                        // Check connection
+                        if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                        }
+                        ?>
+                        
+                        <?php
+                        $sql_1 = "SELECT * FROM feedback WHERE subject LIKE '%".$_SESSION['enquiriesType']."%'";
+                        $result = mysqli_query($conn, $sql_1);
+
+
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+
+                                
+                                
+                                // <form action="./php/editMenu.php" method="post">
+                                     echo'
+                                        <tr>
+                                        <td>'.$row['name'].'</td>
+                                        <td>'.$row['email'].'</td>
+                                        <td>'.$row['subject'].'</td>
+                                        <td>'.$row['message'].'</td>
+                                        </tr>'
+                                        // </form>
+                                ;
+            
+                            }
+                        }
+                        ?>
+
+                        </tbody>
                 </table>
 
             </div>

@@ -17,9 +17,9 @@ die("Connection failed: " . mysqli_connect_error());
 
 <?php
 $password= sha1($_POST['password']);
-$email= $_POST["email"];
+$username= $_POST["username"];
 
-$sql = "SELECT * FROM member WHERE email='".$email."'";
+$sql = "SELECT * FROM admin WHERE username='".$username."'";
 echo $sql;
 $result = mysqli_query($conn, $sql);
 
@@ -28,24 +28,22 @@ if ($row = mysqli_num_rows($result)>0)
 {
     while($row = mysqli_fetch_assoc($result)) {
     $dbPassword=$row['password'];
-    $customerId=$row['customer_ID'];
-    $memberId=$row['id'];
+    $adminId=$row['id'];
     }
 
     echo "test".$password."  ".$dbPassword."test";
     if($password==$dbPassword)
     {
-        $_SESSION['member'] = $customerId;
-        $_SESSION['member_ID'] = $memberId;
+        $_SESSION['admin'] = $adminId;
         echo "<script type='text/javascript'>
-        window.location.href='/sushi/user.php'; 
+        window.location.href='/sushi/adminReports.php'; 
         </script>"; 
     }
     else
     {
         $message = "wrong password fail";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/sushi/login.php'; 
+        window.location.href='/sushi/adminLogin.php'; 
         </script>"; 
       
     }
@@ -53,9 +51,9 @@ if ($row = mysqli_num_rows($result)>0)
 }
 else
 {
-    $message = "wrong email";
+    $message = "wrong username";
     echo "<script type='text/javascript'>alert('$message');
-    window.location.href='/sushi/login.php'; 
+    window.location.href='/sushi/adminLogin.php'; 
     </script>";
 
 }

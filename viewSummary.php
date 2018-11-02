@@ -98,7 +98,7 @@ $transactionId= $_POST["transactionID"];
                                     $sql_2 = "SELECT * FROM transaction WHERE id=".$transactionId;
                                     $result_2 = mysqli_query($conn, $sql_2);
                    
-                                    if (mysqli_num_rows($result_1) > 0) {
+                                    if (mysqli_num_rows($result_2) > 0) {
                                        // output data of each row
                                        
                                        while($row_transaction = mysqli_fetch_assoc($result_2)) {

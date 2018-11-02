@@ -1,3 +1,20 @@
+<?php 
+session_start();
+?>
+<?php
+if (!isset($_SESSION['admin']))
+{
+    echo "<script type='text/javascript'>
+    window.location.href='/sushi/adminLogin.php'; 
+    </script>"; 
+}
+?>  
+<?php
+if (!isset($_POST['date']))
+{
+    $_POST['date']="";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,7 +67,7 @@
                                 <form action="adminReports.php" method="post">
                                     <th colspan="2">
                                         <label style="display: inline-block;">date : </label>
-                                        <input type="date" class="datepicker" id="date" name="date" style="display: inline-block; margin-left: 30px;" onchange="updateDate();">
+                                        <input type="date" class="datepicker" id="date" name="date" style="display: inline-block; margin-left: 30px;" <?php echo 'value="'.$_POST['date'].'"' ?>onchange="updateDate('go');">
                                         <input type="submit" class="go" value="GO" id="go" style="display:none">
                                     </th>
                                     <th></th>
@@ -66,20 +83,42 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Nanyang Avenue</td>
-                                <td>789876</td>
-                                <td>203.3</td>
-                                <td><a href="./viewSummary.php" class="submit" style="width: 30px">VIEW</a></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Orchard Avenue</td>
-                                <td>234567</td>
-                                <td>24.9</td>
-                                <td><a href="./viewSummary.php" class="submit" style="width: 30px">VIEW</a></td>
-                            </tr>
+
+                        <?php
+                        include './php/credentials.php';
+                        // Create connection
+                        $conn = mysqli_connect($servername, $username, $password, $dbname);
+                        // Check connection
+                        if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                        }
+                        ?>
+
+                        <?php
+                        $sql_1 = "SELECT * FROM transaction WHERE date LIKE '%".$_POST['date']."%'";
+                        echo $sql_1;
+                        $result = mysqli_query($conn, $sql_1);
+                        echo "test".mysqli_num_rows($result)."test";
+
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+
+                                echo
+                                '
+                                <tr>
+                                <td>'.$row['customer_ID'].'</td>
+                                <td>'.$row['ship_address'].'</td>
+                                <td>'.$row['ship_postalCode'].'</td>
+                                <td>'.$row['price'].'</td>
+                                <td><form action="viewSummary.php" method="post"><input type="number" id="transactionID" name="transactionID" style="display: none" text-align:center; value='.$row['id'].'><input type="submit" class="submit" style="width: 80px" text-align:center; value="VIEW"></form></td>
+                                </tr>
+                                ';
+            
+                            }
+                        }
+                        ?>
+
                         </tbody>
                     </table>
                 </div>
@@ -111,5 +150,6 @@
             </section>
 
 	    </div>
+
     </body>
 </html>
