@@ -19,6 +19,11 @@
                     <table id="cart-details">
                         <thead>
                         <tr>
+                            <th><a href="./adminReports.php" class="back-button" style="width: 100px;">BACK</a></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
                             <th></th>
                             <th>Item</th>
                             <th>Quantity</th>
