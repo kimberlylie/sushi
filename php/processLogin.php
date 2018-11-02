@@ -17,7 +17,7 @@ die("Connection failed: " . mysqli_connect_error());
 
 <?php
 $password= sha1($_POST['password']);
-$email= $_POST["email"];
+$email= strtolower($_POST["email"]);
 
 $sql = "SELECT * FROM member WHERE email='".$email."'";
 echo $sql;

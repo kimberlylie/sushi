@@ -123,9 +123,10 @@ if (isset($_SESSION['member']))
                                 <td>'.$i.'</td>
                                 <td>'.$row['date'].'</td>
                                 <td>'.$row['price'].'</td>
-                                <td><form action="viewSummary.php" method="post"><input type="submit" class="submit" style="width: 80px" text-align:center; value="VIEW"></form></td>
+                                <td><form action="viewSummary.php" method="post"><input type="number" id="transactionID" name="transactionID" style="display: none" text-align:center; value='.$row['id'].'><input type="submit" class="submit" style="width: 80px" text-align:center; value="VIEW"></form></td>
                                 </tr>
                                 ';
+                                $i=$i+1;
                             }
                         }
                         ?>
