@@ -20,7 +20,7 @@ $oldpassword= sha1($_POST['oldpassword']);
 $newpassword= sha1($_POST['password']);
 
 $sql = "SELECT * FROM member WHERE id=".$_SESSION['member_ID'];
-echo $sql;
+
 $result = mysqli_query($conn, $sql);
 
 

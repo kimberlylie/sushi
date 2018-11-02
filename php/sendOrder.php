@@ -49,7 +49,7 @@ else
     $date = date("Y-m-d");
     
     $sql_3 = "INSERT INTO `transaction` (`customer_ID`,`date`,`ship_address`,`ship_postalCode`,`note`,`price`) VALUES ('".$customerId."','".$date."','".$address."','".$postalCode."','".$note."', ".$_SESSION['allPrice'].")";
-    echo $sql_3;
+
     $result =mysqli_query($conn, $sql_3);
 
     if ($result) { 
@@ -88,6 +88,7 @@ else
     $sql_5 = substr($sql_5, 0, -1);
     if(mysqli_query($conn, $sql_5))
     {
+        $_SESSION['paid']= True;
         $message = "Order has been sent!";
         echo "<script type='text/javascript'>alert('$message');";
         echo "window.location.href='/sushi/summary.php';";

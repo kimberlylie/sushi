@@ -10,10 +10,21 @@ if (!isset($_SESSION['admin']))
 }
 ?>  
 <?php
-if (!isset($_POST['date']))
+// if (!isset($_POST['date']))
+// {
+//     $_POST['date']="";
+// }
+?> 
+<?php
+if (!isset($_SESSION['filterDate']))
 {
-    $_POST['date']="";
+    $_SESSION['filterDate']="";
 }
+if (isset($_POST['date']))
+{
+    $_SESSION['filterDate']=$_POST['date'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +78,7 @@ if (!isset($_POST['date']))
                                 <form action="adminReports.php" method="post">
                                     <th colspan="2">
                                         <label style="display: inline-block;">date : </label>
-                                        <input type="date" class="datepicker" id="date" name="date" style="display: inline-block; margin-left: 30px;" <?php echo 'value="'.$_POST['date'].'"' ?>onchange="updateDate('go');">
+                                        <input type="date" class="datepicker" id="date" name="date" style="display: inline-block; margin-left: 30px;" <?php echo 'value="'.$_SESSION['filterDate'].'"' ?>onchange="updateDate('go');">
                                         <input type="submit" class="go" value="GO" id="go" style="display:none">
                                     </th>
                                     <th></th>
@@ -95,11 +106,12 @@ if (!isset($_POST['date']))
                         ?>
 
                         <?php
-                        $sql_1 = "SELECT * FROM transaction WHERE date LIKE '%".$_POST['date']."%'";
-                        echo $sql_1;
-                        $result = mysqli_query($conn, $sql_1);
-                        echo "test".mysqli_num_rows($result)."test";
+                        $sql_1 = "SELECT * FROM transaction WHERE date LIKE '%".$_SESSION['filterDate']."%'";
 
+                        $result = mysqli_query($conn, $sql_1);
+
+                        $totalRevenue = 0;
+                        $order=0;
                         if (mysqli_num_rows($result) > 0) {
                             // output data of each row
                             while($row = mysqli_fetch_assoc($result)) {
@@ -111,10 +123,11 @@ if (!isset($_POST['date']))
                                 <td>'.$row['ship_address'].'</td>
                                 <td>'.$row['ship_postalCode'].'</td>
                                 <td>'.$row['price'].'</td>
-                                <td><form action="viewSummary.php" method="post"><input type="number" id="transactionID" name="transactionID" style="display: none" text-align:center; value='.$row['id'].'><input type="submit" class="submit" style="width: 80px" text-align:center; value="VIEW"></form></td>
+                                <td><form action="adminSummary.php" method="post"><input type="number" id="transactionID" name="transactionID" style="display: none" text-align:center; value='.$row['id'].'><input type="submit" class="submit" style="width: 80px" text-align:center; value="VIEW"></form></td>
                                 </tr>
                                 ';
-            
+                                $totalRevenue = $totalRevenue +$row['price'];
+                                $order=$order+1;
                             }
                         }
                         ?>
@@ -125,11 +138,11 @@ if (!isset($_POST['date']))
                 <div style="text-align: left; width: 20%; height: 500px; padding-top: 20px; display: inline-block; float: left;">
                     <div class="index-review" style="width: 100%;">
                         <h2>total income:</h2>
-                        <h1><i>$1080</i></h1>
+                        <h1><i><?php echo $totalRevenue; ?></i></h1>
                     </div>
                     <div class="index-review" style="width: 100%; text-align: <left></left>; margin-top: 10px; margin-bottom: 20px;">
                         <h2>total orders:</h2>
-                        <h1><i>15</i></h1>
+                        <h1><i><?php echo $order; ?></i></h1>
                     </div>
                 </div> 
 

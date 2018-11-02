@@ -20,7 +20,7 @@ $password= sha1($_POST['password']);
 $email= strtolower($_POST["email"]);
 
 $sql = "SELECT * FROM member WHERE email='".$email."'";
-echo $sql;
+
 $result = mysqli_query($conn, $sql);
 
 
@@ -32,7 +32,7 @@ if ($row = mysqli_num_rows($result)>0)
     $memberId=$row['id'];
     }
 
-    echo "test".$password."  ".$dbPassword."test";
+
     if($password==$dbPassword)
     {
         $_SESSION['member'] = $customerId;

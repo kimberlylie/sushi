@@ -25,7 +25,6 @@ if (isset($_SESSION['member']))
 {
 
     $sql = "SELECT * FROM customers WHERE id = ".$_SESSION['member'];
-    echo $sql;
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {

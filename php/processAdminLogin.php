@@ -20,7 +20,7 @@ $password= sha1($_POST['password']);
 $username= $_POST["username"];
 
 $sql = "SELECT * FROM admin WHERE username='".$username."'";
-echo $sql;
+
 $result = mysqli_query($conn, $sql);
 
 
@@ -31,7 +31,7 @@ if ($row = mysqli_num_rows($result)>0)
     $adminId=$row['id'];
     }
 
-    echo "test".$password."  ".$dbPassword."test";
+
     if($password==$dbPassword)
     {
         $_SESSION['admin'] = $adminId;

@@ -34,7 +34,7 @@ if (isset($_SESSION['member']))
 {
 
     $sql = "SELECT * FROM customers WHERE id = ".$_SESSION['member'];
-    echo $sql;
+
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -92,7 +92,7 @@ if (isset($_SESSION['member']))
             <div id="user-main">
                 <div style="float: right; margin-right: 87px; margin-top: 76px;"><a id="cart" href="./php/logout.php"><img src="assets/nav/logout-icon2.jpg" width="50px" height="50px"></a></div>
                 <div id="index-review" style="height: 80px;">
-                    <h1>Hello, [Name] !</h1>
+                    <h1>Hello,<?php echo $_SESSION['customer']['firstName'];?> !</h1>
                 </div>
                 <div id="index-review" style="height: 400px; padding-top: 20px;">
                     <h2 style="text-align: left; margin-left: 100px; margin-bottom: 40px;">order history</h2>
@@ -108,9 +108,9 @@ if (isset($_SESSION['member']))
                         <tbody>
                         <?php
                         $sql_1 = "SELECT * FROM transaction WHERE customer_ID = ".$_SESSION['member'];
-                        echo $sql_1;
+
                         $result = mysqli_query($conn, $sql_1);
-                        echo "test".mysqli_num_rows($result)."test";
+
 
                         if (mysqli_num_rows($result) > 0) {
                             // output data of each row

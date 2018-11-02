@@ -42,13 +42,7 @@ $sql_5 = "UPDATE customers set address='".$_SESSION['customer']['address']."' wh
 $sql_6 = "UPDATE customers set postalCode='".$_SESSION['customer']['zip']."' where id =".$_SESSION['member'];
 $sql_7 = "UPDATE customers set phone='".$_SESSION['customer']['phone']."' where id =".$_SESSION['member'];
 
-echo $sql_1;
-echo $sql_2;
-echo $sql_3;
-echo $sql_4;
-echo $sql_5;
-echo $sql_6;
-echo $sql_7;
+
 
 if (!mysqli_query($conn, $sql_1)) 
 {

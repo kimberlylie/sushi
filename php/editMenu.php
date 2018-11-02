@@ -28,7 +28,7 @@
                  {
                      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                  }
-                 echo $sql_1;
+
                 echo "<script type='text/javascript'>
                 window.location.href='/sushi/adminMenu.php'; 
                 </script>"; 

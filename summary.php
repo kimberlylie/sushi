@@ -13,7 +13,15 @@ if (!isset($_SESSION['cart']))
 $_SESSION['cart'] = array();
 }
 ?>  
-
+<?php
+if(!$_SESSION['paid'])
+{
+    $message = "Payment Invalid";
+    echo "<script type='text/javascript'>alert('$message');
+   window.location.href='/sushi/menu.php'; 
+   </script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -261,5 +269,6 @@ $_SESSION['cart'] = array();
         unset($_SESSION['cart']);
         unset($_SESSION['quantity']);
         unset($_SESSION['customer']);
+        unset($_SESSION['paid']);
     ?>
 </html>
