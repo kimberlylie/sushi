@@ -40,7 +40,7 @@
                     <h2 style="text-align: left; margin-left: 100px; margin-bottom: 40px;">transactions log</h2>
                     <div style="text-align: left; margin-left: 100px; margin-bottom: 40px;">
                         <form action="adminReports.php" method="post">
-                            <label style="display: inline-block;">date : </label><input type="date" class="datepicker" id="date" name="date" style="display: inline-block; margin-left: 30px; width: 150px;">
+                            <label style="display: inline-block;">date : </label><input type="date" class="datepicker" id="date" name="date" style="display: inline-block; margin-left: 30px;">
                         </form>
                     </div>
                     
