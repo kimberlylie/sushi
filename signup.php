@@ -67,7 +67,7 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td><p  style="text-align: left;" id="message"></p></td>
+                                <td><p  style="text-align: left; margin-left: 30px;" id="message"></p></td>
                             </tr>
                             <tr>
                                 <td colspan="3"><input type="submit" class="submit" value="SIGN UP" style="width: 99%; margin-left: 0px; margin-top: 60px; text-align: center;"></td>
