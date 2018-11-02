@@ -36,9 +36,11 @@
             <div id="landing-contents" style="height: 700px">
                 <!--<div id="landing-login">-->
                     <!--<img src="./assets/login/logo.png" style="margin-top: 60px;"><hr>-->
-                    <h2 style="padding-top: 60px;">Sign up</h2>
-                    <table id="signup-table" style="margin-left: 700px;">
+                    <table id="signup-table" class="table-center2">
                         <form action="./php/addMember.php" method="post">
+                            <tr>
+                                <th colspan="3"><h2 style="padding-top: 60px; text-align: center;">Sign up</h2></th>
+                            </tr>
                             <tr>
                                 <td colspan="3"><p style="text-align: left;"><b>name</b></p><input type="text" name="firstName" class="input-text" id="firstName" placeholder="John Doe" onchange="checkFirstName();" style="width: 100%;" required></td> 
                             </tr>
