@@ -39,7 +39,11 @@ echo "this".mysqli_num_rows($result)."result";
 
 if (mysqli_num_rows($result)>0)
 {
-    echo "member exist";
+
+        $message = "your email has been registered";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='/sushi/signup.php'; 
+        </script>"; 
 }
 
 else
@@ -62,9 +66,25 @@ else
             $result =mysqli_query($conn, $sql_3);
             $_SESSION['member'] = $customerId;
 
-            echo "<script type='text/javascript'>
-            window.location.href='/sushi/user.php'; 
-            </script>"; 
+            if ($result) { 
+    
+                $sql_4 = "SELECT ID AS LastID FROM `customers` WHERE ID = @@Identity";
+                $result = mysqli_query($conn, $sql_4);
+                echo$sql_4;
+                if (mysqli_num_rows($result) > 0) {
+                    while($row = mysqli_fetch_assoc($result)) 
+                    {
+                        
+                        $_SESSION['member_ID'] =$row['LastID'];
+                    }
+                
+                    echo "<script type='text/javascript'>
+                    window.location.href='/sushi/user.php'; 
+                    </script>"; 
+        
+                }
+            } 
+
 
         }
     } 

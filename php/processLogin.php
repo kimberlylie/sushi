@@ -29,13 +29,14 @@ if ($row = mysqli_num_rows($result)>0)
     while($row = mysqli_fetch_assoc($result)) {
     $dbPassword=$row['password'];
     $customerId=$row['customer_ID'];
+    $memberId=$row['id'];
     }
 
     echo "test".$password."  ".$dbPassword."test";
     if($password==$dbPassword)
     {
         $_SESSION['member'] = $customerId;
-
+        $_SESSION['member_ID'] = $memberId;
         echo "<script type='text/javascript'>
         window.location.href='/sushi/user.php'; 
         </script>"; 
