@@ -90,6 +90,7 @@ if (isset($_SESSION['member']))
             </section>
             
             <div id="user-main">
+                <div style="float: right; margin-right: 87px; margin-top: 76px;"><a id="cart" href="logout.php"><img src="assets/nav/logout-icon2.jpg" width="50px" height="50px"></a></div>
                 <div id="index-review" style="height: 80px;">
                     <h1>Hello, [Name] !</h1>
                 </div>
