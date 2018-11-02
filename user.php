@@ -123,7 +123,7 @@ if (isset($_SESSION['member']))
                                 <td>'.$i.'</td>
                                 <td>'.$row['date'].'</td>
                                 <td>'.$row['price'].'</td>
-                                <td><form action="viewSummary.php" method="post"><input type="submit" class="submit" style="width: 30px" value="SUBMIT"></form></td>
+                                <td><form action="viewSummary.php" method="post"><input type="submit" class="submit" style="width: 60px" value="SUBMIT"></form></td>
                                 </tr>
                                 ';
                             }
