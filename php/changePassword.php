@@ -34,6 +34,10 @@ if ($row = mysqli_num_rows($result)>0)
     {
         $sql_1 = "UPDATE member set password='".$newpassword."' where id =".$_SESSION['member_ID'];
         $result = mysqli_query($conn, $sql);
+        $message = "password change success";
+        echo "<script type='text/javascript'>alert('$message');
+        window.location.href='/sushi/user.php'; 
+        </script>"; 
 
     }
     else
