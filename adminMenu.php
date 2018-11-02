@@ -38,7 +38,7 @@
             </section>
         
             <div class="cart-main">
-                <div id="cart-table">
+                <!--<div id="cart-table">-->
             
                 
                 <table id="cart-details">
@@ -80,9 +80,9 @@
                         </tr>
                     </tbody>
                 </table>
-                </div>
+                <!--</div>-->
 
-                <div id="order-summary" style="text-align: left;">
+                <!--<div id="order-summary" style="text-align: left;">
                     <h2 style="text-align: left; padding-top: 40px;">insert item</h2>
                     <form action="insertItem.php" method="post">
                         <p style="margin-top: 10px;"><b>picture link</b></p><input type="text" class="input-text" style="width: 260px;" name="link" id="link">
@@ -91,7 +91,7 @@
                         <p style="margin-top: 10px;"><b>description</b></p><textarea name="description" style="width: 260px;" class="input-textarea" id="description" rows="4" cols="40" required></textarea><br>
                         <input type="submit" class="submit" value="INSERT" style="width: 260px; margin-top: 30px; text-align: center;"><br>
                     </form> 
-                </div>
+                </div>-->
             </div>
 
             <section>

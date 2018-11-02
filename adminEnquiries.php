@@ -38,17 +38,17 @@
             </section>
         
             <div class="cart-main">
-                <div id="cart-table">
-            
-                <h2 style="text-align: left; margin-left: 40px; padding-top: 40px;">enquiries list</h2>
                 <table id="cart-details">
                     <thead>
+                    <tr>
+                        <th colspan="3"><h2 style="text-align: left; padding-top: 40px;">enquiries list</h2></th>
+                        <th></th>
+                    </tr>
                     <tr>
                         <th>name</th>
                         <th>email</th>
                         <th>subject</th>
                         <th>message</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>                      
@@ -57,33 +57,22 @@
                             <td>[Email]</td>
                             <td>[Subject]</td>
                             <td>[Message]</td>
-                            <td>[reply]</td>
                         </tr>
                         <tr>
                             <td>[Name]</td>
                             <td>[Email]</td>
                             <td>[Subject]</td>
                             <td>[Message]</td>
-                            <td>[reply]</td>
                         </tr>
                         <tr>
                             <td>[Name]</td>
                             <td>[Email]</td>
                             <td>[Subject]</td>
                             <td>[Message]</td>
-                            <td>[reply]</td>
                         </tr>
                     </tbody>
                 </table>
-                </div>
 
-                <div id="order-summary" style="text-align: left; padding-top: 40px; margin-top: 60px;">
-                    <form action="replyMessage.php" method="post">
-                        <p style="margin-top: 10px;"><b>to: </b>[email]</p>
-                        <p style="margin-top: 10px;"><b>message</b></p><textarea name="description" style="width: 260px;" class="input-textarea" id="description" rows="10" cols="40" required></textarea><br>
-                        <input type="submit" class="submit" value="SEND" style="width: 260px; margin-top: 30px; text-align: center;"><br>
-                    </form> 
-                </div>
             </div>
 
             <section>
