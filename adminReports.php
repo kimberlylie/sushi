@@ -37,32 +37,38 @@
             
             <div id="admin-main">
                 <div style="width: 80%; height: 500px; padding-top: 20px; display: inline-block; float: left;">
-                    <h2 style="text-align: left; margin-left: 100px; margin-bottom: 40px;">daily sales report</h2>
-                    <h3 style="text-align: left; margin-left: 100px; margin-bottom: 40px;"><i>[today's date]</i></h2>
+                    <h2 style="text-align: left; margin-left: 100px; margin-bottom: 40px;">transactions log</h2>
+                    <div style="text-align: left; margin-left: 100px; margin-bottom: 40px;">
+                        <form action="adminReports.php" method="post">
+                            <label style="display: inline-block;">date : </label><input type="date" class="datepicker" id="date" name="date" style="display: inline-block; margin-left: 30px; width: 150px;">
+                        </form>
+                    </div>
+                    
+
                     <table id="history-table" style="width: 75%">
                         <thead>
                             <tr>
-                                <th>category</th>
-                                <th>quantity</th>
-                                <th>sales amount</th>
-                                <th>tax</th>
-                                <th>total</th>
+                                <th>customer ID</th>
+                                <th>address</th>
+                                <th>postal code</th>
+                                <th>revenue</th>
+                                <th>details</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>maki</td>
-                                <td>6</td>
-                                <td>190</td>
-                                <td>13.3</td>
+                                <td>1</td>
+                                <td>Nanyang Avenue</td>
+                                <td>789876</td>
                                 <td>203.3</td>
+                                <td><a href="./viewSummary.php" class="submit" style="width: 30px">VIEW</a></td>
                             </tr>
                             <tr>
-                                <td>gunkan</td>
-                                <td>8</td>
-                                <td>$190</td>
-                                <td>13.3</td>
-                                <td>203.3</td>
+                                <td>2</td>
+                                <td>Orchard Avenue</td>
+                                <td>234567</td>
+                                <td>24.9</td>
+                                <td><a href="./viewSummary.php" class="submit" style="width: 30px">VIEW</a></td>
                             </tr>
                         </tbody>
                     </table>
