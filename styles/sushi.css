@@ -8,6 +8,14 @@ body {
 	overflow-x: hidden;
 }
 
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('OpenSans-Regular.ttf') format('truetype');
+}
+
 .header {
 	/*column-count: 3;*/
 	position: fixed;
