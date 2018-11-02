@@ -72,7 +72,6 @@ if (isset($_SESSION['member']))
             </section>
         
             <div class="contact-main">
-
                 <div id="contact-details">
                     <h2>Map</h2>
                     <img src="./assets/contact/map.jpg" width="200px" height="200px"><br><br>
