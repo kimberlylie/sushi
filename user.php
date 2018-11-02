@@ -105,18 +105,30 @@ if (isset($_SESSION['member']))
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>27 Oct 2018, 12:45</td>
-                                <td>$190</td>
+                        <?php
+                        $sql_1 = "SELECT * FROM transaction WHERE customer_ID = ".$_SESSION['member'];
+                        echo $sql_1;
+                        $result = mysqli_query($conn, $sql_1);
+                        echo "test".mysqli_num_rows($result)."test";
+
+                        if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            $i=1;
+                            while($row = mysqli_fetch_assoc($result)) {
+
+                                echo
+                                '
+                                <tr>
+                                <td>'.$i.'</td>
+                                <td>'.$row['date'].'</td>
+                                <td>'.$row['price'].'</td>
                                 <td><a href="./viewSummary.php" class="submit" style="width: 30px">VIEW</a></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>28 Oct 2018, 01:17</td>
-                                <td>$190</td>
-                                <td><a href="./viewSummary.php" class="submit" style="width: 30px">VIEW</a></td>
-                            </tr>
+                                </tr>
+                                ';
+                            }
+                        }
+                        ?>
+
                         </tbody>
                     </table>
                 </div>
