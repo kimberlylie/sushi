@@ -33,17 +33,31 @@
                 </div>
             </section>
             <div id="landing-contents">
-                <!--<div id="landing-image"><img src="./assets/login/cover2.jpg"></div>-->
-                <!--<div id="landing-login">-->
-                    <!--<img src="./assets/login/logo.png"><hr>-->
-                    <h2 style="padding-top: 70px;">Login</h2>
+                <table class="table-center">
+                    <tr>
+                        <th><h2 style="padding-top: 70px;">Login</h2></th>
+                    </tr>
                     <form action="./php/processLogin.php" method="post">
-                        <p style="margin-top: 30px; text-align: left; margin-left: 835px;"><b>Email</b></p><input type="email" class="input-text" name="email" id="email" style="margin-left: 835px;">
-                        <p style="text-align: left; margin-left: 835px;"><b>Password</b></p><input type="password" class="input-text" name="password" id="password" style="margin-left: 835px;">
-                        <input type="submit" class="submit" value="LOG IN" style="margin-top: 50px; text-align: center;"><br>
-                    </form> 
-                    <a href="./signup.php" class="back-button" style="margin-top: 15px; width: 220px;">SIGN UP</a>    
-                <!--</div>-->
+                    <tr>
+                        <td><p style="margin-top: 30px; text-align: left;"><b>Email</b></p></td>
+                    </tr>
+                    <tr>
+                        <td><input type="email" class="input-text" name="email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td><p style="text-align: left;"><b>Password</b></p></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" class="input-text" name="password" id="password"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" class="submit" value="LOG IN" style="margin-top: 50px; text-align: center;"><br></td>
+                    </tr>
+                    <tr>
+                    <td><a href="./signup.php" class="back-button" style="margin-top: 15px; width: 220px;">SIGN UP</a></td>   
+                    </tr>
+                    </form>
+                </table>
             </div>
             <section>
             <div class="footer">

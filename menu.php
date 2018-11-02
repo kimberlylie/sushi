@@ -51,7 +51,7 @@ $_SESSION['cart'] = array();
             <div id="menu-content">
                 <div id="menu-nav-container">
                     <ul>
-                        <li><a href="#maki">maki</a></li>
+                        <li style="margin-left:30px;"><a href="#maki">maki</a></li>
                         <li><a href="#nigiri">nigiri</a></li>
                         <li><a href="#sets">sets</a></li> 
                         <li><a href="#don">don</a></li> 
