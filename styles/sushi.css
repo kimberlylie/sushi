@@ -586,7 +586,7 @@ nav ul li a:hover {
 	font-size: 15px;
 }
 
-#link-button, .input-text, .input-textarea:focus {
+#link-button, .datepicker, .input-text, .input-textarea:focus {
     outline: none;
 }
 
@@ -857,13 +857,36 @@ input {
 	 height: 500px;
 }
 
+[type="date"] {
+  background:#f5f4f0 ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
 .datepicker {
+  border: 1px solid black;
+  border-radius: 0px;
+  background: #f5f4f0 url("./icon-select.jpg") no-repeat 95% 50%;
+  padding: 4px 8px;
+  font-size: 14px;
+  width: 150px;
+}
+
+.go {
+    background-color: black; 
     border: 1px solid black;
-    border-radius: 0;
-    overflow: hidden;
-	background: #F5F4F0;
-	width: 150px;
-	display: block;
+    color: white;
+    padding: 6px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+	margin-left: 10px;
+	width: 60px;
+	cursor: pointer;
 }
 
 /* Styles for footer */

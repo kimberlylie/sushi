@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
         <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <script type="text/javascript" src="./scripts/adminReports.js"></script>
     </head>
 
     <body>   
@@ -37,16 +38,25 @@
             
             <div id="admin-main">
                 <div style="width: 80%; height: 500px; padding-top: 20px; display: inline-block; float: left;">
-                    <h2 style="text-align: left; margin-left: 100px; margin-bottom: 40px;">transactions log</h2>
-                    <div style="text-align: left; margin-left: 100px; margin-bottom: 40px;">
-                        <form action="adminReports.php" method="post">
-                            <label style="display: inline-block;">date : </label><input type="date" class="datepicker" id="date" name="date" style="display: inline-block; margin-left: 30px;">
-                        </form>
-                    </div>
                     
-
                     <table id="history-table" style="width: 75%">
                         <thead>
+                            <tr>
+                                <th colspan="3"><h2 style="text-align: left;">transactions log</h2></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr style="margin-bottom: 30px;"> 
+                                <form action="adminReports.php" method="post">
+                                    <th colspan="2">
+                                        <label style="display: inline-block;">date : </label>
+                                        <input type="date" class="datepicker" id="date" name="date" style="display: inline-block; margin-left: 30px;" onchange="updateDate();">
+                                        <input type="submit" class="go" value="GO" id="go" style="display:none">
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                </form>
+                            </tr>
                             <tr>
                                 <th>customer ID</th>
                                 <th>address</th>

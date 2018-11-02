@@ -55,9 +55,14 @@ $_SESSION['cart'] = array();
         
             <div class="cart-main">
                 <div id="cart-table">
-                <h2 style="text-align: left; margin-left: 230px; padding-top: 40px;">shopping cart</h2>
+                
                 <table id="cart-details">
                     <thead>
+                    <tr>
+                        <th colspan="4"><h2 style="text-align: left; padding-top: 40px;">shopping cart</h2></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                     <tr>
                         <th></th>
                         <th>Item</th>
