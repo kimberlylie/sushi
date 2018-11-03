@@ -241,6 +241,13 @@ $_SESSION['cart'] = array();
                             </script>";
                              
                         }
+
+                        if($_SESSION['customer'] == array('firstName'=>'','email'=>'','phone'=>'','address'=>'','zip'=>'','notes'=>''))
+                        {
+                            echo "<script type='text/javascript'>
+                            window.location.href='./checkout.php'; 
+                            </script>";
+                        }
                         ?>
                     </div>
                     <?php
