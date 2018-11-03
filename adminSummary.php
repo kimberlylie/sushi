@@ -1,3 +1,14 @@
+<?php 
+session_start();
+?>
+<?php
+if (!isset($_SESSION['admin']))
+{
+    echo "<script type='text/javascript'>
+    window.location.href='./sushi/adminLogin.php'; 
+    </script>"; 
+}
+?>  
 <!DOCTYPE html>
 <?php
 $transactionId= $_POST["transactionID"];
