@@ -176,6 +176,9 @@ $_SESSION['cart'] = array();
                              
                         }
                         ?>
+                        <?php
+                        $_SESSION['allPrice']=$allPrice;
+                        ?>
                 <div id="order-summary">
                     <table id="summary-details">
                         <thead>

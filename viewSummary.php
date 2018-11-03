@@ -1,3 +1,13 @@
+<?php session_start(); ?>
+
+<?php
+if (!isset($_SESSION['member']))
+{
+    echo "<script type='text/javascript'>
+            window.location.href='./login.php'; 
+            </script>";
+}
+?>
 <!DOCTYPE html>
 <?php
 $transactionId= $_POST["transactionID"];

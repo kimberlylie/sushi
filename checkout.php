@@ -100,7 +100,7 @@ if (isset($_SESSION['member']))
                         </thead>
                         <tbody>
                             <?php
-                            $allPrice=$_POST['allPrice'];
+                            $allPrice=$_SESSION['allPrice'];
                             echo
                             '<form action="./php/submitOrder.php" method="post">
 
