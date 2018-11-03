@@ -236,9 +236,8 @@ $_SESSION['cart'] = array();
                         <?php
                         if ($allPrice==0)
                         {
-                            $message = "Cart is empty";
-                            echo "<script type='text/javascript'>alert('$message');
-                            window.location.href='./menu.php'; 
+                            echo "<script type='text/javascript'>
+                            window.location.href='./cart.php'; 
                             </script>";
                              
                         }
