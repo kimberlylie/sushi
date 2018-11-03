@@ -366,7 +366,7 @@ $_SESSION['cart'] = array();
                         <div id="modal-item-description"><h4>Description</h4></div>
                         
                         <hr>
-                        <h4>Quantity: </h4><input type="number" class="input-number" name="quantity" value=0 id="quantity" onchange="checkQuantity()">
+                        <h4>Quantity: </h4><input type="number" class="input-number" name="quantity" value=1 id="quantity" onchange="checkQuantity()">
                         <input type="number" value=0 id="itemId" name="itemId"><br>
                         <input type="submit" id="submit" class="submit" value="ADD TO CART">   
                     </div>
