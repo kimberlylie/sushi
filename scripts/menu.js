@@ -20,10 +20,10 @@ function modalFunc(name,price,image,item,description) {
 
 function checkQuantity()
 {
-    if (document.getElementById("quantity").value < 0)
+    if (document.getElementById("quantity").value < 1)
     {
-    alert ("Quantity cannot be less than 0")
-    document.getElementById("quantity").value = 0;
+    alert ("Quantity cannot be less than 1")
+    document.getElementById("quantity").value = 1;
     }
 }
 
