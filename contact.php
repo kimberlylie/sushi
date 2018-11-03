@@ -98,7 +98,7 @@ if (isset($_SESSION['member']))
                         <div>
                             <div id="label">Name</div>
                             <input type="text" name="name" class="input-text" id="name" onchange="checkName()" value="
-                                <?php echo $name                                
+                                <?php echo $name;                                
                                  if (isset($_SESSION['member']))
                                     {
                                         echo ' onfocus="this.blur();"';
@@ -108,7 +108,7 @@ if (isset($_SESSION['member']))
                         <div>
                             <div id="label">E-mail</div>
                             <input type="email" name="email" class="input-text" id="email" onchange="checkEmail()" value="
-                            <?php echo $email                                
+                            <?php echo $email;                                
                                  if (isset($_SESSION['member']))
                                     {
                                         echo ' onfocus="this.blur();"';
