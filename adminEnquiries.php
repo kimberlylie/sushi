@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['admin']))
 {
     echo "<script type='text/javascript'>
-    window.location.href='/sushi/adminLogin.php'; 
+    window.location.href='./sushi/adminLogin.php'; 
     </script>"; 
 }
 ?>  
@@ -59,10 +59,10 @@ if (isset($_POST['type']))
             </section>
         
             <div class="cart-main">
-                <table id="cart-details">
+                <table id="history-table" style="width: 80%;">
                     <thead>
                     <tr>
-                        <th colspan="3"><h2 style="text-align: left; padding-top: 40px;">enquiries list</h2></th>
+                        <th colspan="3"><h2 style="text-align: left;">enquiries list</h2></th>
                         <th></th>
                     </tr>
                     
@@ -73,12 +73,14 @@ if (isset($_POST['type']))
                                     <th colspan="3">
                                     <form action="adminEnquiries.php" method="post">
                                         <label style="display: inline-block;">Type : </label>
-                                        <select name="type" id="type" onchange="updateDate('go');" >
-                                        <option value=""<?php if ($_SESSION['enquiriesType']==""){echo " selected ";}?>>All</option>
-                                        <option value="feedback"<?php if ($_SESSION['enquiriesType']=="feedback"){echo " selected ";}?>>feedback</option>
-                                        <option value="catering"<?php if ($_SESSION['enquiriesType']=="catering"){echo " selected ";}?>>catering</option>
-                                        <option value="others"<?php if ($_SESSION['enquiriesType']=="others"){echo " selected ";}?>>others</option>
-                                        </select>
+                                        <div class="select-style2" style="display: inline-block; margin-left: 30px; margin-bottom: 20px;">
+                                            <select name="type" id="type" onchange="updateDate('go');" >
+                                            <option value=""<?php if ($_SESSION['enquiriesType']==""){echo " selected ";}?>>All</option>
+                                            <option value="feedback"<?php if ($_SESSION['enquiriesType']=="feedback"){echo " selected ";}?>>feedback</option>
+                                            <option value="catering"<?php if ($_SESSION['enquiriesType']=="catering"){echo " selected ";}?>>catering</option>
+                                            <option value="others"<?php if ($_SESSION['enquiriesType']=="others"){echo " selected ";}?>>others</option>
+                                            </select>
+                                        </div>
                                         <input type="submit" class="go" value="GO" id="go" style="display:none">
                                         </form>
                                     </th>

@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['admin']))
 {
     echo "<script type='text/javascript'>
-    window.location.href='/sushi/adminLogin.php'; 
+    window.location.href='./sushi/adminLogin.php'; 
     </script>"; 
 }
 ?>  
@@ -34,7 +34,14 @@ if (isset($_POST['date']))
         <link rel="icon" href="./assets/icon/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
-        <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <style>
+            @font-face {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: url('OpenSans-Regular.ttf') format('truetype');
+            }
+        </style>
         <script type="text/javascript" src="./scripts/adminReports.js"></script>
     </head>
 
@@ -64,8 +71,8 @@ if (isset($_POST['date']))
             </div>
             </section>
             
-            <div id="admin-main">
-                <div style="width: 80%; height: 500px; padding-top: 20px; display: inline-block; float: left;">
+            <div id="admin-main" style="height: 1000px;">
+                <div style="width: 80%; height: 800px; padding-top: 20px; display: inline-block; float: left;">
                     
                     <table id="history-table" style="width: 75%">
                         <thead>

@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['admin']))
 {
     echo "<script type='text/javascript'>
-    window.location.href='/sushi/adminLogin.php'; 
+    window.location.href='./sushi/adminLogin.php'; 
     </script>"; 
 }
 ?>  
@@ -29,7 +29,14 @@ if (isset($_POST['type']))
         <link rel="icon" href="./assets/icon/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
-        <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <style>
+            @font-face {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: url('OpenSans-Regular.ttf') format('truetype');
+            }
+        </style>
         
     </head>
 
@@ -63,10 +70,10 @@ if (isset($_POST['type']))
                 <!--<div id="cart-table">-->
             
                 
-                <table id="history-table" style="width: 75%">
+                <table id="history-table" style="width: 80%;">
                         <thead>
                             <tr>
-                                <th colspan="4"><h2 style="text-align: left;">transactions log</h2></th>
+                                <th colspan="4"><h2 style="text-align: left;">menu items</h2></th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -75,15 +82,17 @@ if (isset($_POST['type']))
                                 <script type="text/javascript" src="scripts/adminReports.js"></script>
                                     <th colspan="3">
                                     <form action="adminMenu.php" method="post">
-                                        <label style="display: inline-block;">Type : </label>
-                                        <select name="type" id="type" onchange="updateDate('go');" >
-                                        <option value=""<?php if ($_SESSION['menuType']==""){echo " selected ";}?>>All</option>
-                                        <option value="Gunkan"<?php if ($_SESSION['menuType']=="Gunkan"){echo " selected ";}?>>Gunkan</option>
-                                        <option value="Maki"<?php if ($_SESSION['menuType']=="Maki"){echo " selected ";}?>>Maki</option>
-                                        <option value="Sets"<?php if ($_SESSION['menuType']=="Sets"){echo " selected ";}?>>Sets</option>
-                                        <option value="Nigiri"<?php if ($_SESSION['menuType']=="Nigiri"){echo " selected ";}?>>Nigiri</option>
-                                        <option value="Don"<?php if ($_SESSION['menuType']=="Don"){echo " selected ";}?>>Don</option>
-                                        </select>
+                                        <label style="display: inline-block; margin-right: 30px; margin-bottom: 20px;">Type : </label>
+                                        <div class="select-style2" style="display: inline-block;">
+                                            <select name="type" id="type" onchange="updateDate('go');" >
+                                            <option value=""<?php if ($_SESSION['menuType']==""){echo " selected ";}?>>All</option>
+                                            <option value="Gunkan"<?php if ($_SESSION['menuType']=="Gunkan"){echo " selected ";}?>>Gunkan</option>
+                                            <option value="Maki"<?php if ($_SESSION['menuType']=="Maki"){echo " selected ";}?>>Maki</option>
+                                            <option value="Sets"<?php if ($_SESSION['menuType']=="Sets"){echo " selected ";}?>>Sets</option>
+                                            <option value="Nigiri"<?php if ($_SESSION['menuType']=="Nigiri"){echo " selected ";}?>>Nigiri</option>
+                                            <option value="Don"<?php if ($_SESSION['menuType']=="Don"){echo " selected ";}?>>Don</option>
+                                            </select>
+                                        </div>
                                         <input type="submit" class="go" value="GO" id="go" style="display:none">
                                         </form>
                                     </th>
@@ -94,9 +103,9 @@ if (isset($_POST['type']))
                             </tr>
                             <tr>
                                 <th></th>
-                                <th>name</th>
+                                <th> item name</th>
                                 <th>price</th>
-                                <th>detail</th>
+                                <th>details</th>
                                 <th>availability</th>
                                 <th></th>
                             </tr>
@@ -129,21 +138,23 @@ if (isset($_POST['type']))
                                         <tr>
                                         <td><img src="'.$row['imgURL'].'"></td>
                                         <td>'.$row['name'].'</td>
-                                        <td><input type="number" id="price'.$row['id'].'" name="price'.$row['id'].'" style=" text-align:center" form="form'.$row['id'].'"  value='.$row['price'].' onchange="updateDate(\'go'.$row['id'].'\');"></td>
-                                        <td><textarea id="description'.$row['id'].'" name="description'.$row['id'].'" style=" text-align:center" form="form'.$row['id'].'" onchange="updateDate(\'go'.$row['id'].'\');"> '.$row['description'].'</textarea></td>
+                                        <td><input class="input-number" type="number" align="left" id="price'.$row['id'].'" name="price'.$row['id'].'" style=" text-align:left; background-color: #f4f5f0; margin-left: 0px;    " form="form'.$row['id'].'"  value='.$row['price'].' onchange="updateDate(\'go'.$row['id'].'\');"></td>
+                                        <td style="padding-top: 20px;"><textarea class="input-textarea" id="description'.$row['id'].'" name="description'.$row['id'].'" style=" text-align:left;" form="form'.$row['id'].'" onchange="updateDate(\'go'.$row['id'].'\');"> '.$row['description'].'</textarea></td>
 
                                         
                                         <td>
+                                        <div class="select-style2">
                                         <select name="availability'.$row['id'].'" id="availability'.$row['id'].'" onchange="updateDate(\'go'.$row['id'].'\');"  form="form'.$row['id'].'" required >
                                         <option value="1"'; if ($row['availability']==1){echo " selected ";}echo'>Available</option>
                                         <option value="0"'; if ($row['availability']==0){echo " selected ";}echo'>Unavailable</option>
                                         </select>
+                                        </div>
                                         </td>
                                         
                                         <td>
                                         <form  name="form'.$row['id'].'" id="form'.$row['id'].'" action="./php/editMenu.php" method="post">
                                         <input type="number" id="menuID" name="menuID" style="display: none" value='.$row['id'].'>
-                                        <input type="submit" class="go'.$row['id'].'" value="update" id="go'.$row['id'].'" style="display:none">
+                                        <input type="submit" class="update" value="UPDATE" id="go'.$row['id'].'" style="display:none">
                                         </form>
                                         </td>
 

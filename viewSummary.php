@@ -9,23 +9,46 @@ $transactionId= $_POST["transactionID"];
         <link rel="icon" href="./assets/icon/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
-        <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <style>
+            @font-face {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: url('OpenSans-Regular.ttf') format('truetype');
+            }
+        </style>
     </head>
 
     <body>   
 	    <div class="container">
-        
-            <div class="confirmation-main">
+            <section>
+            <div class="header">
+                    
+                    <div class="header-box1"><img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px"></div>
+                    <div class="header-box2">
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="index.php"><b>home</b></a></li>
+                                <li><a href="menu.php"><b>menu</b></a></li>
+                                <li><a href="contact.php"><b>contact</b></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="header-box3">
+                        <nav class="main-nav">
+                            <a id="cart" href="user.php"><img src="assets/nav/user-icon.jpg" width="50px" height="50px"></a>
+                            <a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>
+                        </nav>
+                    </div>  
+            </div>
+            </section>
+            <div class="confirmation-main" width: 100%;>
 
-                <div id="cart-summary"> 
-                    <div id="cart-table" style="margin-top: 30px; float: none;">
+                <div id="cart-summary" display:"inline-block;"> 
+                    <div id="cart-table" style="margin-top: 100px; width: 70%; margin-left: -150px;">
                     <table id="cart-details">
                         <thead>
-                        <tr>
-                            <th><a href="./user.php" class="back-button" style="width: 100px;">BACK</a></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
                         <tr>
                             <th></th>
                             <th>Item</th>
@@ -83,17 +106,12 @@ $transactionId= $_POST["transactionID"];
                     </table>
                     </div>
 
-                    <div id="order-summary2" style="float: none; margin-left: 550px;">
-                        <table id="summary-details">
-                            <thead>
-                                <th style="border-bottom: 1px solid #ddd;"></th>
-                                <th style="border-bottom: 1px solid #ddd;"></th>
-                                <th style="border-bottom: 1px solid #ddd;"></th>
-                                <th style="border-bottom: 1px solid #ddd;"></th>
-                            </thead>
+                    <div id="payment-made" style="display: inline-block; width: 30%;">
+                        <table id="summary-details" class="table-center" style="text-align: left; margin-top: 80px;">
                             <tbody>
+                                <tr><td><h1>payment : </h1></td></tr>
                                 <tr>
-                                    <td style="text-align: left; margin-right: 190px; margin-top: 50px;"><h3>payment: 
+                                    <td><h1>
                                     <?php 
                                     $sql_2 = "SELECT * FROM transaction WHERE id=".$transactionId;
                                     $result_2 = mysqli_query($conn, $sql_2);
@@ -105,10 +123,10 @@ $transactionId= $_POST["transactionID"];
                                            echo $row_transaction['price'];
                                        }
                                     }
-                                    ?></h3></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td style="text-align: left; margin-top: 50px;"><h3></h3></td>
+                                    ?></h1></td>     
+                                </tr>
+                                <tr style="margin-top: 50px;">
+                                    <td><a href="./user.php" class="back-button" style="width: 200px;">BACK</a></td>
                                 </tr>
                             </tbody>
                         </table>

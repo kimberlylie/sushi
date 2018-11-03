@@ -9,12 +9,7 @@ body {
 }
 
 /* open-sans-regular - latin */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('OpenSans-Regular.ttf') format('truetype');
-}
+
 
 .header {
 	/*column-count: 3;*/
@@ -875,6 +870,10 @@ input {
   opacity: 0;
 }
 
+#history-table img{
+	width: 40%;
+}
+
 .datepicker {
   border: 1px solid black;
   border-radius: 0px;
@@ -896,6 +895,47 @@ input {
 	width: 60px;
 	cursor: pointer;
 }
+
+.update {
+    background-color: black; 
+    border: 1px solid black;
+    color: white;
+    padding: 6px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+	margin-left: 10px;
+	width: 100px;
+	cursor: pointer;
+}
+
+.select-style2 {
+    border: 1px solid black;
+    border-radius: 0;
+    /*overflow: hidden;*/
+	background: #F5F4F0 url("./icon-select.jpg") no-repeat 95% 50%;
+	width: 150px;
+	display: block;
+	
+}
+
+.select-style2 select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+	text-align: center;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.select-style2 select:focus {
+    outline: none;
+}
+
 
 /* Styles for footer */
 .footer {

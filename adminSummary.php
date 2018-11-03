@@ -14,18 +14,35 @@ $transactionId= $_POST["transactionID"];
 
     <body>   
 	    <div class="container">
-        
+            <section>
+            <div class="header">       
+                <div class="header-box1"><img src="assets/nav/sushi_logo.png" alt="logo" class="logo" width="150px" height="50px"></div>
+
+                <div class="header-box2">
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="adminReports.php"><b>reports</b></a></li>
+                            <li><a href="adminMenu.php"><b>menu</b></a></li>
+                            <li><a href="adminEnquiries.php"><b>enquiries</b></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="header-box3">
+                    <nav class="main-nav">
+                        <a id="cart" href="adminLogin.php"><img src="assets/nav/logout-icon.jpg" width="50px" height="50px" style="margin-top: 4px; margin-left: 50px;"></a>
+                        <!--<a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>-->
+                    </nav>
+                </div>          
+            </div>
+            </section>
+
             <div class="confirmation-main">
 
-                <div id="cart-summary"> 
-                    <div id="cart-table" style="margin-top: 30px; float: none;">
+                <div id="cart-summary" display:"inline-block;"> 
+                    <div id="cart-table" style="margin-top: 100px; width: 70%; margin-left: -150px;">
                     <table id="cart-details">
                         <thead>
-                        <tr>
-                            <th><a href="./adminReports.php" class="back-button" style="width: 100px;">BACK</a></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
                         <tr>
                             <th></th>
                             <th>Item</th>
@@ -83,17 +100,12 @@ $transactionId= $_POST["transactionID"];
                     </table>
                     </div>
 
-                    <div id="order-summary2" style="float: none; margin-left: 550px;">
-                        <table id="summary-details">
-                            <thead>
-                                <th style="border-bottom: 1px solid #ddd;"></th>
-                                <th style="border-bottom: 1px solid #ddd;"></th>
-                                <th style="border-bottom: 1px solid #ddd;"></th>
-                                <th style="border-bottom: 1px solid #ddd;"></th>
-                            </thead>
+                    <div id="payment-made" style="display: inline-block; width: 30%;">
+                        <table id="summary-details" class="table-center" style="text-align: left; margin-top: 80px;">
                             <tbody>
+                                <tr><td><h2>payment : </h2></td></tr>
                                 <tr>
-                                    <td style="text-align: left; margin-right: 190px; margin-top: 50px;"><h3>payment: 
+                                    <td><h2>
                                     <?php 
                                     $sql_2 = "SELECT * FROM transaction WHERE id=".$transactionId;
                                     $result_2 = mysqli_query($conn, $sql_2);
@@ -105,10 +117,10 @@ $transactionId= $_POST["transactionID"];
                                            echo $row_transaction['price'];
                                        }
                                     }
-                                    ?></h3></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td style="text-align: left; margin-top: 50px;"><h3></h3></td>
+                                    ?></h2></td>   
+                                </tr>
+                                <tr style="margin-top: 50px;">
+                                    <td><a href="./adminReports.php" class="back-button" style="width: 200px;">BACK</a></td>
                                 </tr>
                             </tbody>
                         </table>
