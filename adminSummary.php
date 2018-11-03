@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['admin']))
 {
     echo "<script type='text/javascript'>
-    window.location.href='./sushi/adminLogin.php'; 
+    window.location.href='./adminLogin.php'; 
     </script>"; 
 }
 ?>  
