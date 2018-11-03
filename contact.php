@@ -97,11 +97,23 @@ if (isset($_SESSION['member']))
 
                         <div>
                             <div id="label">Name</div>
-                            <input type="text" name="name" class="input-text" id="name" onchange="checkName()" value="<?php echo $name?>"required>
+                            <input type="text" name="name" class="input-text" id="name" onchange="checkName()" value="
+                                <?php echo $name                                
+                                 if (isset($_SESSION['member']))
+                                    {
+                                        echo ' onfocus="this.blur();"';
+                                    }
+                                ?>"required>
                         </div>
                         <div>
                             <div id="label">E-mail</div>
-                            <input type="email" name="email" class="input-text" id="email" onchange="checkEmail()" value="<?php echo $email?>"required>
+                            <input type="email" name="email" class="input-text" id="email" onchange="checkEmail()" value="
+                            <?php echo $email                                
+                                 if (isset($_SESSION['member']))
+                                    {
+                                        echo ' onfocus="this.blur();"';
+                                    }
+                                ?>"required>
                         </div>
 
                         <div id="label">Subject</div>
