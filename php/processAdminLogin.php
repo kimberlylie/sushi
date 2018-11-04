@@ -36,14 +36,14 @@ if ($row = mysqli_num_rows($result)>0)
     {
         $_SESSION['admin'] = $adminId;
         echo "<script type='text/javascript'>
-        window.location.href='./adminReports.php'; 
+        window.location.href='../adminReports.php'; 
         </script>"; 
     }
     else
     {
         $message = "wrong password fail";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='./adminLogin.php'; 
+        window.location.href='../adminLogin.php'; 
         </script>"; 
       
     }

@@ -42,7 +42,7 @@ if (mysqli_num_rows($result)>0)
 
         $message = "your email has been registered";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='./signup.php'; 
+        window.location.href='../signup.php'; 
         </script>"; 
 }
 
@@ -79,7 +79,7 @@ else
                     }
                 
                     echo "<script type='text/javascript'>
-                    window.location.href='./user.php'; 
+                    window.location.href='../user.php'; 
                     </script>"; 
         
                 }

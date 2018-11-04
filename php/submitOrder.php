@@ -4,7 +4,7 @@
                     {
                         echo 
                         "<script type='text/javascript'>
-                        window.location.href='./menu.php'; 
+                        window.location.href='../menu.php'; 
                         </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
                     }
                     ?>
@@ -13,7 +13,7 @@
                     {
                         echo 
                         "<script type='text/javascript'>
-                        window.location.href='./menu.php'; 
+                        window.location.href='../menu.php'; 
                         </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
                     }
                 ?>
@@ -24,7 +24,7 @@
                     {
                         echo 
                         "<script type='text/javascript'>
-                        window.location.href='./checkout.php'; 
+                        window.location.href='../checkout.php'; 
                         </script>"; //window.location.href='/~kimie/sushi/cart.php'; 
 
                     }

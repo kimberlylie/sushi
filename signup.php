@@ -58,10 +58,10 @@
                             </tr>
 
                             <tr>
-                                <td><p style="text-align: left;"><b>password</b></p><input type="password" name="password" class="input-text" id="password" onchange="checkPassword();"  style="width: 250px;" required></td>
+                                <td><p style="text-align: left;"><b>password</b></p><input type="password" name="password" class="input-text" id="password" onfocusout="checkPassword();"  style="width: 250px;" required></td>
                                 <td></td>
                                 <td>
-                                    <p style="text-align: left; margin-left: 30px;"><b>confirm password</b></p><input type="password" name="cpassword" class="input-text" id="cpassword" onchange="checkPassword();" style="margin-left: 30px; width: 250px;" required> 
+                                    <p style="text-align: left; margin-left: 30px;"><b>confirm password</b></p><input type="password" name="cpassword" class="input-text" id="cpassword" onfocusout="checkPassword();" style="margin-left: 30px; width: 250px;" required> 
                                 </td>
                             </tr>
                             <tr>
@@ -70,7 +70,7 @@
                                 <td><p  style="text-align: left; margin-left: 30px;" id="message"></p></td>
                             </tr>
                             <tr>
-                                <td colspan="3"><input type="submit" class="submit" value="SIGN UP" style="width: 99%; margin-left: 0px; margin-top: 60px; text-align: center;"></td>
+                                <td colspan="3"><input type="submit" class="submit" id="signUp" name="signUp" value="SIGN UP" style="width: 99%; margin-left: 0px; margin-top: 60px; text-align: center;"></td>
                             </tr>  
                             <tr>
                                 <td colspan="3"><a href="./login.php" class="back-button" style="margin-left: 0px; margin-top: 15px; width: 495px;">LOG IN</a></td>
