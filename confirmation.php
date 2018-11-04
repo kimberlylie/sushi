@@ -23,7 +23,14 @@ $_SESSION['cart'] = array();
         <link rel="icon" href="./assets/icon/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
-        <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <style>
+            @font-face {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: url('OpenSans-Regular.ttf') format('truetype');
+            }
+        </style>
         <script type="text/javascript" src="./scripts/confirmation.js"> </script>
     </head>
 
@@ -113,14 +120,7 @@ $_SESSION['cart'] = array();
                                     
                                     if ($_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]>0)
                                     {   
-                    /*                  $rowId ='ItemWithId' .$_SESSION['cart'][$i][0];
-                                        $quantityId = 'quantity'.$rowId;
-                                        echo "<tr id='".$rowId."'>";
-                                        echo "<td>" .$_SESSION['cart'][$i][0]. "</td>";
-                                        echo '<td><input type="number" name="'.$quantityId.'" value='.$_SESSION['cart'][$i][1].' id="'.$quantityId.'" onchange="';
-                                        echo "checkQuantity('".$quantityId."','".$rowId."')";
-                                        echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;"></td>';
-                                        echo "</tr>"; */
+
                                         $sql = "SELECT * FROM menu where id=".array_keys($_SESSION['cart'])[$i];
                                         $result = mysqli_query($conn, $sql);
                                         $item=array();
@@ -137,8 +137,6 @@ $_SESSION['cart'] = array();
                                                 $deleteId ='delete'.$rowId;
                                                 $saveId ='save'.$rowId;
 
-                                                //echo'<form action="./php/saveChange.php" method="post">';
-
                                                 echo "<tr id='".$rowId."'>";
 
 
@@ -151,10 +149,7 @@ $_SESSION['cart'] = array();
                                                 echo "<td id='".$priceId."'>" .$row['price']. "</td>";  
 
                                                 echo "<td>" .$_SESSION['cart'][array_keys($_SESSION['cart'])[$i]]. "</td>";
-                                                //echo '<td><input type="number" class="input-number" style="background-color: #F5F4F0;" name="quantityId" value='.$_SESSION['quantity'][$i].' id="quantityId" onchange="';
-                                                //echo "updateCart('".$rowId."','".$priceId."','".$totalPriceId."','".$saveId."')";
-                                                //echo'" style="width:50px; margin-bottom: 30px; margin-top: 30px;">';
-                                                //echo'<input type="submit" class="update" value="UPDATE" id="'.$saveId.'" style="display:none">';
+
                                                 echo '</td>';
 
                                                 echo'</form>';
@@ -162,14 +157,10 @@ $_SESSION['cart'] = array();
                                                 $totalPrice = $row['price']*$_SESSION['cart'][array_keys($_SESSION['cart'])[$i]];
 
                                                 echo "<td class='td-center' id='".$totalPriceId."'>".$totalPrice."</td>";
-                                                //echo'<td class="td-center"><form action="./php/deleteCartEntry.php" method="post">';
 
                                                 echo "<input type='number' value=".array_keys($_SESSION['cart'])[$i]." id='itemNoId' name='itemNoId'";
                                                 echo 'style="display:none"';
                                                 echo" >";
-
-                                                //echo'<input type="submit" class="delete" value="X" id="'.$deleteId.'">
-                                                //</form></td>';
                                                 
                                                 echo "</tr>";
                                                 $allPrice = $allPrice +$totalPrice;
@@ -253,7 +244,6 @@ $_SESSION['cart'] = array();
                     <?php
                     $_SESSION['allPrice']=$allPrice + $gstPrice + 4;
                     ?>
-                    <!--Try using float instead of table-->
                     <div id="confirmation-buttons">
                     <table id="align-buttons">
                         <tbody>

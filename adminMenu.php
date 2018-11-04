@@ -60,15 +60,12 @@ if (isset($_POST['type']))
                     <div class="header-box3">
                         <nav class="main-nav">
                             <a id="cart" href="./php/adminLogout.php"><img src="assets/nav/logout-icon.jpg" width="50px" height="50px" style="margin-top: 4px; margin-left: 50px;"></a>
-                            <!--<a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>-->
                         </nav>
                     </div>  
             </div>
             </section>
         
-            <div class="cart-main">
-                <!--<div id="cart-table">-->
-            
+            <div class="cart-main">            
                 
                 <table id="history-table" style="width: 80%;">
                         <thead>
@@ -133,7 +130,6 @@ if (isset($_POST['type']))
 
                                 
                                 
-                                // <form action="./php/editMenu.php" method="post">
                                      echo'
                                         <tr>
                                         <td><img src="'.$row['imgURL'].'"></td>
@@ -159,7 +155,6 @@ if (isset($_POST['type']))
                                         </td>
 
                                         </tr>'
-                                        // </form>
                                 ;
             
                             }

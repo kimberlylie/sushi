@@ -29,7 +29,14 @@ $transactionId= $_POST["transactionID"];
         <link rel="icon" href="./assets/icon/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
-        <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <style>
+            @font-face {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: url('OpenSans-Regular.ttf') format('truetype');
+            }
+        </style>
     </head>
 
     <body>   
@@ -51,7 +58,6 @@ $transactionId= $_POST["transactionID"];
                 <div class="header-box3">
                     <nav class="main-nav">
                         <a id="cart" href="./php/adminLogout.php"><img src="assets/nav/logout-icon.jpg" width="50px" height="50px" style="margin-top: 4px; margin-left: 50px;"></a>
-                        <!--<a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>-->
                     </nav>
                 </div>          
             </div>

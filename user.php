@@ -59,7 +59,14 @@ if (isset($_SESSION['member']))
         <link rel="icon" href="./assets/icon/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
-        <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <style>
+            @font-face {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: url('OpenSans-Regular.ttf') format('truetype');
+            }
+        </style>
         <script type="text/javascript" src="./scripts/signup.js"></script>
     </head>
 
