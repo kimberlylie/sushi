@@ -91,7 +91,7 @@ else
         $_SESSION['paid']= True;
         $message = "Order has been sent!";
         echo "<script type='text/javascript'>alert('$message');";
-        echo "window.location.href='/sushi/summary.php';";
+        echo "window.location.href='../summary.php';";
         echo"</script>"; //window.location.href='/~kimie/sushi/contact.html';
     }
     else 

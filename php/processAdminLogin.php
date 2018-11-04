@@ -36,14 +36,14 @@ if ($row = mysqli_num_rows($result)>0)
     {
         $_SESSION['admin'] = $adminId;
         echo "<script type='text/javascript'>
-        window.location.href='/sushi/adminReports.php'; 
+        window.location.href='./adminReports.php'; 
         </script>"; 
     }
     else
     {
         $message = "wrong password fail";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/sushi/adminLogin.php'; 
+        window.location.href='./adminLogin.php'; 
         </script>"; 
       
     }
@@ -53,7 +53,7 @@ else
 {
     $message = "wrong username";
     echo "<script type='text/javascript'>alert('$message');
-    window.location.href='/sushi/adminLogin.php'; 
+    window.location.href='../adminLogin.php'; 
     </script>";
 
 }

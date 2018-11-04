@@ -35,7 +35,7 @@ if (!isset($_SESSION['cart']))
 {
     echo 
     "<script type='text/javascript'>
-   window.location.href='/sushi/menu.php'; 
+   window.location.href='./menu.php'; 
    </script>"; 
 }
 
@@ -54,7 +54,7 @@ $_SESSION['cart'][$itemId]= $quantity;
 echo $_SESSION['cart'][$itemId];
 
 echo "<script type='text/javascript'>
-window.location.href='/sushi/cart.php'; 
+window.location.href='../cart.php'; 
 </script>";
 
 ?>

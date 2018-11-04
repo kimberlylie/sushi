@@ -7,6 +7,6 @@
 
         
         echo "<script type='text/javascript'>
-        window.location.href='/sushi/adminLogin.php'; 
+        window.location.href='../adminLogin.php'; 
         </script>"; 
 ?>

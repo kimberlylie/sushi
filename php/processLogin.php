@@ -38,14 +38,14 @@ if ($row = mysqli_num_rows($result)>0)
         $_SESSION['member'] = $customerId;
         $_SESSION['member_ID'] = $memberId;
         echo "<script type='text/javascript'>
-        window.location.href='/sushi/user.php'; 
+        window.location.href='../user.php'; 
         </script>"; 
     }
     else
     {
         $message = "wrong password fail";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/sushi/login.php'; 
+        window.location.href='../login.php'; 
         </script>"; 
       
     }
@@ -55,7 +55,7 @@ else
 {
     $message = "wrong email";
     echo "<script type='text/javascript'>alert('$message');
-    window.location.href='/sushi/login.php'; 
+    window.location.href='../login.php'; 
     </script>";
 
 }

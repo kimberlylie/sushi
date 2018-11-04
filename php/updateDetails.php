@@ -74,7 +74,7 @@ if (!mysqli_query($conn, $sql_7))
 }
 
 echo "<script type='text/javascript'>
-window.location.href='/sushi/user.php'; 
+window.location.href='../user.php'; 
 </script>"; 
 
 ?>

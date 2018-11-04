@@ -18,7 +18,7 @@ if(!$_SESSION['paid'])
 {
     $message = "Payment Invalid";
     echo "<script type='text/javascript'>alert('$message');
-   window.location.href='/sushi/menu.php'; 
+   window.location.href='./menu.php'; 
    </script>";
 }
 ?>

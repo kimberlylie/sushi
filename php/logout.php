@@ -7,6 +7,6 @@
         unset($_SESSION['member_ID']);
         
         echo "<script type='text/javascript'>
-        window.location.href='/sushi/index.php'; 
+        window.location.href='../index.php'; 
         </script>"; 
     ?>

@@ -30,7 +30,7 @@
                  }
 
                 echo "<script type='text/javascript'>
-                window.location.href='/sushi/adminMenu.php'; 
+                window.location.href='../adminMenu.php'; 
                 </script>"; 
 
 

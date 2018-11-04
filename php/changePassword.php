@@ -36,7 +36,7 @@ if ($row = mysqli_num_rows($result)>0)
         $result = mysqli_query($conn, $sql);
         $message = "password change success";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/sushi/user.php'; 
+        window.location.href='../user.php'; 
         </script>"; 
 
     }
@@ -44,7 +44,7 @@ if ($row = mysqli_num_rows($result)>0)
     {
         $message = "wrong password fail";
         echo "<script type='text/javascript'>alert('$message');
-        window.location.href='/sushi/user.php'; 
+        window.location.href='../user.php'; 
         </script>"; 
       
     }
