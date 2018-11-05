@@ -107,7 +107,7 @@ if (isset($_POST['date']))
                         ?>
 
                         <?php
-                        $sql_1 = "SELECT * FROM transaction WHERE date LIKE '%".$_SESSION['filterDate']."%'";
+                        $sql_1 = "SELECT * FROM transaction WHERE date LIKE '%".$_SESSION['filterDate']."%' ORDER BY date DESC";
 
                         $result = mysqli_query($conn, $sql_1);
 
