@@ -59,7 +59,14 @@ if (isset($_SESSION['member']))
         <link rel="icon" href="./assets/icon/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./styles/sushi.css">
         <meta charset="utf-8">
-        <style>@import url('https://fonts.googleapis.com/css?family=Open+Sans');</style>
+        <style>
+            @font-face {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: url('OpenSans-Regular.ttf') format('truetype');
+            }
+        </style>
         <script type="text/javascript" src="./scripts/signup.js"></script>
     </head>
 
@@ -90,11 +97,11 @@ if (isset($_SESSION['member']))
             </section>
             
             <div id="user-main">
-                <div style="float: right; margin-right: 87px; margin-top: 76px;"><a id="cart" href="./php/logout.php"><img src="assets/nav/logout-icon2.jpg" width="50px" height="50px"></a></div>
+                <div style="float: right; margin-right: 87px; margin-top: 76px;"><a id="cart" href="./php/logout.php" style="background-color: #f5f4f0;"><img src="assets/nav/logout-icon2.jpg" width="50px" height="50px"></a></div>
                 <div id="index-review" style="height: 80px;">
-                    <h1>Hello,<?php echo $_SESSION['customer']['firstName'];?> !</h1>
+                    <h1>Hello, <?php echo $_SESSION['customer']['firstName'];?> !</h1>
                 </div>
-                <div id="index-review" style="height: 400px; padding-top: 20px;">
+                <div id="index-review" style="height: 800px; padding-top: 20px;">
                     <h2 style="text-align: left; margin-left: 100px; margin-bottom: 40px;">order history</h2>
                     <table id="history-table">
                         <thead>

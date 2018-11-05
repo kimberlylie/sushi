@@ -9,12 +9,7 @@ if (!isset($_SESSION['admin']))
     </script>"; 
 }
 ?>  
-<?php
-// if (!isset($_POST['date']))
-// {
-//     $_POST['date']="";
-// }
-?> 
+
 <?php
 if (!isset($_SESSION['filterDate']))
 {
@@ -65,7 +60,6 @@ if (isset($_POST['date']))
                 <div class="header-box3">
                     <nav class="main-nav">
                         <a id="cart" href="./php/adminLogout.php"><img src="assets/nav/logout-icon.jpg" width="50px" height="50px" style="margin-top: 4px; margin-left: 50px;"></a>
-                        <!--<a id="cart" href="cart.php"><img src="assets/nav/cart.png" width="50px" height="50px"></a>-->
                     </nav>
                 </div>          
             </div>
