@@ -35,7 +35,6 @@ echo $password;
 $sql = "SELECT * FROM member WHERE email='".$email."'";
 $result = mysqli_query($conn, $sql);
 
-echo "this".mysqli_num_rows($result)."result";
 
 if (mysqli_num_rows($result)>0)
 {
