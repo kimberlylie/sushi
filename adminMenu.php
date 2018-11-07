@@ -76,7 +76,7 @@ if (isset($_POST['type']))
                             </tr>
                             <tr style="margin-bottom: 30px;"> 
                             
-                                <script type="text/javascript" src="scripts/adminReports.js"></script>
+                                <script type="text/javascript" src="scripts/adminMenu.js"></script>
                                     <th colspan="3">
                                     <form action="adminMenu.php" method="post">
                                         <label style="display: inline-block; margin-right: 30px; margin-bottom: 20px;">Type : </label>
@@ -134,7 +134,7 @@ if (isset($_POST['type']))
                                         <tr>
                                         <td><img src="'.$row['imgURL'].'"></td>
                                         <td>'.$row['name'].'</td>
-                                        <td><input class="input-number" type="number" align="left" id="price'.$row['id'].'" name="price'.$row['id'].'" style=" text-align:left; background-color: #f4f5f0; margin-left: 0px;    " form="form'.$row['id'].'"  value='.$row['price'].' onchange="updateDate(\'go'.$row['id'].'\');"></td>
+                                        <td><input class="input-number" type="number" align="left" id="price'.$row['id'].'" name="price'.$row['id'].'" style=" text-align:left; background-color: #f4f5f0; margin-left: 0px;" form="form'.$row['id'].'"  value='.$row['price'].' onchange="checkPrice('.$row['id'].');"></td>
                                         <td style="padding-top: 20px;"><textarea class="input-textarea" id="description'.$row['id'].'" name="description'.$row['id'].'" style=" text-align:left;" form="form'.$row['id'].'" onchange="updateDate(\'go'.$row['id'].'\');"> '.$row['description'].'</textarea></td>
 
                                         
@@ -164,7 +164,7 @@ if (isset($_POST['type']))
                         </tbody>
                     </table>
             </div>
-
+            <script type="text/javascript" src="adminMenu.js"></script>
             <section>
             <div class="footer">
                 <div id="icons">
