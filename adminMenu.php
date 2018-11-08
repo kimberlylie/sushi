@@ -134,8 +134,8 @@ if (isset($_POST['type']))
                                         <tr>
                                         <td><img src="'.$row['imgURL'].'"></td>
                                         <td>'.$row['name'].'</td>
-                                        <td><input class="input-number" type="number" align="left" id="price'.$row['id'].'" name="price'.$row['id'].'" style=" text-align:left; background-color: #f4f5f0; margin-left: 0px;" form="form'.$row['id'].'"  value='.$row['price'].' onchange="checkPrice('.$row['id'].');"></td>
-                                        <td style="padding-top: 20px;"><textarea class="input-textarea" id="description'.$row['id'].'" name="description'.$row['id'].'" style=" text-align:left;" form="form'.$row['id'].'" onchange="updateDate(\'go'.$row['id'].'\');"> '.$row['description'].'</textarea></td>
+                                        <td><input class="input-number" type="number" align="left" id="price'.$row['id'].'" name="price'.$row['id'].'" style=" text-align:left; background-color: #f4f5f0; margin-left: 0px;" step=0.1 form="form'.$row['id'].'"  value='.$row['price'].' onchange="checkPrice('.$row['id'].');"></td>
+                                        <td style="padding-top: 20px;"><textarea class="input-textarea" id="description'.$row['id'].'" name="description'.$row['id'].'" style=" text-align:left;" form="form'.$row['id'].'" onchange="updateDate(\'go'.$row['id'].'\');">'.$row['description'].'</textarea></td>
 
                                         
                                         <td>
